@@ -1,0 +1,47 @@
+<div id="question" class="col-xs-12  ">
+<div class="row">
+   
+    <div class="col-sm-11">
+       <div ng-class="vm.isQuestionDone()" ng-click="vm.setQuestionDone()" ></div> <p><strong>{{vm.question.id}}. {{vm.question.desc}}</strong></p>
+    </div>
+</div>
+<div class="row">
+
+    <ul data-as-sortable="vm.dragControlListeners" data-ng-model="vm.question.options">
+        <li data-ng-repeat="option in vm.question.options" data-as-sortable-item>
+ 
+            <div class="col-sm-11" data-as-sortable-item-handle>
+                <% option.desc %> <% 3 - $index %>
+            </div>
+        </li>
+    </ul>		
+</div>
+    <!-- version 1
+    <ul class="row">
+        <div class="col-md-12">
+            <ul>
+                <li data-ng-repeat="option in vm.question.options" ng-click="vm.setValue(vm.question, option)">
+                    <div class="col-md-10">
+                        <% option.letter %>.
+                            <% option.desc%>
+                    </div>
+                    <div class="col-md-2">
+                        Importancia:
+                        <% option.value %>
+                    </div>
+                </li>
+            </ul>
+
+</div>
+</ul>
+-->
+</div>
+<!--
+vm.question: <% vm.question | json %>
+---<br>
+vm.clicked: <%vm.clicked | json%>
+
+---<br>
+Answers!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<% vm.answers | json%>
+-->

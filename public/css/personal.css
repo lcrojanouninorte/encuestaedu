@@ -1,0 +1,41 @@
+.color-position-0{
+background-color: green;
+}
+.color-position-1{
+background-color: yellow;
+}
+.color-position-2{
+background-color: orange;
+}
+.color-position-3{
+background-color: red;
+}
+
+.done{
+        background-image: url(http://www.iconsdb.com/icons/preview/royal-blue/check-mark-10-xxl.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    min-height: 50px;
+    min-width: 50px;
+    width: 50px;
+    /* display: inline; */
+    float: left;
+}
+.not-done{
+    background-image: url(http://vignette2.wikia.nocookie.net/kagerouproject/images/b/b3/Neutral.png/revision/latest?cb=20140806201746);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    min-height: 50px;
+    min-width: 50px;
+    width: 50px;
+    /* display: inline; */
+    float: left;
+}
+
+
+
+.as-sortable-item, .as-sortable-placeholder {
+    min-height: 25px;
+    margin: 1px 2px 5px 1px;
+    border-radius: 3px;
+}
