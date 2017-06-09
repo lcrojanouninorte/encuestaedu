@@ -1,6 +1,19 @@
 (function() {
     'use strict';
-    angular.module('app.directives', []).directive('question', question);
+    var directives = angular.module('app.directives', []);
+    directives.directive('question', question);
+
+    directives.directive('onFinishRender', function ($timeout) {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attr) {
+            if (scope.$last === true) {
+                scope.$evalAsync(attr.onFinishRender);
+                 element.parent().draggable = true;
+            }
+        }
+    }
+});
 
     /** @ngInject */
     function question(apiConf) {
@@ -23,8 +36,6 @@
         function linkf(scope, el, attr, vm) {
             // scope.question = attr.questionTemplate    ;
             //vm.qIndex = scope.pmp.qIndex;
-
-
         }
         /** @ngInject */
         function questionsController($scope, $log, $attrs, survey) {
@@ -32,6 +43,9 @@
             //vm.questions =  survey.currentSurvey();
             vm.clicked = {};
             vm.answers = [];
+            vm.loadNgSortable = function() {
+                console.log('loaded');
+            }
 
             //version 1
             vm.setValue = function(question, option) {
@@ -110,5 +124,7 @@
         }
 
     }
+
+
 
 })();

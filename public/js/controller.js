@@ -20,6 +20,8 @@ angular.module('app.controllers', [])
                 { disabled: true },
             ];
 
+             
+
 
             surveyCrtl.next = function(tab_index){
               //validar que el formulario este completo
