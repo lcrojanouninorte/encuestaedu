@@ -2,11 +2,12 @@ var app = angular.module('surveyApp',
   [
   'ngTouch',
   'ngAnimate',
+  'simplePagination',
     'ui.bootstrap',
     'as.sortable',
     'app.services',  
     'app.controllers',
-    'app.directives'
+    'app.directives',
     ]); 
 
 

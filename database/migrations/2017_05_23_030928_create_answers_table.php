@@ -21,7 +21,7 @@ class CreateAnswersTable extends Migration
             $table->timestamps();
 
             $table->foreign('option_id')->references('id')->on('options');
-            $table->foreign('survey_id')->references('id')->on('surveys');
+            $table->foreign('survey_id')->references('id')->on('surveys')->onDelete('cascade');
         });
     }
 

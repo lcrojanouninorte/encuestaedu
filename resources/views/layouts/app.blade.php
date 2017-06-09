@@ -85,6 +85,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ URL::asset('js/ng-sortable.min.js') }}"></script>
     <script src="{{ URL::asset('js/ui-bootstrap-tpls-2.5.0.min.js') }}"></script>
+    <script src="{{ URL::asset('js/simplePagination.js') }}"></script>
     <script src="{{ URL::asset('js/config.js') }}"></script>
     <script src="{{ URL::asset('js/controller.js') }}"></script>
     <script src="{{ URL::asset('js/service.js') }}"></script>

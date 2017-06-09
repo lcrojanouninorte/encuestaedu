@@ -121,13 +121,18 @@
           
           <!--encuesta-->
           
-          <div ng-repeat="question in surveyCrtl.questions">
+          <div ng-repeat="question in surveyCrtl.questions | startFrom: surveyCrtl.pagination.page * surveyCrtl.pagination.perPage | limitTo: surveyCrtl.pagination.perPage">
             <question  question="question"> </question>
           </div>
+         
           {{ csrf_field() }}
-          <div class="col-md-5 col-md-offset-5">
-            <button type="button" class="btn btn-primary" ng-click="surveyCrtl.save();">Enviar</button>
+          <div class="col-md-3 col-md-offset-5">
+           <button class="btn btn-success col-md" ng-click="surveyCrtl.pagination.prevPage()">Anterior</button>
+<button class="btn btn-success col-md" ng-click="surveyCrtl.pagination.nextPage()">Siguiente</button>
+            <button type="button" class="btn btn-primary col-md" ng-click="surveyCrtl.save();">Enviar</button>
+           
           </div>
+           <p><--"Actualmente esta activo el boton de enviar para efectos de la prueba"</p>
         </div>
       </div>
     </div>

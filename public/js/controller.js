@@ -1,14 +1,17 @@
 angular.module('app.controllers', [])
-    .controller('SurveyController', function($scope, survey, $log, $window) {
+    .controller('SurveyController', function($scope, survey, $log, $window, Pagination) {
             var surveyCrtl = this;
+            surveyCrtl.pagination = Pagination.getNew(5);
+            surveyCrtl.pagination.numPages = 0;
+
             surveyCrtl.questions = [];
             surveyCrtl.answers = [];
             surveyCrtl.profile = {
               user_id:"",
-              nombre: "",
-              edad: "",
-              curso:"",
-              institucion: ""
+              nombre: "Nombre",
+              edad: 23,
+              curso:"Curso A",
+              institucion: "institucion"
             }
             surveyCrtl.active = 0;
             surveyCrtl.tabs = [
@@ -29,6 +32,7 @@ angular.module('app.controllers', [])
             survey.getQuestions("token").then(function(data) {
                 if (!$.isEmptyObject(data) && data !== null && typeof(data) != "undefined") {
                     surveyCrtl.questions = data;
+                    surveyCrtl.pagination.numPages = Math.ceil(surveyCrtl.questions.length/surveyCrtl.pagination.perPage);
                     //active();
                 } else {
                     surveyCrtl.questions = {};
