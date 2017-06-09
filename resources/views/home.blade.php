@@ -3,6 +3,23 @@
 @section('content')
 <div class="container">
     <div class="row">
+    <div class="flash-message">
+   @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+            @if(Session::has('alert-' . $msg))
+           
+            <div class="row">
+                  <div class="col s12 ">
+                    <div class="card-panel green accent-1">
+                       <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p>
+                    </div>
+                  </div>
+                </div>
+
+            @endif
+    @endforeach
+
+       
+</div>
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -29,8 +46,9 @@
                     {{ Form::open(['method' => 'DELETE', 'route' => ['surveys.destroy', $survey->id]]) }}
                 {{ Form::token()}}
                 {{ Form::hidden('id', $survey->id) }}
-                {{ Form::submit('Borrar encuesta realizada', ['class' => 'btn btn-danger']) }}
+                {{ Form::submit('Borrar encuesta realizada ', ['class' => 'btn btn-danger']) }}
             {{ Form::close() }}
+            (Modo de prueba)
                     </div>
                     <br> 
                     

@@ -9,6 +9,8 @@ use App\Answer;
 use Illuminate\Http\Request;
 use DB;
 
+use Session;
+
 
 class SurveyController extends Controller
 {
@@ -153,6 +155,8 @@ class SurveyController extends Controller
     {
         //
         Survey::destroy($survey->id);
+        Session::flash('alert-success', 'Borrado correctamente, puede crear una neva encuesta');
+        return back()->with('message', 'success| Borrado correctamente.');
 
     }
 }
