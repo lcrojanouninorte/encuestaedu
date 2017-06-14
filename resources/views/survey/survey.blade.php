@@ -116,13 +116,14 @@
   <div class="row">
     <div class="col-md-12">
       <div class="panel panel-default">
-        <div class="panel-heading">Questionario</div>
+        <div class="panel-heading">Questionario <a href="#" ng-click="surveyCrtl.inputType = !surveyCrtl.inputType">Cambiar Tipo de Entrada</a></div>
         <div class="panel-body">
           
           <!--encuesta-->
           
           <div ng-repeat="question in surveyCrtl.questions | startFrom: surveyCrtl.pagination.page * surveyCrtl.pagination.perPage | limitTo: surveyCrtl.pagination.perPage">
-            <question  question="question"> </question>
+            <question ng-show="surveyCrtl.inputType" question="question"> </question>
+            <question-click  ng-show="!surveyCrtl.inputType" question="question"></question-click>
           </div>
          
           {{ csrf_field() }}

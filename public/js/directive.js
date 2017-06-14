@@ -6,14 +6,14 @@
     directives.directive('onFinishRender', function ($timeout) {
     return {
         restrict: 'A',
-        link: function (scope, element, attr) {
-            if (scope.$last === true) {
-                scope.$evalAsync(attr.onFinishRender);
-                 element.parent().draggable = true;
+            link: function (scope, element, attr) {
+                if (scope.$last === true) {
+                    scope.$evalAsync(attr.onFinishRender);
+                     element.parent().draggable = true;
+                }
             }
         }
-    }
-});
+    });
 
     /** @ngInject */
     function question(apiConf) {
@@ -47,36 +47,7 @@
                 console.log('loaded');
             }
 
-            //version 1
-            vm.setValue = function(question, option) {
-                vm.clicked = option;
-                if (vm.answers.length < 4) {
-                    if (vm.answers.indexOf(option) === -1) {
-                        vm.answers.push(option);
-                        option.value = vm.answers.length - 1;
-                    } else {
-                        var index = vm.answers.indexOf(option);
-                        if (index > -1) {
-                            vm.answers.splice(index, 1);
-                            option.value = "";
-                            angular.forEach(vm.answers, function(option, key) {
-                                option.value = key;
-                            });
-                        }
-                    }
-                }
-
-
-            }
-
-
-            vm.reset = function(question) {
-                for (var i = question.options.length - 1; i >= 0; i--) {
-                    question.options[i].value = null;
-                }
-                vm.answers = [];
-            }
-            //fin version 1
+            
 
 
             //version2

@@ -8,6 +8,7 @@ var app = angular.module('surveyApp',
     'app.services',  
     'app.controllers',
     'app.directives',
+    'app.componets'
     ]); 
 
 

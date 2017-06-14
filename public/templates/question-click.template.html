@@ -1,0 +1,38 @@
+<div id="question" class="col-xs-12  ">
+<div class="row">
+   
+    <div class="col-sm-11">
+       <div ng-class="$ctrl.isQuestionDone()" ng-click="$ctrl.setQuestionDone()" ></div> <p><strong>{{$ctrl.question.id}}. {{$ctrl.question.desc}}</strong></p>
+    </div>
+    <a href="" ng-click="$ctrl.reset($ctrl.question)">Reset</a>
+</div>
+
+  
+    <ul class="row">
+        <div class="col-md-12">
+            <ul>
+                <li data-ng-repeat="option in $ctrl.question.options" ng-click="$ctrl.setValue($ctrl.question, option, $event)">
+                    <div class="col-md-10">
+                        <% option.letter %>.
+                            <% option.desc%>
+                    </div>
+                    <div class="col-md-2">
+                        Importancia:
+                        <% option.value %>
+                    </div>
+                </li>
+            </ul>
+
+</div>
+</ul>
+
+</div>
+<!--
+vm.question: <% vm.question | json %>
+---<br>
+vm.clicked: <%vm.clicked | json%>
+
+---<br>
+Answers!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<% vm.answers | json%>
+-->

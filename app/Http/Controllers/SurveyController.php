@@ -6,6 +6,7 @@ use App\Survey;
 use App\Question;
 use App\Profile;
 use App\Answer;
+use App\Area;
 use Illuminate\Http\Request;
 use DB;
 
@@ -106,11 +107,12 @@ class SurveyController extends Controller
      */
     public function show(Survey $survey)
     {
-        //
+        //send 
         $results = DB::table('answers')
-                ->select('options.area', DB::raw('SUM(answers.value) as total'))
+                ->select('options.area', DB::raw('SUM(answers.value) as total'), 'cod_area')
                 ->leftJoin('options', 'answers.option_id', '=', 'options.id')
                 ->leftJoin('surveys', 'surveys.id', '=', 'answers.survey_id')
+                ->leftJoin('areas', 'areas.id', '=', 'options.area')
                 ->where('surveys.id', $survey->id)
                 ->groupBy('area')
                 ->get();

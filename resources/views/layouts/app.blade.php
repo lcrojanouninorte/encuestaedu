@@ -90,6 +90,7 @@
     <script src="{{ URL::asset('js/controller.js') }}"></script>
     <script src="{{ URL::asset('js/service.js') }}"></script>
     <script src="{{ URL::asset('js/directive.js') }}"></script>
+    <script src="{{ URL::asset('js/componets.js') }}"></script>
      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-touch.js"></script>
       <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
      

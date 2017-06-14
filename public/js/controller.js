@@ -3,7 +3,6 @@ angular.module('app.controllers', [])
             var surveyCrtl = this;
             surveyCrtl.pagination = Pagination.getNew(5);
             surveyCrtl.pagination.numPages = 0;
-
             surveyCrtl.questions = [];
             surveyCrtl.answers = [];
             surveyCrtl.profile = {
@@ -19,6 +18,7 @@ angular.module('app.controllers', [])
                 { disabled: true },
                 { disabled: true },
             ];
+            surveyCrtl.inputType = false;
 
              
 

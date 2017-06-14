@@ -25,7 +25,8 @@
             <tbody>
               @foreach ($results as $result)
               <tr>
-                <td>{{$result->area}}</td>
+
+                <td><a href="/cno/{{$survey->id}}/{{$result->cod_area}}" > {{$result->cod_area}}</a> </td>
                 <td>{{$result->total}} </td>
               </tr>
               
