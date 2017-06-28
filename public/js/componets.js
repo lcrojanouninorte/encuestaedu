@@ -14,13 +14,13 @@ componets.component('questionClick', {
                 if (this.answers.length < 4) {
                     if (this.answers.indexOf(option) === -1) {
                         this.answers.push(option);
-                        option.value = this.answers.length - 1;
-                        $(event.target).addClass('color-position-'+option.value);
+                        option.value = this.answers.length -1;
+                        //$(event.target).find(".item-check").addClass('color-position-'+option.value);
                     } else {
                         var index = this.answers.indexOf(option);
                         if (index > -1) {
                             this.answers.splice(index, 1);
-                            $(event.target).removeClass('color-position-'+option.value);
+                           // $(event.target).find(".item-check").removeClass('color-position-'+option.value);
                             option.value = "";
                             angular.forEach(this.answers, function(option, key) {
                                 option.value = key;

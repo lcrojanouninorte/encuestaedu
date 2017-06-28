@@ -1,7 +1,7 @@
 angular.module('app.controllers', [])
     .controller('SurveyController', function($scope, survey, $log, $window, Pagination) {
             var surveyCrtl = this;
-            surveyCrtl.pagination = Pagination.getNew(5);
+            surveyCrtl.pagination = Pagination.getNew(10);
             surveyCrtl.pagination.numPages = 0;
             surveyCrtl.questions = [];
             surveyCrtl.answers = [];

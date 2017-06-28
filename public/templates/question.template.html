@@ -8,7 +8,7 @@
 <div class="row">
 
     <ul data-as-sortable="vm.dragControlListeners" data-ng-model="vm.question.options">
-        <li  on-finish-render data-ng-repeat="option in vm.question.options" data-as-sortable-item  class="success" >
+        <li class="question-item" on-finish-render data-ng-repeat="option in vm.question.options" data-as-sortable-item  class="success" >
  
             <div class="col-sm-11" data-as-sortable-item-handle>
                 <% option.desc %> <% 3 - $index %>

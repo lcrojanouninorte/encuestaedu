@@ -1,21 +1,26 @@
-.color-position-0{
+.color-position-3{
 background-color: green;
-}
-.color-position-1{
-background-color: yellow;
+color: green;
 }
 .color-position-2{
-background-color: orange;
+background-color: yellow;
+color: yellow;
 }
-.color-position-3{
+.color-position-1{
+background-color: orange;
+color: orange;
+
+}
+.color-position-0{
 background-color: red;
+color: red;
 }
 
 .done{
         background-image: url(http://iconizer.net/files/Simplicio/orig/notification_done.png);
     background-size: 50%;
     background-repeat: no-repeat;
-    min-height: 50px;
+    min-height: 25px;
     min-width: 50px;
     width: 50px;
     /* display: inline; */
@@ -25,11 +30,12 @@ background-color: red;
     background-image: url(http://vignette2.wikia.nocookie.net/kagerouproject/images/b/b3/Neutral.png/revision/latest?cb=20140806201746);
     background-size: 50%;
     background-repeat: no-repeat;
-    min-height: 50px;
+    min-height: 25px;
     min-width: 50px;
     width: 50px;
     /* display: inline; */
     float: left;
+
 }
 
 
@@ -39,3 +45,23 @@ background-color: red;
     margin: 1px 2px 5px 1px;
     border-radius: 3px;
 }
+ {
+    display: block!important;
+}
+
+p {
+    margin: 0px!important;
+}
+.question-item {
+    z-index: 100;
+}
+.question {
+    display: block!important;
+}
+
+.container-fluid:after, .container-fluid:before, .container:after, .container:before, .row:after, .row:before {
+    display: block;
+    content: " ";
+}
+
+ 

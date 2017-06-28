@@ -8,18 +8,16 @@
 </div>
 
   
-    <ul class="row">
+    <ul class="row question">
         <div class="col-md-12">
             <ul>
                 <li data-ng-repeat="option in $ctrl.question.options" ng-click="$ctrl.setValue($ctrl.question, option, $event)">
-                    <div class="col-md-10">
-                        <% option.letter %>.
+                    <div class="col-md-12">
+                            <span class="color-position-<% option.value %> item-check glyphicon glyphicon-minus" ng-show="option.value!=null"  aria-hidden="true"></span>
+                            <% option.value  %>
                             <% option.desc%>
                     </div>
-                    <div class="col-md-2">
-                        Importancia:
-                        <% option.value %>
-                    </div>
+                     
                 </li>
             </ul>
 
