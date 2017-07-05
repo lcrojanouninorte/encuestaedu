@@ -76,13 +76,13 @@ class SurveyController extends Controller
             //crear usuario
             // create user
             $user_id = "";
-            if(!isset($data["profile"]["user_id"])){
+            if(!isset($profile["user_id"])){
                 $newUser = User::create($userData);
                  
                 Auth::loginUsingId($newUser->id);
                  $user_id = $newUser->id;
             }else{
-                 $user_id = $data["profile"]["user_id"];
+                 $user_id = $profile["user_id"];
             }
             
 
