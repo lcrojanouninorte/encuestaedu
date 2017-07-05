@@ -1,153 +1,183 @@
 @extends('layouts.app')
 @section('content')
 <div class="container"  ng-controller="SurveyController as surveyCrtl">
-
-@if (Auth::check())
- <uib-tabset active="surveyCrtl.active">
-  <uib-tab index="0" >
-  <uib-tab-heading>
-  <i class="glyphicon glyphicon-bell"></i> Normas de Aplicación
-  </uib-tab-heading>
   <div class="panel panel-default">
-    <div class="panel-body">
-      <h2 style="text-align: center">Normas de Aplicación </h2>
-      <p>
-        En cada pregunta debes leer cuidadosamente las 4 actividades que tienen una letra. A Continuación, en la HOJA DE RESPUESTAS, poner 0 en la actividad que menos te gusta de las cuatro, un 3 en la que más te gusta, un 2 en la siguiente que más te gusta, y un 1 en la que queda. Se trata, pues de ordenar de 0 a 3 esas actividades según tu preferencia. Aunque a veces te cueste algo decidirte, siempre deberás establecer un orden de 0 a 3 para poder valorar bien la prueba.
-      </p>
-      <p>
-        EJEMPLO: En una empresa preferiría
-      </p>
-      <ul>
-        <li>K.  Llevar la contabilidad</li>
-        <li>R. Enseñar nuevas técnicas de producción </li>
-        <li>P. Mantener la maquinaria en perfectas condiciones de funcionamiento. </li>
-        <li>N. Visitar a los clientes para venderles los productos.</li>
-      </ul>
-      <h4 style="text-align: center">Hoja de respuestas</h4>
-      <div class="col-sm-4 col-sm-offset-4">
-        <table class="table text-center ">
-          <thead>
-          </thead>
-          <tbody>
-            <tr>
-              <td>K</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>R</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td>P</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>N</td>
-              <td>3</td>
-            </tr>
-          </tbody>
-        </table>
-        
+    <div class="panel-body" >
+      <wizard on-finish="finishedWizard()" on-cancel="cancelledWizard()" indicators-position="top">
+      <wz-step wz-title="Instrucciones">
+      <h2 style="text-align: center">Instrucciónes de Aplicación </h2>
+      <div class="col s12">
+        En cada pregunta debes leer cuidadosamente las 4 actividades que tienen una letra.  Organízalas según tu preferencia. A Continuación, en la HOJA DE RESPUESTAS, poner Siendo 3 la de mayor preferencia y 0 la de menor.  0 en la actividad que menos te gusta de las cuatro, un 3 en la que más te gusta, un 2 en la siguiente que más te gusta, y un 1 en la que queda. Se trata, pues de ordenar de 0 a 3 esas actividades según tu preferencia. Aunque a veces te cueste algo decidirte, siempre deberás establecer un orden de 0 a 3 para poder valorar bien la prueba.  
       </div>
-      <div class="col-sm-12">
-        <p>En este caso, según las respuestas, lo que más me gusta es visitar a los clientes, y por eso lo valoro con tres puntos, y lo que menos, mantener la maquinaria, valorado con 0 puntos.
-        Aunque no hay tiempo fijo para responder al cuestionario, debes terminarlo por completo y no dejar sin responder ninguna pregunta para que se pueda valorar correctamente. No pienses tampoco mucho las respuestas, déjate llevar de la primera impresión.</p>
-        <strong class="text-bold">Este cuestionario trata de clasificar tus preferencias profesionales en 13 grandes áreas de interés. Responde con cuidado y sinceridad, pues te ayudara a conocer mejor tus propios intereses y a compararlos con los de otras personas. Responde guiándote únicamente por el gusto que te suscitan las actividades que se te indiquen.</strong>
+      <div class="col-sm-2 col-sm-offset-10 text-left">
+        <button type="button" class="btn btn-info btn-md" wz-next value="Continue">Siguiente <i class="glyphicon glyphicon-chevron-right"></i></button>
       </div>
-    <div class="col-sm-2 col-sm-offset-10 text-left">
-     <button type="button" class="btn btn-info btn-md" ng-click="surveyCrtl.next(1);">Siguiente <i class="glyphicon glyphicon-chevron-right"></i></button> 
-    </div>
-    </div>
-  </div>
-  </uib-tab>
+      </wz-step>
+      <wz-step wz-title="Perfil">
+      <h2 class="center-align">Inicia tu ruta ocupacional</h2>
+      <strong class="text-bold">Este cuestionario trata de clasificar tus preferencias profesionales en 13 grandes áreas de interés. Responde con cuidado y sinceridad, pues te ayudara a conocer mejor tus propios intereses y a compararlos con los de otras personas. Responde guiándote únicamente por el gusto que te suscitan las actividades que se te indiquen.</strong>
+       <br>
+        <form class="form-horizontal" style="margin-top: 10px;">
+          <!--  <input type="hidden" name="user_id" ng-model="surveyCrtl.profile.user_id" ng-init="surveyCrtl.profile.user_id = {{1}}"> -->
+          <fieldset>
+          @if(Auth::check())
+          <h4>Bienvenido nuevamente {{Auth::user()->name }}</h4> 
+          No eres tu?: 
+          <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     jQuery(document).ready(function($) {
+                                                       document.getElementById('logout-form').submit();
+                                                     });">
+                                            Salir
+                                        </a>
 
-  <!-- Pagina 2, profile-->
-  <uib-tab index="1" disable="surveyCrtl.tabs[1].disabled ">
-  <uib-tab-heading>
-  <i class="glyphicon glyphicon-bell"></i> Información
-  </uib-tab-heading>
-  <div class="panel panel-default">
-    
-    <div class="panel-body">
 
 
-      <form class="form-horizontal">
-      <input type="hidden" name="user_id" ng-model="surveyCrtl.profile.user_id" ng-init="surveyCrtl.profile.user_id = {{Auth::user()->id}}">
-        <fieldset>
-          <!-- Form Name -->
-          <legend>Información</legend>
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="Institución">Institución</label>
-            <div class="col-md-5">
-              <input id="Institución" ng-model="surveyCrtl.profile.institucion"  name="Institución" type="text" placeholder="" class="form-control input-md">
-              
+          <input type="hidden" name="user_id" ng-model="surveyCrtl.profile.user_id" ng-init="surveyCrtl.profile.user_id = {{Auth::id()}}"> 
+          @else
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="Institución">E-Mail</label>
+              <div class="col-md-5">
+                <input id="Institución" ng-model="surveyCrtl.profile.email"  name="email" type="text" placeholder="" class="form-control input-md">
+              </div>
             </div>
-          </div>
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="edad">Edad</label>
-            <div class="col-md-2">
-              <input id="edad" ng-model="surveyCrtl.profile.edad"  name="edad" type="text" placeholder="" class="form-control input-md">
-              
+
+          @endif
+
+            <!-- Form Name -->
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="Institución">Institución</label>
+              <div class="col-md-5">
+                <input id="Institución" ng-model="surveyCrtl.profile.institucion"  name="Institución" type="text" placeholder="" class="form-control input-md">
+              </div>
             </div>
-          </div>
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="curso">Curso</label>
-            <div class="col-md-2">
-              <input id="curso" ng-model="surveyCrtl.profile.curso"  name="curso" type="text" placeholder="" class="form-control input-md" required="">
-              
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="edad">Edad</label>
+              <div class="col-md-2">
+                <input id="edad" ng-model="surveyCrtl.profile.edad"  name="edad" type="text" placeholder="" class="form-control input-md">
+              </div>
             </div>
-          </div>
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="curso">Grado <% surveyCrtl.profile.curso %></label>
+              <div class="col-md-8">
+                <div class="row" >
+                  <p class="col s2">
+                    <input ng-model="surveyCrtl.profile.curso" name="group1" type="radio" id="test1" value="6" />
+                    <label for="test1">6°</label>
+                  </p>
+                  <p class="col s2">
+                    <input ng-model="surveyCrtl.profile.curso" name="group1" type="radio" id="test2"  value="7"/>
+                    <label for="test2">7°</label>
+                  </p>
+                  <p class="col s2">
+                    <input ng-model="surveyCrtl.profile.curso" name="group1" type="radio" id="test3"  value="8"/>
+                    <label for="test3">8°</label>
+                  </p>
+                  <p class="col s2">
+                    <input ng-model="surveyCrtl.profile.curso" name="group1" type="radio" id="test4"  value="9"/>
+                    <label for="test4">9°</label>
+                  </p>
+                  <p class="col s2">
+                    <input ng-model="surveyCrtl.profile.curso" name="group1" type="radio" id="test5"  value="10"/>
+                    <label for="test5">10°</label>
+                  </p>
+                  <p class="col s2">
+                    <input ng-model="surveyCrtl.profile.curso" name="group1" type="radio" id="test6" value="11" />
+                    <label for="test6">11°</label>
+                  </p>
+                  
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group " >
+              <label class="col-md-4 control-label" for="opciones">Cuál de las siguientes opciones consideras más adecuada a tu actualidad. </label>
+              <div class="col-md-8">
+                
+                  <p class="col s12">
+                    <input ng-model="surveyCrtl.profile.opciones" name="group2" type="radio" id="opciones1" value="1"/>
+                    <label for="opciones1">1. Tengo el tiempo y las posibilidades para estudiar por varios años sin necesidad de trabajar.</label>
+                  </p>
+                  <p class="col s12">
+                    <input ng-model="surveyCrtl.profile.opciones" name="group2" type="radio" id="opciones2" value="2"/>
+                    <label for="opciones2">2. Puedo estudiar durante varios años pero necesito trabajar al tiempo.</label>
+                  </p>
+                  <p class="col s12">
+                    <input ng-model="surveyCrtl.profile.opciones" name="group2" type="radio" id="opciones3" value="3"/>
+                    <label for="opciones3">3. Necesito estudiar rápidamente para laborar cuanto antes. </label>
+                  </p>
+                  <p class="col s12">
+                    <input ng-model="surveyCrtl.profile.opciones" name="group2" type="radio" id="opciones4" value="4"/>
+                    <label for="opciones4">4. No tengo tiempo para estudiar, necesito trabajar de inmediato.</label>
+                  </p>
+
+                 
+              </div>
+            </div>
+            <div class="form-group " >
+              <label class="col-md-4 control-label" for="verificacion">Es tu primera vez en la herramienta?. </label>
+              <div class="col-md-8">
+                
+                  <p class="col s6">
+                    <input ng-model="surveyCrtl.profile.verificacion" name="group3" type="radio" id="verificacion1" value="1"/>
+                    <label for="verificacion1">Si</label>
+                  </p>
+                  <p class="col s6">
+                    <input ng-model="surveyCrtl.profile.verificacion" name="group3" type="radio" id="verificacion2" value="0"/>
+                    <label for="verificacion2">No</label>
+                  </p>
+
+                 
+              </div>
+            </div>
+          
         </fieldset>
       </form>
-       <div class="col-sm-2 col-sm-offset-10 text-left">
-     <button type="button" class="btn btn-info btn-md" ng-click="surveyCrtl.next(2);">Siguiente <i class="glyphicon glyphicon-chevron-right"></i></button> 
-    </div>
-    </div>
-  </div>
-
-  </uib-tab>
-  <uib-tab index="2" disable="surveyCrtl.tabs[2].disabled ">
-  <uib-tab-heading>
-  <i class="glyphicon glyphicon-bell"></i> Alert!
-  </uib-tab-heading>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="panel panel-default">
-        <div class="panel-heading">Questionario <a href="#" ng-click="surveyCrtl.inputType = !surveyCrtl.inputType">Cambiar Tipo de Entrada</a></div>
+      
+      <div class="col-sm-2 col-sm-offset-10 text-left" style="margin-top: 15px;">
+        <button type="button" class="btn btn-info btn-md" wz-next value="Go on">Siguiente <i class="glyphicon glyphicon-chevron-right"></i></button>
+      </div>
+     
+    </wz-step>
+    <wz-step wz-title="Test">
+    <p>En cada pregunta debes leer cuidadosamente las 4 actividades. Organízalas según tu preferencia. Siendo 3 la de mayor preferencia y 0 la de menor.
+    </p>
+    <div class="row">
+      <div class="col s12">
         <div class="panel-body">
-          
+          <div  offsetTop="10" class="simple" >
+            <div class="col s1">
+              <p> Progreso:</p>
+            </div>
+            <div hl-sticky="" class="col s11" >
+              <uib-progressbar  class="progress-striped active" max="52" value="surveyCrtl.answers_done" type="success">
+             
+              </uib-progressbar>
+            </div>
+          </div>
           <!--encuesta-->
-          
-          <div ng-repeat="question in surveyCrtl.questions | startFrom: surveyCrtl.pagination.page * surveyCrtl.pagination.perPage | limitTo: surveyCrtl.pagination.perPage">
-            <question ng-show="surveyCrtl.inputType" question="question"> </question>
-            <question-click  ng-show="!surveyCrtl.inputType" question="question"></question-click>
-          </div>
          
-          {{ csrf_field() }}
-          <div class="col-md-3 col-md-offset-5">
-           <button class="btn btn-success col-md" ng-click="surveyCrtl.pagination.prevPage()">Anterior</button>
-<button class="btn btn-success col-md" ng-click="surveyCrtl.pagination.nextPage()">Siguiente</button>
-            <button type="button" class="btn btn-primary col-md" ng-click="surveyCrtl.save();">Enviar</button>
-           
+          <div ng-repeat="question in surveyCrtl.questions | startFrom: surveyCrtl.pagination.page * surveyCrtl.pagination.perPage | limitTo: surveyCrtl.pagination.perPage">
+            <!-- <question ng-show="surveyCrtl.inputType" question="question"> </question>-->
+            <question-click  ng-show="!surveyCrtl.inputType" donecount="surveyCrtl.answers_done" question="question"></question-click>
           </div>
-           <p><--"Actualmente esta activo el boton de enviar para efectos de la prueba"</p>
+          {{ csrf_field() }}
+          <div class="col m3 push-m5" style="margin-top: 15px;">
+            <button class="btn btn-success col" ng-click="surveyCrtl.pagination.prevPage()">Anterior</button>
+            <button class="btn btn-success col" ng-click="surveyCrtl.pagination.nextPage()">Siguiente</button>
+            <button type="button" class="btn btn-primary col" ng-click="surveyCrtl.save();" wz-next >Enviar</button>
+            <p><--"Actualmente esta activo el boton de enviar para efectos de la prueba"</p>
+          </div>
         </div>
       </div>
     </div>
+    </wz-step>
+    </wizard>
   </div>
-  </uib-tab>
-  </uib-tabset>
-@else
-<div class="panel panel-default">
-    <div class="panel-body">
-      <h2 style="text-align: center">Login</h2>
-      <p> Para realizar la encuesta debes estar logeado</p>
-    </div>
-  </div>
-@endif
- 
+</div>
+</div>
 </div>
 @endsection

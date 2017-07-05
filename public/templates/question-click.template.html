@@ -1,36 +1,39 @@
-<div id="question" class="col-xs-12  ">
-<div class="row">
-   
-    <div class="col-sm-11">
-       <div ng-class="$ctrl.isQuestionDone()" ng-click="$ctrl.setQuestionDone()" ></div> <p><strong>{{$ctrl.question.id}}. {{$ctrl.question.desc}}</strong></p>
-    </div>
-    <a href="" ng-click="$ctrl.reset($ctrl.question)">Reset</a>
-</div>
+<div id="question" class="row question-item">
+    <div class="question-title col s12">
+            <div class="col s1 m1"  >
+                <div class="center-align" ng-class="$ctrl.isQuestionDone()"></div> 
+            </div>
+            <div class="col s9 m10"> 
+                <p class="center-align bold"><b><strong>{{$ctrl.question.id}}. {{$ctrl.question.desc}}</strong></b></p>
+                
+            </div>
+            <div class="col s1 m1">
+                <a class="center-align btn-edit btn-floating btn-xsmall waves-effect waves-light  light-blue darken-1"><i class="material-icons" ng-click="$ctrl.reset($ctrl.question)">delete</i></a>
+            </div>
 
-  
-    <ul class="row question">
-        <div class="col-md-12">
+            
+            
+    </div>
+
+    <div class="col s12 question">
+        <div class="col s12">
             <ul>
-                <li data-ng-repeat="option in $ctrl.question.options" ng-click="$ctrl.setValue($ctrl.question, option, $event)">
-                    <div class="col-md-12">
-                            <span class="color-position-<% option.value %> item-check glyphicon glyphicon-minus" ng-show="option.value!=null"  aria-hidden="true"></span>
-                            <% option.value  %>
-                            <% option.desc%>
+                <li class="question-option" data-ng-repeat="option in $ctrl.question.options" ng-click="$ctrl.setValue($ctrl.question, option, $event)">
+                    <div class="col m12">
+                        
+                        <img src="smile{{option.value || 0}}.png" style="max-width: 20px;">
+                        <!-- <span class="color-position-<% option.value %> item-check glyphicon glyphicon-minus" ng-show="option.value!=null"  aria-hidden="true"></span>-->
+                        <!--<% option.value  %>-->
+                        <% option.desc%>
                     </div>
-                     
+                    
                 </li>
             </ul>
+            
+        </div>
+        
+
+         
+    </div>
 
 </div>
-</ul>
-
-</div>
-<!--
-vm.question: <% vm.question | json %>
----<br>
-vm.clicked: <%vm.clicked | json%>
-
----<br>
-Answers!!!!!!!!!!!!!!!!!!!!!!!!!!!
-<% vm.answers | json%>
--->

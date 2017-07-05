@@ -20,7 +20,7 @@ class CreateAnswersTable extends Migration
             $table->integer('value');
             $table->timestamps();
 
-            $table->foreign('option_id')->references('id')->on('options');
+            $table->foreign('option_id')->references('id')->on('options')->onDelete('cascade');;
             $table->foreign('survey_id')->references('id')->on('surveys')->onDelete('cascade');
         });
     }

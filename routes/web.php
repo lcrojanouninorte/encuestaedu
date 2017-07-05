@@ -12,18 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::group(['middleware' => 'auth'], function () {
-
 Route::resource('surveys', 'SurveyController');
 Route::resource('questions', 'QuestionController');
 Route::resource('cnos', 'CnoController');
+Route::get('caracterizacion/{survey}', 'SurveyController@showCaracterizacion');
 Route::get('/cno/{survey}/{cod_area}/{category?}/{level?}', 'CnoController@cno_report');
+Route::get('/cnopdf/{survey}/{cod_area}/{category?}/{level?}', 'CnoController@cno_reportpdf');
+
+Route::group(['middleware' => 'auth'], function () {
+
 
 
 

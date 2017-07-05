@@ -1,7 +1,7 @@
 angular.module('app.controllers', [])
     .controller('SurveyController', function($scope, survey, $log, $window, Pagination) {
             var surveyCrtl = this;
-            surveyCrtl.pagination = Pagination.getNew(10);
+            surveyCrtl.pagination = Pagination.getNew(18);
             surveyCrtl.pagination.numPages = 0;
             surveyCrtl.questions = [];
             surveyCrtl.answers = [];
@@ -13,6 +13,7 @@ angular.module('app.controllers', [])
               institucion: "institucion"
             }
             surveyCrtl.active = 0;
+            surveyCrtl.answers_done = 0;
             surveyCrtl.tabs = [
                 { disabled: false },
                 { disabled: true },
@@ -51,7 +52,8 @@ angular.module('app.controllers', [])
                         if (!$.isEmptyObject(data) && data !== null && typeof(data) != "undfined") {
                             if(data.success){
                               //se guardo correctamente, redireccionar al dashboar
-                              $window.location.href = '/surveys/'+data.survey.id;
+                              $window.location.href = '/caracterizacion/'+data.survey.id;
+                              //$window.location.href = '/survey/'+data.survey.id;
                               //redireccionar a home
                             }else{
                               //mostrar que hubo un error al guardar

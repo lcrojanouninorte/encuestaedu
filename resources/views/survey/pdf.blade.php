@@ -6,38 +6,72 @@
 <uib-tabset active="surveyCrtl.active">
   <uib-tab index="0" >
   <uib-tab-heading>
-  <i class="glyphicon glyphicon-bell"></i> Resultados por area
+  <i class="glyphicon glyphicon-bell"></i> Caracterizacion
   </uib-tab-heading>
   <div class="row">
     <div class="col-md-12">
       <div class="panel panel-default">
         <div class="panel-heading">Areas</div>
         <div class="panel-body">
-<div class="col-md-6 col-md-offset-3 text-center">
-  
+<div class="col-md-12 col-md-offset-0 text-center">
+
+<h3>Escoje un area ocupacional en cada una de las categorias:</h3>
+<p>Es posible que solo halla una sola area de aplicación.</p>
+
+ 
           <table class="table table-bordered">
             <thead>
               <tr>
-                <th>Area</th>
-                <th>Puntaje Total</th>
+                <th>Puntaje</th>
+                <th >Area</th>
+                <th>Categoria</th>
               </tr>
             </thead>
             <tbody>
+            
               @foreach ($results as $result)
               <tr>
-
-                <td><a href="/cno/{{$survey->id}}/{{$result->cod_area}}" > {{$result->cod_area}}</a> </td>
                 <td>{{$result->total}} </td>
+                <td ><a href="/cno/{{$survey->id}}/{{$result->cod_area}}" > {{$result->desc_area}}</a> </td>
+                <td>
+                @if(!count($result->categorias)>0)
+                    No existen categorias para el nivel de educación seleccionado 
+                @else
+                 <form action="#">
+                   <ul>
+                     @foreach ( $result->categorias as $categoria)
+                     <li>
+                      
+                        <p>
+                          <input ng-model="categoria{{$result->area}}" name="group{{$result->area}}" type="radio" id="test{{$result->area}}{{$categoria->categoria}}" value="{{$categoria->categoria}}"/>
+                          <label for="test{{$result->area}}{{$categoria->categoria}}">{{$categoria->categoria_desc}}</label>
+                        </p>
+                         
+                     
+                      
+                       
+                     </li>
+                     @endforeach
+
+                   </ul>
+                   <% categoria{{$result->area}} %>
+                   <a href="/cnopdf/{{$survey->id}}/{{$result->cod_area}}/<% categoria{{$result->area}} %>/{{$nivel}}" class="btn btn-primary" type="submit"> Descargar Pdf</a>
+            </form>
+                   @endif
+                </td>
               </tr>
               
               @endforeach
+                  
+             
             </tbody>
           </table>
+          
           </div>
 
           <br>
-          <div class="col-md-5 col-md-offset-5">
-            <a class="btn btn-primary" href="{{ URL::route('home') }}">Volver</a>
+          <div style="margin-top:30px;" class="col-md-5 col-md-offset-5">
+            <a class="btn btn-success" href="/">Volver</a>
 
           </div>
         </div>
@@ -82,6 +116,8 @@
           
           {{ csrf_field() }}
           <br>
+          
+
           <div class="col-md-5 col-md-offset-5">
             <a class="btn btn-primary" href="{{ URL::route('home') }}">Volver</a>
 

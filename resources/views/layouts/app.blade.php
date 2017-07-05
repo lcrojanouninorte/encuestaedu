@@ -8,15 +8,19 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Encuesta') }}</title>
+    <title>{{ config('app.name', 'Proyectate') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/ng-sortable.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/ng-sortable.style.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/personal.css') }}" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-      <script src="http://cdn.jsdelivr.net/g/jquery@1,jquery.ui@1.10%28jquery.ui.core.min.js+jquery.ui.widget.min.js+jquery.ui.mouse.min.js+jquery.ui.sortable.min.js%29,angular.ui-sortable"></script>
+    <link href="{{ asset('/css/angular-wizard.min.css') }}" rel="stylesheet">
+<!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
 
 
 </head>
@@ -26,17 +30,17 @@
             <div class="container">
                 <div class="navbar-header">
 
-                    <!-- Collapsed Hamburger -->
+                    <!-- Collapsed Hamburger
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                         <span class="sr-only">Toggle Navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-
+ -->
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        Encuesta
+                        Proyectate!
                     </a>
                 </div>
 
@@ -82,7 +86,19 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+
+<!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+
+        
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-touch.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+    <script src="{{ URL::asset('js/angular-sticky.min.js') }}"></script>
+    <script src="{{ URL::asset('js/angular-wizard.min.js') }}"></script>
     <script src="{{ URL::asset('js/ng-sortable.min.js') }}"></script>
     <script src="{{ URL::asset('js/ui-bootstrap-tpls-2.5.0.min.js') }}"></script>
     <script src="{{ URL::asset('js/simplePagination.js') }}"></script>
@@ -91,10 +107,8 @@
     <script src="{{ URL::asset('js/service.js') }}"></script>
     <script src="{{ URL::asset('js/directive.js') }}"></script>
     <script src="{{ URL::asset('js/componets.js') }}"></script>
-     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-touch.js"></script>
-      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
-     
+    <script src="{{ asset('js/app.js') }}"></script>
 
-    
+
 </body>
 </html>

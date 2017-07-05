@@ -19,6 +19,8 @@ class CreateProfilesTable extends Migration
             $table->string('institucion');
             $table->integer('edad');
             $table->string('curso');
+            $table->string('opciones');
+            $table->string('verificacion');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

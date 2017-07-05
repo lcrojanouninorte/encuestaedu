@@ -61,7 +61,41 @@ class CnoController extends Controller
 
         return $cod_area;
     }
- 
+     public function cno_reportpdf($survey, $cod_area, $category=null, $level=null)
+    {
+        //buscar las nivel,  categorias y profesiones del area seleccionada
+        
+
+        if($cod_area){
+            $results = DB::table('cnos')->select('categoria')->distinct()->where('prioridad', $cod_area)->get();;
+        }
+        if($category){
+            $results = DB::table('cnos')->select('nivel')->distinct()
+            ->where('prioridad', $cod_area)
+            ->where('categoria', $category)
+            ->get();
+        }
+        if($level){
+             $results = DB::table('cnos')->select('ocupacion', 'desc_ocupacion')->distinct()
+            ->where('prioridad', $cod_area)
+            ->where('categoria', $category)
+            ->where('nivel', $level)
+            ->get();
+        }
+
+ return $results;
+       // $results->where('prioridad', $cod_area)->get();
+
+        return view('cno.show')->with([
+            'results' => $results,
+            'cod_area' => $cod_area,
+            'category' => $category,
+            'level' => $level,
+            'survey' => $survey
+        ] );
+
+       
+    }
 
 
     /**

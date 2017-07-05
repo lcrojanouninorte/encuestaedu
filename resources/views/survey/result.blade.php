@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container"  ng-controller="SurveyController as surveyCrtl">
-  @if (Auth::check())
+ 
   
   <div class="row">
     <div class="col-md-12">
@@ -42,14 +42,7 @@
       </div>
     </div>
   </div>
-  @else
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <h2 style="text-align: center">Login</h2>
-      <p> Para ver la encuesta debes estar logeado</p>
-    </div>
-  </div>
-  @endif
+ 
   
 </div>
 @endsection

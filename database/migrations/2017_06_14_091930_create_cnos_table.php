@@ -17,6 +17,7 @@ class CreateCnosTable extends Migration
             $table->increments('id');
             $table->integer('area_id')->unsigned();
             $table->string('categoria');
+            $table->string('categoria_desc');
             $table->string('nivel');
             $table->string('clasificacion');
             $table->string('ocupacion');
