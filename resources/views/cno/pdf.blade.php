@@ -7,7 +7,7 @@
 body { margin: 0px; }
 #login-nav{display: none;}
 header { position: fixed; top: 100px; left: 0px; right: 0px; background-color: lightblue; height: 50px; }
-footer { position: fixed; bottom: 0px; left: 0px; right: 0px;  height: 80px; }
+.footer { position: fixed; bottom: 0px; left: 0px; right: 0px;  height: 80px; }
 li {
     list-style-type: circle!important;
 }
@@ -79,24 +79,24 @@ ul {
  
 </div>
 </main>
-<div class="row">
-   <footer class="logos col-sm-12 ">
+ 
+   <div class="footer logos row ">
 
  
-                <div class="col-sm-4 center-align">
+                <div class="col-sm-4 ">
                     <img src="logos/uninorte.jpg" >
                 </div>
-                <div class="col-sm-4 center-align" >
+                <div class="col-sm-4 " >
                      <img src="logos/promigas.jpg" style="max-width: 120px;">
                 </div>
-                <div class="col-sm-4 center-align">
+                <div class="col-sm-4 ">
                     <img src="logos/camaracomercio.png" style="max-width: 160px;">
                 </div>
                    
                    
                 
-  </footer>
+  </div>
 
-</div>
+ 
  
 @endsection
