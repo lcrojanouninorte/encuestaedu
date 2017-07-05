@@ -54,7 +54,7 @@
                      @endforeach
 
                    </ul>
-                   <% categoria{{$result->area}} %>
+                 
                    <a href="/cnopdf/{{$survey->id}}/{{$result->cod_area}}/<% categoria{{$result->area}} %>/{{$nivel}}" class="btn btn-primary" type="submit"> Descargar Pdf</a>
             </form>
                    @endif
