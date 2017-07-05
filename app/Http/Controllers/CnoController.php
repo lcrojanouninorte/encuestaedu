@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Cno;
 use Illuminate\Http\Request;
 use DB;
-
+use PDF;
+use App;
 use Session;
 
 class CnoController extends Controller
@@ -76,17 +77,48 @@ class CnoController extends Controller
             ->get();
         }
         if($level){
-             $results = DB::table('cnos')->select('ocupacion', 'desc_ocupacion')->distinct()
+             $results = DB::table('cnos')->select('ocupacion', 'desc_ocupacion', 'cod_profesion')->distinct()
             ->where('prioridad', $cod_area)
             ->where('categoria', $category)
             ->where('nivel', $level)
             ->get();
-        }
 
- return $results;
+            foreach ($results as $key => $ocupacion) {
+                
+            $skill = DB::table('skills')->select('habilidad')->distinct()
+            ->where('cod_profesion',$ocupacion->cod_profesion)
+            ->get();
+
+            $knowledge = DB::table('knowledge')->select('conocimiento')->distinct()
+            ->where('cod_profesion',$ocupacion->cod_profesion)
+            ->get();
+
+            $knowledge = DB::table('knowledge')->select('conocimiento')->distinct()
+            ->where('cod_profesion',$ocupacion->cod_profesion)
+            ->get();
+
+            $ocupacion->skills =  $skill;
+            $ocupacion->knowledge = $knowledge;
+
+            }
+            
+
+        }
+//return $results;
+PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
+$pdf = PDF::loadView('cno.pdf', [
+            'results' => $results,
+            'cod_area' => $cod_area,
+            'category' => $category,
+            'level' => $level,
+            'survey' => $survey
+        ] );
+//return $pdf->download('invoice.pdf');
+return $pdf->stream();
+//return $results;
        // $results->where('prioridad', $cod_area)->get();
 
-        return view('cno.show')->with([
+        return view('cno.pdf')->with([
             'results' => $results,
             'cod_area' => $cod_area,
             'category' => $category,
