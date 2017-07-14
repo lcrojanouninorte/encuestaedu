@@ -26,6 +26,12 @@
 
           <input type="hidden" name="user_id" ng-model="surveyCrtl.profile.user_id" ng-init="surveyCrtl.profile.user_id = {{Auth::id()}}"> 
           @else
+          <div class="form-group">
+              <label class="col-md-4 control-label" for="Institución">Nombre y Apellido</label>
+              <div class="col-md-5">
+                <input id="Institución" ng-model="surveyCrtl.profile.nombre"  name="nombre" type="text" placeholder="" class="form-control input-md">
+              </div>
+            </div>
             <div class="form-group">
               <label class="col-md-4 control-label" for="Institución">E-Mail</label>
               <div class="col-md-5">
@@ -34,52 +40,33 @@
             </div>
 
           @endif
-
-            <!-- Form Name -->
-            <!-- Text input-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="Institución">Institución</label>
-              <div class="col-md-5">
-                <input id="Institución" ng-model="surveyCrtl.profile.institucion"  name="Institución" type="text" placeholder="" class="form-control input-md">
-              </div>
-            </div>
-            <!-- Text input-->
+          <!-- Text input-->
             <div class="form-group">
               <label class="col-md-4 control-label" for="edad">Edad</label>
               <div class="col-md-2">
                 <input id="edad" ng-model="surveyCrtl.profile.edad"  name="edad" type="text" placeholder="" class="form-control input-md">
               </div>
             </div>
+
+            <!-- Form Name -->
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="Institución">Colegio</label>
+              <div class="col-md-5">
+                <input id="Institución" ng-model="surveyCrtl.profile.institucion"  name="Institución" type="text" placeholder="" class="form-control input-md">
+              </div>
+            </div>
+            
             <!-- Text input-->
             <div class="form-group">
               <label class="col-md-4 control-label" for="curso">Grado <% surveyCrtl.profile.curso %></label>
               <div class="col-md-8">
                 <div class="row" >
-                  <p class="col s2">
-                    <input ng-model="surveyCrtl.profile.curso" name="group1" type="radio" id="test1" value="6" />
-                    <label for="test1">6°</label>
-                  </p>
-                  <p class="col s2">
-                    <input ng-model="surveyCrtl.profile.curso" name="group1" type="radio" id="test2"  value="7"/>
-                    <label for="test2">7°</label>
-                  </p>
-                  <p class="col s2">
-                    <input ng-model="surveyCrtl.profile.curso" name="group1" type="radio" id="test3"  value="8"/>
-                    <label for="test3">8°</label>
-                  </p>
-                  <p class="col s2">
-                    <input ng-model="surveyCrtl.profile.curso" name="group1" type="radio" id="test4"  value="9"/>
-                    <label for="test4">9°</label>
-                  </p>
-                  <p class="col s2">
-                    <input ng-model="surveyCrtl.profile.curso" name="group1" type="radio" id="test5"  value="10"/>
-                    <label for="test5">10°</label>
-                  </p>
-                  <p class="col s2">
-                    <input ng-model="surveyCrtl.profile.curso" name="group1" type="radio" id="test6" value="11" />
-                    <label for="test6">11°</label>
-                  </p>
+                  <p class="col s12">
+
+                    <input ng-model="surveyCrtl.profile.curso" name="group1" type="text" id="test1" />
                   
+                  </p>
                 </div>
               </div>
             </div>
@@ -105,8 +92,10 @@
         </fieldset>
       </form>
       
-      <div class="col-sm-2 col-sm-offset-10 text-left" style="margin-top: 15px;">
-        <button type="button" class="waves-effect waves-light btn-large blue darken-1" wz-next value="Go on">Siguiente <i class="glyphicon glyphicon-chevron-right"></i></button>
+      <div class="col-sm-12   text-left center-align" style="margin-top: 15px;">
+      <a href="#" class="row "> Al hacer click en "Continuar" Acepta la politica de tratamiento de datos</a>
+      <br>
+        <button type="button" class="waves-effect waves-light btn-large blue darken-1" wz-next value="Go on">CONTINUAR</button>
       </div>
      
     </wz-step>

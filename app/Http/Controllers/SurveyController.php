@@ -94,6 +94,7 @@ class SurveyController extends Controller
             $newProfile->curso = $profile["curso"];
             $newProfile->opciones = $profile["opciones"];
             $newProfile->verificacion = $profile["verificacion"];
+            $newProfile->nombre = $profile["nombre"];
             $newProfile->save();
             if( !$newProfile )
             {
