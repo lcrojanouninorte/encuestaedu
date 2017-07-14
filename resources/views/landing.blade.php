@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Proyectate</title>
+        <title>Orienta-T</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link href="{{ asset('/css/personal.css') }}" rel="stylesheet">
@@ -61,32 +61,39 @@
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
     </head>
-    <body>
-        <div class="  valign-wrapper full-height container">
-            <div class="row">
-                <div class="col s12">
-                    <h1 class="center-align">PROYECTATE</h1>
+    <body class="full-height  valign-wrapper">
+    <div class="row">
+        <div class="col s12">
+            <div class="col s12">
+                <div class="col s12 center-align">
+                    <img class=" logo-principal" src="/logo.png">
                 </div>
                 <div class=" col s12 center-align begin">
                     <a  href="/questions" class="waves-effect waves-light btn-large blue darken-1">
                     Empezar<i class="material-icons right">play_arrow</i></a>
                 </div>
-                <div class="logos col s12 ">
-                <div class="col s4 center-align">
-                    <img src="/logos/uninorte.jpg" >
-                </div>
-                <div class="col s4 center-align" >
-                     <img src="/logos/promigas.jpg" style="max-width: 120px;">
-                </div>
-                <div class="col s4 center-align">
-                    <img src="/logos/camaracomercio.png" style="max-width: 160px;">
-                </div>
-                   
-                   
-                </div>
+                
                 
             </div>
         </div>
+        <div  class="ilustracion-wrapper col s12 center-align">
+            <img   class="ilustracion" src="/ilustracion.png">
+        </div>
+        <div class="col s12 logos-wrapper " style="    padding: 0px;">
+            <div class="logos  valign-wrapper">
+                    <div class="col s4 center-align">
+                        <img src="/logos/uninorte.jpg" >
+                    </div>
+                    <div class="col s4 center-align"  >
+                         <img src="/logos/promigas.jpg"  style="width: 130px">
+                    </div>
+                    <div class="col s4 center-align">
+                        <img src="/logos/camaracomercio.png"  >
+                    </div>
+                </div>
+        </div>
+    </div>
+        
         <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <!-- Compiled and minified JavaScript -->

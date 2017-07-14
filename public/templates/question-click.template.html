@@ -20,11 +20,15 @@
             <ul>
                 <li class="question-option" data-ng-repeat="option in $ctrl.question.options" ng-click="$ctrl.setValue($ctrl.question, option, $event)">
                     <div class="col m12">
-                        
-                        <img src="smile{{option.value || 0}}.png" style="max-width: 20px;">
+                        <div class="col s2 m1">
+                        <img src="smile{{option.value || 0}}.png" style="max-width: 30px;">
+                        </div>
                         <!-- <span class="color-position-<% option.value %> item-check glyphicon glyphicon-minus" ng-show="option.value!=null"  aria-hidden="true"></span>-->
                         <!--<% option.value  %>-->
-                        <% option.desc%>
+                        <div class="col s10 m11">
+                          <% option.desc%>  
+                        </div>
+                        
                     </div>
                     
                 </li>

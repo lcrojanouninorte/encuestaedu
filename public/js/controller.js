@@ -21,6 +21,9 @@ angular.module('app.controllers', [])
             ];
             surveyCrtl.inputType = false;
 
+            surveyCrtl.paginationPerPage = function(){
+              //surveyCrtl.pagination.perPage = 10
+            }
              
 
 
