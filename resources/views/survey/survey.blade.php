@@ -10,7 +10,7 @@
        <br>
         <form class="form-horizontal" style="margin-top: 10px;">
           <!--  <input type="hidden" name="user_id" ng-model="surveyCrtl.profile.user_id" ng-init="surveyCrtl.profile.user_id = {{1}}"> -->
-          <fieldset>
+          
           @if(Auth::check())
           <h4>Bienvenido nuevamente {{Auth::user()->name }}</h4> 
           No eres tu?: 
@@ -43,7 +43,7 @@
           <!-- Text input-->
             <div class="form-group">
               <label class="col-md-4 control-label" for="edad">Edad</label>
-              <div class="col-md-2">
+              <div class="col-md-5">
                 <input id="edad" ng-model="surveyCrtl.profile.edad"  name="edad" type="text" placeholder="" class="form-control input-md">
               </div>
             </div>
@@ -59,8 +59,8 @@
             
             <!-- Text input-->
             <div class="form-group">
-              <label class="col-md-4 control-label" for="curso">Grado <% surveyCrtl.profile.curso %></label>
-              <div class="col-md-8">
+              <label class="col-md-4 control-label" for="curso">Grado</label>
+              <div class="col-md-5">
                 <div class="row" >
                   <p class="col s12">
 
@@ -89,7 +89,7 @@
               </div>
             </div>
           
-        </fieldset>
+       
       </form>
       
       <div class="col-sm-12   text-left center-align" style="margin-top: 15px;">
