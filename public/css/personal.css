@@ -3,7 +3,11 @@ strong {
     font-weight: 600!important;
 }
 
-
+.disclaimer{
+    color: #948989!important; /*Color of Disclaimer Text*/
+    font-size:12px!important; /*Font Size of Disclaimer Text*/
+    font-family:  Arial, Helvetica, sans-serif!important; /*Web Safe Font Family of Disclaimer Text*/
+}
 .color-position-3{
 background-color: green;
 color: green;
@@ -112,9 +116,15 @@ p {
     height: 100px;
 }
 
-.logos img {
-    max-width: 200px;
-}
+.logo1  {
+        max-width: 200px;
+    }
+    .logo2  {
+        max-width: 200px;
+    }
+    .logo3  {
+        max-width: 200px;
+    }
 .logos {
   
 }
@@ -138,9 +148,16 @@ p {
     .ilustracion {
     width: 100%;
 }
-    .logos img {
+    .logo1  {
         max-width: 80px;
     }
+    .logo2  {
+        max-width: 70px;
+    }
+    .logo3  {
+        max-width: 80px;
+    }
+
     .title {
                 font-size: 14px;
             }
@@ -178,3 +195,4 @@ body{
     padding: 24px;
     text-shadow: 0px 0px 2px white;
 }
+

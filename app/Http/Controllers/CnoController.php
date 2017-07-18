@@ -47,7 +47,7 @@ class CnoController extends Controller
                  $query->where('prioridad', $cod_area)
                         ->where('categoria', $category);
             }))->get();
-              $level = $results[$level];
+              $level = $results[$level-1];
               unset( $results[$level->id-1]);
         }else{
             if($category){
@@ -79,8 +79,11 @@ class CnoController extends Controller
     }
 public function cno_profesion($cod_porfesion, $level=null)
 {
-    $results = Cno::where("cod_profesion", $cod_porfesion)->with("skills", "knowledges", "outputs")->get();
-    
+    $results = Cno::where("cod_profesion", $cod_porfesion)
+                
+                ->with("skills", "knowledges", "outputs")->get();
+ 
+  // return $results;
     return view('cno.profesion')->with([
             'results' => $results[0],
             'nivel' => $level

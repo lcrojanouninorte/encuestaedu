@@ -59,15 +59,52 @@
       <div class="col s12 m4">
         <div class="card-panel ">
 			<div class="row">
+        	<img class="col" style="height: 45px;" src="http://media.utp.edu.co/ilex/archivos/solicite-su-certificado-de-cursos-de-ingles-ilex/certificate-flat.png">
+			<h5 class="text-center col">Oferta Académica</h5>
+        </div>
+			<ul>
+
+			<?php  $title= "" ?>
+			<?php  $salidas= [] ?>
+			@foreach ($results->outputs as $output)
+				@if($output->nivel == $nivel)
+					<?php  $title_old= $output->desc_ciu; ?>
+
+				<li>
+					@if($title_old != $title || $title ="")
+						 
+						<?php 
+						//TODO: cambiar esto para que lo haga desde el controlador, solo se debe crear una tabl a mas
+							$salidas[] = $title_old;
+							$title = $title_old; 
+						?>
+					@else
+						<?php $title = $title_old; ?>
+					@endif
+				<span class="valign-wrapper"><i class="small material-icons">label_outline</i>{{$output->salida}}</span>
+
+				</li>
+				@endif
+		    @endforeach
+		    </ul>
+				
+ 
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card-panel ">
+			<div class="row">
         	<img class="col" style="height: 45px;" src="https://www.shareicon.net/download/2016/07/22/800263_start_512x512.png">
 			<h5 class="text-center col">Salidas Ocupacionales</h5>
         </div>
 			<ul>
-			@foreach ($results->outputs as $output)
-				@if($output->nivel == $nivel)
+ 
+			@foreach ($salidas as $output)
+					<li>
+				<span class="valign-wrapper"><i class="small material-icons">label_outline</i>{{$output}}:</span>
 
-				<li><span class="valign-wrapper"><i class="small material-icons">label_outline</i>{{$output->salida}}</span></li>
-				@endif
+				</li>
+				
 		    @endforeach
 		    </ul>
 				

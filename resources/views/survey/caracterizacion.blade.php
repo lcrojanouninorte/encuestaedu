@@ -18,38 +18,45 @@
 <h6>Escoje una categoria que más te llame la atención</h6>
 
 <div class="row">
-@foreach ($results as $result)
-  @if(!count($result->categorias)>0)
-                    
-  @else
+@if(count($results)>=0)
+  @foreach ($results as $result)
+    
 
-    <div class="col s12 m6">
-      <div class="card">
-        <div class="card-image">
-          <img style="opacity: 0.2;filter: alpha(opacity=20);" src="https://static.vecteezy.com/system/resources/previews/000/103/286/non_2x/free-flat-design-vector-background.jpg">
-          <span class="card-title valign-wrappe" style="    color: #000;">{{$result->desc_area}}</span>
-          
-        </div>
-        <div class="card-content">
-        <div ><span>Puntaje:</span>
-        <h2 class="text-center">{{$result->total}}</h2>
-          
-        </div>
-        <p>Categorias:</p>
-          <div class="collection row">
-                     @foreach ( $result->categorias as $categoria)
-                     <a class="collection-item" href="/cno/{{$survey->id}}/{{$result->cod_area}}/{{$categoria->categoria}}/{{$nivel}}">
-                        {{$categoria->categoria_desc}}
+      <div class="col s12 m6">
+        <div class="card">
+          <div class="card-image">
+            <img style="opacity: 0.2;filter: alpha(opacity=20);" src="https://static.vecteezy.com/system/resources/previews/000/103/286/non_2x/free-flat-design-vector-background.jpg">
+            <span class="card-title valign-wrappe" style="    color: #000;">{{$result->desc_area}}</span>
+            
+          </div>
+          <div class="card-content">
+          <div ><span>Puntaje:</span>
+          <h2 class="text-center">{{$result->total}}</h2>
+            
+          </div>
+          <p>Categorias:</p>
+            <div class="collection row">
+            @if(!count($result->categorias)>0)
+                      <p>No Existen categorias asociadas nivel academico seleccionado, por favor intenta realizar nuevamente el test</p>
+            @else
+                       @foreach ( $result->categorias as $categoria)
+                       <a class="collection-item" href="/cno/{{$survey->id}}/{{$result->cod_area}}/{{$categoria->categoria}}/{{$nivel}}">
+                          {{$categoria->categoria_desc}}
 
-                     </a>
-                     @endforeach
+                       </a>
+                       @endforeach
+           @endif
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-  @endif
-@endforeach
+    
+  @endforeach
+@else
+<h6>No hay una ruta ocupacional que corresponda a los criterios que has seleccionado, intenta volver a realizar el test.</h6>
+@endif
+
   </div>
  
 

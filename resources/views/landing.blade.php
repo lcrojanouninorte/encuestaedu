@@ -7,7 +7,7 @@
         <title>Orienta-T</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <link href="{{ asset('/css/personal.css') }}" rel="stylesheet">
+        <link href="/css/personal.css" rel="stylesheet">
         
         
         <!-- Styles -->
@@ -82,18 +82,26 @@
         <div class="col s12 logos-wrapper " style="    padding: 0px;">
             <div class="logos  valign-wrapper">
                     <div class="col s4 center-align">
-                        <img src="/logos/uninorte.jpg" >
+                        <img class="logo1" src="/logos/uninorte.jpg" >
                     </div>
                     <div class="col s4 center-align"  >
-                         <img src="/logos/promigas.jpg"  style="width: 130px">
+                         <img class="logo1" src="/logos/promigas.jpg"  style="width: 130px">
                     </div>
                     <div class="col s4 center-align">
-                        <img src="/logos/camaracomercio.png"  >
+                        <img class="logo1" src="/logos/camaracomercio.png"  >
                     </div>
                 </div>
         </div>
-    </div>
+        <div class="row center-align" >
+        <div class="col s12 m6 offset-m3">
+        <br>
+            <p class="disclaimer"><b>Disclaimer:</b> Los derechos de Autor del Test Preferencias Profesionales (PPS) les corresponden a Carlos Yuste, David Yuste y Jose Luis Galvez. Hace parte de su propiedad intelectual y se reservan sus derechos de autor. Se ha autorizado el uso del Test para fines educativos e investigativos sin ningún tipo de lucro. </p>
+
+        </div>
         
+    </div>
+    </div>
+    
         <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <!-- Compiled and minified JavaScript -->
