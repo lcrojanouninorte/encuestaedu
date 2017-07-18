@@ -63,7 +63,7 @@ Question::create(['id'=>44, 'desc' => 'Prefiero:']);
 Question::create(['id'=>45, 'desc' => 'En la construcción de una autopista preferiría: ']);
 Question::create(['id'=>46, 'desc' => 'En un instituto de enseñanza preferiría: ']);
 Question::create(['id'=>47, 'desc' => 'Compraría un libro de: ']);
-Question::create(['id'=>48, 'desc' => 'En una tesis doctoral  preferiría replantear: ']);
+Question::create(['id'=>48, 'desc' => 'En una un trabajo final  preferiría replantear: ']);
 Question::create(['id'=>49, 'desc' => 'Si tengo que quedarme en casa en una tarde lluviosa, preferiría: ']);
 Question::create(['id'=>50, 'desc' => 'Prefiero: ']);
 Question::create(['id'=>51, 'desc' => 'Por afinidad de gustos cultivaría la amistad con un aficionado: ']);

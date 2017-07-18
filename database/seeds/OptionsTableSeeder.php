@@ -17,7 +17,7 @@ class OptionsTableSeeder extends Seeder
 Option::create(['id'=>1, 'question_id' => 1, 'desc' => 'Influencia de la Sociedad sobre los grupos marginados .', 'area' =>2]);
 Option::create(['id'=>2, 'question_id' => 1, 'desc' => 'Influencia de la música rock en la vida moderna.', 'area' =>5]);
 Option::create(['id'=>3, 'question_id' => 1, 'desc' => 'Como dirigir y organizar el personal de una empresa.', 'area' =>8]);
-Option::create(['id'=>4, 'question_id' => 1, 'desc' => 'Sistemas de tratamiento médico de heroinómanos.', 'area' =>11]);
+Option::create(['id'=>4, 'question_id' => 1, 'desc' => 'Sistemas de tratamiento médico para adictos a las drogas.', 'area' =>11]);
 
 Option::create(['id'=>5, 'question_id' => 2, 'desc' => 'Estado Actual de la ciencia colombiana.', 'area' =>1]);
 Option::create(['id'=>6, 'question_id' => 2, 'desc' => 'Los orígenes de la música moderna.', 'area' =>5]);
@@ -66,7 +66,7 @@ Option::create(['id'=>40, 'question_id' => 10, 'desc' => 'Experto desactivando e
 
 Option::create(['id'=>41, 'question_id' => 11, 'desc' => 'Investigar sobre el comportamiento del hombre en grupo.', 'area' =>2]);
 Option::create(['id'=>42, 'question_id' => 11, 'desc' => 'Ser catedrático  de literatura o lengua.', 'area' =>7]);
-Option::create(['id'=>43, 'question_id' => 11, 'desc' => 'Formar profesionales de la enseñanza como catedrático de pedagogía.', 'area' =>10]);
+Option::create(['id'=>43, 'question_id' => 11, 'desc' => 'Formar profesionales de la enseñanza como docente de pedagogía.', 'area' =>10]);
 Option::create(['id'=>44, 'question_id' => 11, 'desc' => 'Ser catedrático de derecho.', 'area' =>12]);
 
 Option::create(['id'=>45, 'question_id' => 12, 'desc' => 'Hacer los dibujos y diseños artísticos.', 'area' =>4]);
@@ -104,7 +104,7 @@ Option::create(['id'=>70, 'question_id' => 18, 'desc' => 'Encargado de un report
 Option::create(['id'=>71, 'question_id' => 18, 'desc' => 'Encargado de un reportaje semanal sobre aspectos relacionados con la enseñanza escolar.', 'area' =>10]);
 Option::create(['id'=>72, 'question_id' => 18, 'desc' => 'Encargado de un reportaje semanal en un país en guerra.', 'area' =>13]);
 
-Option::create(['id'=>73, 'question_id' => 19, 'desc' => 'Fabricar aparatos para que los minusválidos se valgan por sí mismos.', 'area' =>3]);
+Option::create(['id'=>73, 'question_id' => 19, 'desc' => 'Fabricar aparatos para que personas discapacitadas se valgan por sí mismos.', 'area' =>3]);
 Option::create(['id'=>74, 'question_id' => 19, 'desc' => 'Ser escritor en un periódico.', 'area' =>7]);
 Option::create(['id'=>75, 'question_id' => 19, 'desc' => 'Dar clases para elevar el nivel cultural de la gente, niños o adultos.', 'area' =>10]);
 Option::create(['id'=>76, 'question_id' => 19, 'desc' => 'Ser el portavoz de un grupo para defender sus propuestas ante la alcaldía.', 'area' =>12]);
@@ -141,7 +141,7 @@ Option::create(['id'=>100, 'question_id' => 25, 'desc' => 'Atender a los cliente
 
 Option::create(['id'=>101, 'question_id' => 26, 'desc' => 'Especializarme en construcción de puentes.', 'area' =>3]);
 Option::create(['id'=>102, 'question_id' => 26, 'desc' => 'Especializarme en estudio de mapas y geografía.', 'area' =>6]);
-Option::create(['id'=>103, 'question_id' => 26, 'desc' => 'Especializarme en asistencia sanitaria.', 'area' =>11]);
+Option::create(['id'=>103, 'question_id' => 26, 'desc' => 'Especializarme en asistencia de la salud.', 'area' =>11]);
 Option::create(['id'=>104, 'question_id' => 26, 'desc' => 'Realizar prácticas de vuelo y paracaidismo.', 'area' =>13]);
 
 Option::create(['id'=>105, 'question_id' => 27, 'desc' => 'Demostrar matemáticamente la existencia de un nuevo elemento en la composición del átomo.', 'area' =>1]);
@@ -174,7 +174,7 @@ Option::create(['id'=>126, 'question_id' => 32, 'desc' => 'Un nuevo sistema elec
 Option::create(['id'=>127, 'question_id' => 32, 'desc' => 'Una novela o libro de poesía.', 'area' =>7]);
 Option::create(['id'=>128, 'question_id' => 32, 'desc' => 'Guía de consejos para un entrevistador o presentador de televisión.', 'area' =>12]);
 
-Option::create(['id'=>129, 'question_id' => 33, 'desc' => 'Diseñar los programas de impresión automática de los pasabordos.', 'area' =>9]);
+Option::create(['id'=>129, 'question_id' => 33, 'desc' => 'Diseñar los programas de impresión automática de los pasajes de avión.', 'area' =>9]);
 Option::create(['id'=>130, 'question_id' => 33, 'desc' => 'Organizar cursos de capacitación y actualización de los conocimientos de los empleados.', 'area' =>10]);
 Option::create(['id'=>131, 'question_id' => 33, 'desc' => 'Servicios médicos del aeropuerto.', 'area' =>11]);
 Option::create(['id'=>132, 'question_id' => 33, 'desc' => 'Buen trato a pasajeros y clientes.', 'area' =>12]);
@@ -194,7 +194,7 @@ Option::create(['id'=>142, 'question_id' => 36, 'desc' => 'Se dedican al teatro 
 Option::create(['id'=>143, 'question_id' => 36, 'desc' => 'Aficionados a la literatura.', 'area' =>7]);
 Option::create(['id'=>144, 'question_id' => 36, 'desc' => 'Quienes tratan de aumentar el nivel cultural de otras personas a través de la enseñanza.', 'area' =>10]);
 
-Option::create(['id'=>145, 'question_id' => 37, 'desc' => 'Un libro de antropología .', 'area' =>2]);
+Option::create(['id'=>145, 'question_id' => 37, 'desc' => 'Un libro sobre el ser humano .', 'area' =>2]);
 Option::create(['id'=>146, 'question_id' => 37, 'desc' => 'Un libro de técnicas para pintura o escultura.', 'area' =>4]);
 Option::create(['id'=>147, 'question_id' => 37, 'desc' => 'Un atlas de geografía mundial o de mi país.', 'area' =>6]);
 Option::create(['id'=>148, 'question_id' => 37, 'desc' => 'Un libro de medicina sobre el cuerpo humano.', 'area' =>11]);
@@ -204,15 +204,15 @@ Option::create(['id'=>150, 'question_id' => 38, 'desc' => 'Ser miembro de una or
 Option::create(['id'=>151, 'question_id' => 38, 'desc' => 'Investigar sobre algunos hechos históricos importantes.', 'area' =>6]);
 Option::create(['id'=>152, 'question_id' => 38, 'desc' => 'Defender en juicio los derechos de otras personas.', 'area' =>12]);
 
-Option::create(['id'=>153, 'question_id' => 39, 'desc' => 'Tomar fotos o hacer dibujos o croquis sobre lo que vamos observando.', 'area' =>4]);
+Option::create(['id'=>153, 'question_id' => 39, 'desc' => 'Tomar fotos o hacer dibujos sobre lo que vamos observando.', 'area' =>4]);
 Option::create(['id'=>154, 'question_id' => 39, 'desc' => 'Administrar los fondos o economía del grupo.', 'area' =>8]);
 Option::create(['id'=>155, 'question_id' => 39, 'desc' => 'Ser el portavoz del grupo ante los periodistas o corresponsales de radio.', 'area' =>12]);
 Option::create(['id'=>156, 'question_id' => 39, 'desc' => 'Intervenir Activamente en las acciones de mayor riesgo.', 'area' =>13]);
 
 Option::create(['id'=>157, 'question_id' => 40, 'desc' => 'Dirigir el montaje de las piezas eléctricas o partes delicadas del motor.', 'area' =>3]);
 Option::create(['id'=>158, 'question_id' => 40, 'desc' => 'Diseñar los dibujos de nuevos modelos.', 'area' =>4]);
-Option::create(['id'=>159, 'question_id' => 40, 'desc' => 'Hacer los estudios de viabilidad económica de nuevos modelos.', 'area' =>8]);
-Option::create(['id'=>160, 'question_id' => 40, 'desc' => 'Atender a los accidentados en la empresa.', 'area' =>11]);
+Option::create(['id'=>159, 'question_id' => 40, 'desc' => 'Hacer los estudios de posibilidades económicas de nuevos modelos.', 'area' =>8]);
+Option::create(['id'=>160, 'question_id' => 40, 'desc' => 'Atender a los accidentados en una empresa.', 'area' =>11]);
 
 Option::create(['id'=>161, 'question_id' => 41, 'desc' => 'Presentar un programa sobre la ciencia en la actualidad.', 'area' =>1]);
 Option::create(['id'=>162, 'question_id' => 41, 'desc' => 'Investigar la influencia de la propaganda en las costumbres de la gente o sobre sus hábitos de consumo.', 'area' =>2]);
@@ -222,10 +222,10 @@ Option::create(['id'=>164, 'question_id' => 41, 'desc' => 'Ser el protagonista d
 Option::create(['id'=>165, 'question_id' => 42, 'desc' => 'Dirigir cursos de especialización o enseñanza para los empleados.', 'area' =>10]);
 Option::create(['id'=>166, 'question_id' => 42, 'desc' => 'Realizar las revisiones médicas para comprobar la salud de los nuevos asegurados.', 'area' =>11]);
 Option::create(['id'=>167, 'question_id' => 42, 'desc' => 'Hacer visitas comerciales para captar nuevos clientes.', 'area' =>12]);
-Option::create(['id'=>168, 'question_id' => 42, 'desc' => 'Ir a los lugares donde ha habido accidentes para dar un informe del siniestro .', 'area' =>13]);
+Option::create(['id'=>168, 'question_id' => 42, 'desc' => 'Ir a los lugares donde ha habido accidentes para dar un informe del accidente .', 'area' =>13]);
 
 Option::create(['id'=>169, 'question_id' => 43, 'desc' => 'Nuevas formas de energía.', 'area' =>1]);
-Option::create(['id'=>170, 'question_id' => 43, 'desc' => 'Arqueología .', 'area' =>6]);
+Option::create(['id'=>170, 'question_id' => 43, 'desc' => 'Objetos antiguos .', 'area' =>6]);
 Option::create(['id'=>171, 'question_id' => 43, 'desc' => 'Algún idioma moderno.', 'area' =>7]);
 Option::create(['id'=>172, 'question_id' => 43, 'desc' => 'Primeros auxilios en casos de un accidente.', 'area' =>11]);
 
@@ -237,17 +237,17 @@ Option::create(['id'=>176, 'question_id' => 44, 'desc' => 'Trabajar con niños q
 Option::create(['id'=>177, 'question_id' => 45, 'desc' => 'Dirigir y organizar su construcción.', 'area' =>3]);
 Option::create(['id'=>178, 'question_id' => 45, 'desc' => 'Ser el experto en geografía regional, para asesorar a los ingenieros.', 'area' =>6]);
 Option::create(['id'=>179, 'question_id' => 45, 'desc' => 'Informatizar la gestión económica o los cálculos estadísticos.', 'area' =>9]);
-Option::create(['id'=>180, 'question_id' => 45, 'desc' => 'Convencer a los afectados por expropiaciones, para llegar a un entendimiento sobre compensaciones económicas.', 'area' =>12]);
+Option::create(['id'=>180, 'question_id' => 45, 'desc' => 'Convencer a los afectados por embargos, para llegar a un entendimiento sobre compensaciones económicas.', 'area' =>12]);
 
 Option::create(['id'=>181, 'question_id' => 46, 'desc' => 'Dar clases de dibujo o pintura.', 'area' =>4]);
 Option::create(['id'=>182, 'question_id' => 46, 'desc' => 'Dar clases de música.', 'area' =>5]);
 Option::create(['id'=>183, 'question_id' => 46, 'desc' => 'Dar clases de geografía o historia.', 'area' =>6]);
 Option::create(['id'=>184, 'question_id' => 46, 'desc' => 'Dar clases de actividades atléticas como karate o lucha libre.', 'area' =>13]);
 
-Option::create(['id'=>185, 'question_id' => 47, 'desc' => 'Sociología .', 'area' =>2]);
+Option::create(['id'=>185, 'question_id' => 47, 'desc' => 'Los seres humanos en los grupos.', 'area' =>2]);
 Option::create(['id'=>186, 'question_id' => 47, 'desc' => 'Historia de la pintura.', 'area' =>4]);
 Option::create(['id'=>187, 'question_id' => 47, 'desc' => 'Estudios literarios.', 'area' =>7]);
-Option::create(['id'=>188, 'question_id' => 47, 'desc' => 'Estudios legislativos .', 'area' =>12]);
+Option::create(['id'=>188, 'question_id' => 47, 'desc' => 'Estudios leyes .', 'area' =>12]);
 
 Option::create(['id'=>189, 'question_id' => 48, 'desc' => 'La teoría evolucionista sobre el origen del hombre.', 'area' =>2]);
 Option::create(['id'=>190, 'question_id' => 48, 'desc' => 'Nuevas formas de expresión musical.', 'area' =>5]);
@@ -266,7 +266,7 @@ Option::create(['id'=>200, 'question_id' => 50, 'desc' => 'Orientar a otros para
 Option::create(['id'=>201, 'question_id' => 51, 'desc' => 'A estudios de otras lenguas.', 'area' =>7]);
 Option::create(['id'=>202, 'question_id' => 51, 'desc' => 'A organizar y dirigir empresas propias.', 'area' =>8]);
 Option::create(['id'=>203, 'question_id' => 51, 'desc' => 'A los computadores.', 'area' =>9]);
-Option::create(['id'=>204, 'question_id' => 51, 'desc' => 'Al submarinismo.', 'area' =>13]);
+Option::create(['id'=>204, 'question_id' => 51, 'desc' => 'A los submarinos', 'area' =>13]);
 Option::create(['id'=>205, 'question_id' => 52, 'desc' => 'Investigar sobre la formación de la tierra.', 'area' =>1]);
 Option::create(['id'=>206, 'question_id' => 52, 'desc' => 'Formar parte de un grupo musical.', 'area' =>5]);
 Option::create(['id'=>207, 'question_id' => 52, 'desc' => 'Dirigir la contabilidad de una empresa.', 'area' =>8]);

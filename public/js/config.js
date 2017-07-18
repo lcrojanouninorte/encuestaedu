@@ -20,7 +20,9 @@ app.config(config);
     // Enable log
      $interpolateProvider.startSymbol('<%');
      $interpolateProvider.endSymbol('%>');  
-     
+   
+ 
+ 
     
      
   }

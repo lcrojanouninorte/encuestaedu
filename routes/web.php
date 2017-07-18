@@ -23,6 +23,7 @@ Route::resource('questions', 'QuestionController');
 Route::resource('cnos', 'CnoController');
 Route::get('caracterizacion/{survey}', 'SurveyController@showCaracterizacion');
 Route::get('/cno/{survey}/{cod_area}/{category?}/{level?}', 'CnoController@cno_report');
+Route::get('/profesion/{cod_porfesion}/{level?}', 'CnoController@cno_profesion');
 Route::get('/cnopdf/{survey}/{cod_area}/{category?}/{level?}', 'CnoController@cno_reportpdf');
 
 Route::group(['middleware' => 'auth'], function () {

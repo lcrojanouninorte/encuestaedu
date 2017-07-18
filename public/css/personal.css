@@ -1,3 +1,4 @@
+
 strong {
     font-weight: 600!important;
 }
@@ -162,4 +163,18 @@ p {
 body{
     background-image: url('/fondo.png');
         background-size: contain;
+}
+
+.profesion li {
+    display: block;
+}
+
+ .caracterizacion .card .card-image .card-title {
+    color: #000000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    padding: 24px;
+    text-shadow: 0px 0px 2px white;
 }

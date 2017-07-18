@@ -9,6 +9,8 @@ use PDF;
 use App;
 use Session;
 
+use App\Preparationlevel;
+
 class CnoController extends Controller
 {
     /**
@@ -32,25 +34,38 @@ class CnoController extends Controller
         //buscar las nivel,  categorias y profesiones del area seleccionada
         
 
-        if($cod_area){
-            $results = DB::table('cnos')->select('categoria')->distinct()->where('prioridad', $cod_area)->get();;
-        }
-        if($category){
-            $results = DB::table('cnos')->select('nivel')->distinct()
+        if($level>=0){
+            /* $results = DB::table('cnos')->select('ocupacion', 'desc_ocupacion', 'cod_profesion', 'preparationlevels.desc')->distinct()
+             ->leftJoin('preparationlevels', 'cnos.nivel', '=', 'preparationlevels.id')
             ->where('prioridad', $cod_area)
             ->where('categoria', $category)
-            ->get();
+            //->where('nivel', $level)
+            ->get();*/
+
+            $results = Preparationlevel::with(array('cnos' => function($query) use ($category, $cod_area)
+            {
+                 $query->where('prioridad', $cod_area)
+                        ->where('categoria', $category);
+            }))->get();
+              $level = $results[$level];
+              unset( $results[$level->id-1]);
+        }else{
+            if($category){
+                $results = DB::table('cnos')->select('nivel')->distinct()
+                ->where('prioridad', $cod_area)
+                ->where('categoria', $category)
+                ->get();
+            }else{
+                if($cod_area){
+                    $results = DB::table('cnos')->select('categoria')->distinct()->where('prioridad', $cod_area)->get();;
+                }
+            }
         }
-        if($level){
-             $results = DB::table('cnos')->select('ocupacion', 'desc_ocupacion')->distinct()
-            ->where('prioridad', $cod_area)
-            ->where('categoria', $category)
-            ->where('nivel', $level)
-            ->get();
-        }
+        
+      // return $results;
 
 
-       // $results->where('prioridad', $cod_area)->get();
+       //$results->where('prioridad', $cod_area)->get();
 
         return view('cno.show')->with([
             'results' => $results,
@@ -62,12 +77,23 @@ class CnoController extends Controller
 
         return $cod_area;
     }
+public function cno_profesion($cod_porfesion, $level=null)
+{
+    $results = Cno::where("cod_profesion", $cod_porfesion)->with("skills", "knowledges", "outputs")->get();
+    
+    return view('cno.profesion')->with([
+            'results' => $results[0],
+            'nivel' => $level
+        ] );
+
+}
+
      public function cno_reportpdf($survey, $cod_area, $category=null, $level=null)
     {
         //buscar las nivel,  categorias y profesiones del area seleccionada
         
 
-        if($cod_area){
+        /*if($cod_area){
             $results = DB::table('cnos')->select('categoria')->distinct()->where('prioridad', $cod_area)->get();;
         }
         if($category){
@@ -75,7 +101,7 @@ class CnoController extends Controller
             ->where('prioridad', $cod_area)
             ->where('categoria', $category)
             ->get();
-        }
+        }*/
         if($level){
              $results = DB::table('cnos')->select('ocupacion', 'desc_ocupacion', 'cod_profesion')->distinct()
             ->where('prioridad', $cod_area)
