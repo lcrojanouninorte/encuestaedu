@@ -11,11 +11,11 @@
     <title>{{ config('app.name', 'Orienta-T') }}</title>
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
-    <link href="/css/ng-sortable.min.css" rel="stylesheet">
-    <link href="/css/ng-sortable.style.min.css" rel="stylesheet">
-    <link href="/css/personal.css" rel="stylesheet">
-    <link href="/css/angular-wizard.min.css" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/ng-sortable.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/ng-sortable.style.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/personal.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/angular-wizard.min.css') }}" rel="stylesheet">
 <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         
@@ -43,17 +43,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-touch.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
-    <script src="/js/angular-sticky.min.js"></script>
-    <script src="/js/angular-wizard.min.js"></script>
-    <script src="/js/ng-sortable.min.js"></script>
-    <script src="/js/ui-bootstrap-tpls-2.5.0.min.js"></script>
-    <script src="/js/simplePagination.js"></script>
-    <script src="/js/config.js"></script>
-    <script src="/js/controller.js"></script>
-    <script src="/js/service.js"></script>
-    <script src="/js/directive.js"></script>
-    <script src="/js/componets.js"></script>
-    <script src="/js/app.js"></script>
+    <script src="{{ URL::asset('js/angular-sticky.min.js') }}"></script>
+    <script src="{{ URL::asset('js/angular-wizard.min.js') }}"></script>
+    <script src="{{ URL::asset('js/ng-sortable.min.js') }}"></script>
+    <script src="{{ URL::asset('js/ui-bootstrap-tpls-2.5.0.min.js') }}"></script>
+    <script src="{{ URL::asset('js/simplePagination.js') }}"></script>
+    <script src="{{ URL::asset('js/config.js') }}"></script>
+    <script src="{{ URL::asset('js/controller.js') }}"></script>
+    <script src="{{ URL::asset('js/service.js') }}"></script>
+    <script src="{{ URL::asset('js/directive.js') }}"></script>
+    <script src="{{ URL::asset('js/componets.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
 
 </body>
