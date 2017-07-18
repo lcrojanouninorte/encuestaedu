@@ -26,11 +26,12 @@ app.config(config);
     
      
   }
-
+//ok
 var local = {
   	"apiHost": "http://encuestaedu.app/api",
+    //"apiHost": "http://orienta-t.co/api",
     "questionTemplate": "/templates/question.template.html",
-    "resultUrl":"http://localhost/pmp_hugo/PMP/public/results/"
+ 
   };
   var prod = {
     "login":  "http://colorado.uninorte.edu.co/evadoc_api/login/google",
