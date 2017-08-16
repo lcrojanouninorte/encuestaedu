@@ -101,7 +101,7 @@
  
 			@foreach ($salidas as $output)
 					<li>
-				<span class="valign-wrapper"><i class="small material-icons">label_outline</i>{{$output}}:</span>
+				<span class="valign-wrapper"><i class="small material-icons">label_outline</i>{{$output}}</span>
 
 				</li>
 				

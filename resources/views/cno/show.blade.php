@@ -24,7 +24,7 @@
                 @if(count($level->cnos)>0)
                   @foreach ($level->cnos as $key=>$cno)
                   
-                  <a href="/profesion/{{$cno->cod_profesion}}/{{$level->id}}" class="collection-item avatar ">
+                  <a style="z-index: 100" href="/profesion/{{$cno->cod_profesion}}/{{$level->id}}" class="collection-item avatar ">
                     <i class="circle green">{{ ++$key }}</i>
                     <span class=" title"><p>  {{$cno->ocupacion}}</p></span>
                     
@@ -49,7 +49,7 @@
               @if(count($nivel->cnos)>0)
               @foreach ($nivel->cnos as $key=>$cno)
               
-              <a href="/profesion/{{$cno->cod_profesion}}/{{$nivel->id}}" class="collection-item avatar ">
+              <a style="z-index: 100;" href="/profesion/{{$cno->cod_profesion}}/{{$nivel->id}}" class="collection-item avatar ">
                 <i class="circle green">{{ ++$key }}</i>
                 <span class=" title"><p>  {{$cno->ocupacion}}</p></span>
                 
