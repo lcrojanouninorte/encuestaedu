@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <title>Orienta-T</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -71,6 +71,14 @@
                 <div class=" col s12 center-align begin">
                     <a  href="/questions" class="waves-effect waves-light btn-large blue darken-1">
                     Empezar<i class="material-icons right">play_arrow</i></a>
+                </div>
+                <div class=" col s12 center-align" style="margin-top: 5px;">
+                   <p>Ó</p>
+                </div>
+                 
+                <div class=" col s12 center-align" style="margin-top: 5px;text-decoration: underline;color:blue;">
+                    <a  href="/login" class=" btn-link">
+                    Ingresar Nuevamente</a>
                 </div>
                 
                 

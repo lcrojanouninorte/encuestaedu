@@ -62,10 +62,12 @@ class SurveyController extends Controller
         $survey = $data["survey"];
         $userData =[];
         if(!isset($data["profile"]["user_id"])){
+
+            //TODO: validar lado servidor e-mail
             $userData = [
                     'name' => $data["profile"]["email"],
                     'email' => $data["profile"]["email"],
-                    'password' =>  bcrypt("qwerty"),
+                    'password' =>  bcrypt($data["profile"]["contrasena"]),
             ];
         }
 
@@ -81,26 +83,28 @@ class SurveyController extends Controller
                  
                 Auth::loginUsingId($newUser->id);
                  $user_id = $newUser->id;
+
+                  //crear el perfil si no existe, o update el existente
+                $newProfile = Profile::firstOrNew(['user_id' => $user_id]); // your data
+                $newProfile->edad = $profile["edad"];
+                $newProfile->institucion = $profile["institucion"];
+                $newProfile->curso = $profile["curso"];
+                $newProfile->opciones = $profile["opciones"];
+                //$newProfile->verificacion = $profile["verificacion"];
+                $newProfile->nombre = $profile["nombre"];
+                $newProfile->save();
+                if( !$newProfile )
+                {
+                    $response["success"] = false;
+                    throw new \Exception('No se creo el perfil');
+                }
             }else{
                  $user_id = $profile["user_id"];
             }
             
 
 
-            //crear el perfil si no existe
-            $newProfile = Profile::firstOrNew(['user_id' => $user_id]); // your data
-            $newProfile->edad = $profile["edad"];
-            $newProfile->institucion = $profile["institucion"];
-            $newProfile->curso = $profile["curso"];
-            $newProfile->opciones = $profile["opciones"];
-            $newProfile->verificacion = $profile["verificacion"];
-            $newProfile->nombre = $profile["nombre"];
-            $newProfile->save();
-            if( !$newProfile )
-            {
-                $response["success"] = false;
-                throw new \Exception('No se creo el perfil');
-            }
+           
 
             //crear una encuesta y obtener su id
             $newSurvey = Survey::firstOrNew(['user_id' => $user_id]); // your data
@@ -254,5 +258,21 @@ class SurveyController extends Controller
         Session::flash('alert-success', 'Borrado correctamente, puede crear una neva encuesta');
         return back()->with('message', 'success| Borrado correctamente.');
 
+    }
+
+    public function validateEmail($email){
+        $response["success"] = true;
+
+        $user = User::where("email",$email )->get();
+        if(!$user->isEmpty()){
+            $response["newUser"]= false;
+        }else{
+            $response["newUser"]= true;
+        }
+        $response["user"]= $user;
+       // $data = $request->json()->all();
+        //$email = $data["email"];
+
+        return $response;
     }
 }

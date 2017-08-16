@@ -11,6 +11,7 @@
         var service = {
             apiHost: apiHost,
             create:create,
+            isNewEmail:isNewEmail,
             getQuestions: getQuestions,
             currentSurvey: getCurrentSurvey 
 
@@ -87,7 +88,40 @@
                 $log.error('XHR Failed for getAnswers.\n' + angular.toJson(error.data, true));
                 return null;
             }
+        }
+
+
+        function isNewEmail(email) {
+            
+            $log.info("Inicia proceso verificaci+on mail" + email );
+            $log.info("Enviando :", email);
+            return $http.get(apiHost +"/validate/"+email)
+                .then(postAnswersComplete)
+                .catch(postAnswersFailed);
+
+            function postAnswersComplete(response) {
+                $log.info("devolviendo :", response);
+                if (response.status == 200) { //Respuesta ok
+                    if (typeof(response.data) != "undefined" && response.data != null) {//verificar que envio preguntas
+                        if(typeof(response.data.questions)!="undefined"){
+                        }
+                        return response.data;
+                    } else {
+                        return null //si no se ha realizado el insturmento
+                    }
+                }
+
+                return new_answers;
+
+            }
+
+            function postAnswersFailed(error) {
+                $log.error('XHR Failed for getAnswers.\n' + angular.toJson(error.data, true));
+                return null;
+            }
         } 
+
+
 
     }
  

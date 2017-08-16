@@ -196,3 +196,25 @@ body{
     text-shadow: 0px 0px 2px white;
 }
 
+
+
+.step.ng-hide {
+opacity: 0;
+}
+.step.current {
+opacity: 1;
+transition: all 1s ease-in-out;
+}
+
+input.ng-invalid {
+    background-color: pink;
+}
+input.ng-valid {
+    background-color: lightgreen;
+}
+
+
+.collection .collection-item.avatar {
+    min-height: 60px!important;
+   
+}

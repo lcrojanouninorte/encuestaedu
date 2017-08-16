@@ -77,17 +77,38 @@ class CnoController extends Controller
 
         return $cod_area;
     }
-public function cno_profesion($cod_porfesion, $level=null)
+public function cno_profesion($cod_profesion, $level=null)
 {
-    $results = Cno::where("cod_profesion", $cod_porfesion)
+    $results = Cno::where("cod_profesion", $cod_profesion)
                 
                 ->with("skills", "knowledges", "outputs")->get();
  
   // return $results;
     return view('cno.profesion')->with([
             'results' => $results[0],
+            'cod_profesion' => $cod_profesion,
             'nivel' => $level
         ] );
+
+}
+
+public function cno_profesionpdf($cod_profesion, $level=null)
+{
+    $results = Cno::where("cod_profesion", $cod_profesion)
+                
+                ->with("skills", "knowledges", "outputs")->get();
+ 
+  // return $results;
+
+                PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
+$pdf = PDF::loadView('cno.singlepdf', [
+             'results' => $results[0],
+             'cod_profesion' => $cod_profesion,
+            'nivel' => $level
+        ] );
+//return $pdf->download('invoice.pdf');
+return $pdf->stream();
+    
 
 }
 
@@ -133,6 +154,7 @@ public function cno_profesion($cod_porfesion, $level=null)
             
 
         }
+        ini_set('max_execution_time', 300);  
 //return $results;
 PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
 $pdf = PDF::loadView('cno.pdf', [

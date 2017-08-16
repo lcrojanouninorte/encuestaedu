@@ -1,30 +1,22 @@
 @extends('layouts.app')
 @section('content')
-<div >
-<div class="row">
-	
-
-      <div class="col s12">
-
-        <div class="card-panel center-align">
-         
-              <img class="" src="/logo.png" style="width: 100px;">
  
 
+<div class="row">
+
+	<div class=" container">
+
+  
+      <div class="col s12">
+        <div class="card-panel center-align">
+              <img class="" src="/logo.png" style="width: 100px;">
 			<h4 class="text-center">{{$results->ocupacion}}</h4>
 				<p>{{$results->desc_ocupacion}}</p>
- 
         </div>
       </div>
-    </div>
-	
-
-</div>
-
-<div class="row">
-
-	<div class="row">
-      <div class="col s12 m4">
+ 
+ 
+      <div class="col s12 ">
         <div class="card-panel ">
         <div class="row">
         	<img class="col" style="height: 45px;" src="http://danieldonahoo.com/wp-content/uploads/2015/11/settings-icon.png">
@@ -41,7 +33,7 @@
         </div>
       </div>
   
-      <div class="col s12 m4">
+      <div class="col s12 ">
         <div class="card-panel ">
 			<div class="row">
         	<img class="col" style="height: 45px;" src="http://eversity.uasys.edu/sites/default/files/content/paragraphs/text-graphic/problem_solving.png">
@@ -56,7 +48,7 @@
  
         </div>
       </div>
-      <div class="col s12 m4">
+      <div class="col s12 ">
         <div class="card-panel ">
 			<div class="row">
         	<img class="col" style="height: 45px;" src="http://media.utp.edu.co/ilex/archivos/solicite-su-certificado-de-cursos-de-ingles-ilex/certificate-flat.png">
@@ -91,7 +83,7 @@
  
         </div>
       </div>
-      <div class="col s12 m4">
+      <div class="col s12 ">
         <div class="card-panel ">
 			<div class="row">
         	<img class="col" style="height: 45px;" src="https://www.shareicon.net/download/2016/07/22/800263_start_512x512.png">
@@ -113,9 +105,10 @@
       </div>
     </div>
  <br>
-          <div style="margin-top:30px;" class="col-md-5 col-md-offset-5">
+          <div style="margin-top:30px;" class="col-md-12  text-center">
             <a class="btn btn-success" href="/">Volver al Inicio</a>
-
+ <a class="btn btn-primary" href="/profesionpdf/{{$cod_profesion}}/{{$nivel}}" target="_blank">Descargar Pdf</a>
+                      <a class="btn btn-primary" href="/profesionpdf/{{$cod_profesion}}/{{$nivel}}" target="_blank">Enviar a E-mail</a>
           </div>
 
  
