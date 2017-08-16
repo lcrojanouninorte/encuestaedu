@@ -72,6 +72,14 @@
                     <a  href="/questions" class="waves-effect waves-light btn-large blue darken-1">
                     Empezar<i class="material-icons right">play_arrow</i></a>
                 </div>
+                <div class=" col s12 center-align" style="margin-top: 5px;">
+                   <p>Ó</p>
+                </div>
+                 
+                <div class=" col s12 center-align" style="margin-top: 5px;text-decoration: underline;color:blue;">
+                    <a  href="/login" class=" btn-link">
+                    Ingresar Nuevamente</a>
+                </div>
                 
                 
             </div>

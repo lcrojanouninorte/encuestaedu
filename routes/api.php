@@ -20,3 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/surveys', "SurveyController@index");
 Route::post('/surveys', "SurveyController@store");
 Route::get('/questions', "QuestionController@index");
+
+Route::get('validate/{email}', 'SurveyController@validateEmail');

@@ -24,15 +24,20 @@
                 @if(count($level->cnos)>0)
                   @foreach ($level->cnos as $key=>$cno)
                   
-                  <a style="z-index: 100" href="/profesion/{{$cno->cod_profesion}}/{{$level->id}}" class="collection-item avatar ">
+ 
+                  <a style="z-index: 100;" href="/profesion/{{$cno->cod_profesion}}/{{$level->id}}" class="collection-item avatar col s12">
+ 
                     <i class="circle green">{{ ++$key }}</i>
                     <span class=" title"><p>  {{$cno->ocupacion}}</p></span>
                     
                     
                   </a>
+                 
+                  
+                 
                   @endforeach
 
-                  <div class="col s12 center-align"> <a href="/cnopdf/{{$survey}}/{{$cod_area}}/{{$category}}/{{$level->id}}" class="btn btn-primary" > Descargar Pdf</a></div>
+                  <div class="col s12 center-align"> <a href="/cnopdf/{{$survey}}/{{$cod_area}}/{{$category}}/{{$level->id}}" class="btn btn-primary" target="_blank"> Descargar Pdf</a></div>
                 @else
                   <p>No hay profesiones para este nivel de preparación</p>
                 @endif

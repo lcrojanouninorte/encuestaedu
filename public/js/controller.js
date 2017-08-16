@@ -1,16 +1,21 @@
 angular.module('app.controllers', [])
-    .controller('SurveyController', function($scope, survey, $log, $window, Pagination) {
+    .controller('SurveyController', function($scope, survey, $log, $window, Pagination,WizardHandler ) {
             var surveyCrtl = this;
             surveyCrtl.pagination = Pagination.getNew(18);
             surveyCrtl.pagination.numPages = 0;
             surveyCrtl.questions = [];
             surveyCrtl.answers = [];
+            surveyCrtl.sectionsErrors = {
+              s1:false,
+              s2:false,
+              s3:false
+            };
             surveyCrtl.profile = {
               user_id:"",
-              nombre: "Nombre",
-              edad: 23,
-              curso:"Curso A",
-              institucion: "institucion"
+              nombre: "",
+              edad: "",
+              curso:"",
+              institucion: ""
             }
             surveyCrtl.active = 0;
             surveyCrtl.answers_done = 0;
@@ -32,6 +37,28 @@ angular.module('app.controllers', [])
               surveyCrtl.active = tab_index;
               surveyCrtl.tabs[tab_index].disabled = false;
 
+            }
+            surveyCrtl.validate = function(from, many, section){
+              var is_ok = true;
+              for (var i = from; i <= many+from-1; i++) {
+                if(!surveyCrtl.questions[i].done){
+                  surveyCrtl.sectionsErrors[section] = true;
+                  $window.scrollTo(0, 0);
+                  is_ok = false;
+                  
+                  break;
+                }
+              }
+              if(is_ok){
+                WizardHandler.wizard('mainw').next();
+                if(section=="s3"){
+                  surveyCrtl.save();
+                }
+              }else{
+                alert("Hay una pregunta sin completar, por favor revisar")
+              }
+
+              return is_ok;
             }
 
             //Iniciar solicitando las preguntas
@@ -70,5 +97,30 @@ angular.module('app.controllers', [])
                     });
 
                 }
+
+                //helpers
+
+                surveyCrtl.canExitChar = function(){
+                  //Verificar si el e-mail ya existe
+                  return survey.isNewEmail(surveyCrtl.profile.email).then(
+                  function(data) {
+                        if (!$.isEmptyObject(data) && data !== null && typeof(data) != "undfined") {
+                            if(data.success){
+                              if(!data.newUser){
+                                 alert("Ya has ingresado anteriormente, por favor ingresa con tu usuario y contraseña");
+                                $window.location.href = '/login';
+                              }
+                            }else{
+                              //mostrar que hubo un error al guardar
+                              alert("error intente mas tarde");
+                            }
+                            //active();
+                        } else {
+                           alert("error intente mas tarde");
+                        }
+                       // $log.debug("recibido en questions controller: ", surveyCrtl.questions);
+                    });
+                   
+                };
 
             });

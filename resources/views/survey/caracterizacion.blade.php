@@ -13,9 +13,9 @@
         <div class="panel-body">
 <div class="col-md-12 col-md-offset-0 text-center">
 
-<h5>Un ultimo paso...</h5>
+<h5>Ahora escoje una categoria que más te llame la atención</h5>
 
-<h6>Escoje una categoria que más te llame la atención</h6>
+ 
 
 <div class="row">
 @if(count($results)>=0)
@@ -23,12 +23,14 @@
     
 
       <div class="col s12 m6">
-        <div class="card">
-          <div class="card-image">
-            <img style="opacity: 0.2;filter: alpha(opacity=20);" src="https://static.vecteezy.com/system/resources/previews/000/103/286/non_2x/free-flat-design-vector-background.jpg">
-            <span class="card-title valign-wrappe" style="    color: #000;">{{$result->desc_area}}</span>
+        <div class="card" style="min-height: 500px;">
+           <div class="card-image">
+            <img style="opacity: 1;filter: alpha(opacity=20);" src="https://static.vecteezy.com/system/resources/previews/000/103/286/non_2x/free-flat-design-vector-background.jpg">
+           
             
           </div>
+          <span class="card-title valign-wrappe" style="color: #000;">{{$result->desc_area}}</span>
+            
           <div class="card-content">
           <div ><span>Puntaje:</span>
           <h2 class="text-center">{{$result->total}}</h2>
