@@ -16,11 +16,8 @@ class CreateOutputsTable extends Migration
         Schema::create('outputs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nivel');
-            $table->string('salida');
+            $table->string('area_formacion');
             $table->string('onet');
-            $table->string('cod_area');
-            $table->string('ciu');
-            $table->string('desc_ciu');
             
 
             $table->timestamps();

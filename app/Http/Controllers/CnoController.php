@@ -8,6 +8,8 @@ use DB;
 use PDF;
 use App;
 use Session;
+use Mail;
+use Auth;
 
 use App\Preparationlevel;
 
@@ -33,6 +35,7 @@ class CnoController extends Controller
     {
         //buscar las nivel,  categorias y profesiones del area seleccionada
         
+
 
         if($level>=0){
             /* $results = DB::table('cnos')->select('ocupacion', 'desc_ocupacion', 'cod_profesion', 'preparationlevels.desc')->distinct()
@@ -81,8 +84,10 @@ public function cno_profesion($cod_profesion, $level=null)
 {
     $results = Cno::where("cod_profesion", $cod_profesion)
                 
-                ->with("skills", "knowledges", "outputs")->get();
+                ->with("skills", "knowledges", "outputs", "descoutputs")->get();
  
+
+
   // return $results;
     return view('cno.profesion')->with([
             'results' => $results[0],
@@ -91,23 +96,58 @@ public function cno_profesion($cod_profesion, $level=null)
         ] );
 
 }
+public function cno_profesionmail($cod_profesion, $level=null)
+{
+
+        $user = Auth::user();
+        if($user){
+          $data = array(
+                        'email' =>  $user->email,
+                        'nombre' => $user->name,
+
+                    );
+            Mail::send('emails.perfil', $data, function ($message) use ($data) {
+
+                $message->from('contacto@orienta-t.co', 'Orienta-t');
+
+                $message->to( $data["email"])->subject('Perfil Ocupacional - Orienta-T'); //Cambiar fecha
+
+            });
+           Session::flash('alert-success', 'Mensaje Enviado Correctamente.');
+        }else{
+           Session::flash('alert-error', 'Mensaje No Enviado. Intente nuevamente');
+        }
+
+        return back()->with('message', 'success|Record updated.'); 
+        
+
+     
+       
+
+ 
+
+}
 
 public function cno_profesionpdf($cod_profesion, $level=null)
 {
+ 
+
     $results = Cno::where("cod_profesion", $cod_profesion)
                 
                 ->with("skills", "knowledges", "outputs")->get();
  
-  // return $results;
 
-                PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
+
+  // return $results;
+ return PDF::loadFile('http://encuestaedu.app/profesion/'.$cod_profesion.'/'.$level)->inline('github.pdf');
+              /*  PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
 $pdf = PDF::loadView('cno.singlepdf', [
              'results' => $results[0],
              'cod_profesion' => $cod_profesion,
             'nivel' => $level
         ] );
 //return $pdf->download('invoice.pdf');
-return $pdf->stream();
+return $pdf->stream();*/
     
 
 }
@@ -115,7 +155,16 @@ return $pdf->stream();
      public function cno_reportpdf($survey, $cod_area, $category=null, $level=null)
     {
         //buscar las nivel,  categorias y profesiones del area seleccionada
-        
+        $data=[];
+         Mail::send('emails.credenciales', $data, function ($message) use ($data) {
+
+                $message->from('contacto@orienta-t.co', 'Orienta-t');
+
+                $message->to( 'lcrojano@gmail.com')->subject('Mensaje desde Cita'); //Cambiar fecha
+
+            });
+           //  Session::flash('alert-success', 'Mensaje Enviado Correctamente, Pronto será revisado.')
+         return PDF::loadFile('http://encuestaedu.app/profesion/4153/1')->inline('github.pdf');
 
         /*if($cod_area){
             $results = DB::table('cnos')->select('categoria')->distinct()->where('prioridad', $cod_area)->get();;

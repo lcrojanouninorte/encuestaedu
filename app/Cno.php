@@ -17,7 +17,10 @@ class Cno extends Model
         return $this->hasMany(Knowledge::class, 'cod_profesion', 'cod_profesion');
     }
     public function outputs(){
-        return $this->hasMany(Output::class, 'cod_area', 'cod_area');
+        return $this->hasMany(Output::class, 'onet', 'onet');
+    }
+    public function descoutputs(){
+        return $this->hasMany(Descoutput::class, 'onet', 'onet');
     }
 }
 

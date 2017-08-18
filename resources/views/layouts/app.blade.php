@@ -26,11 +26,11 @@
 </head>
 <body >
     <div id="app">
- <nav class="navbar navbar-default navbar-static-top">
+ <nav class="navbar navbar-default navbar-static-top hide-print">
             <div class="container">
                 <div class="navbar-header">
 
-                     Collapsed Hamburger
+                    <!-- Collapsed Hamburger-->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                         <span class="sr-only">Toggle Navigation</span>
                         <span class="icon-bar"></span>
@@ -38,10 +38,10 @@
                         <span class="icon-bar"></span>
                     </button>
  
-                    <!-- Branding Image
+                    <!-- Branding Image-->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        Proyectate!
-                    </a> -->
+                         <img id="logo-nav" class="logo-principal logo-nav" src="/logo.png" style="width: 30px">
+                    </a> 
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -54,7 +54,7 @@
                     <ul id="login-nav" class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Ingresar</a></li>
+                            <li><a href="{{ route('login') }}">Iniciar Sesión <i class="material-icons right">exit_to_app</i></a> </li>
                            <!-- <li><a href="{{ route('register') }}">Register</a></li>-->
                         @else
                             <li class="dropdown">
@@ -82,6 +82,24 @@
             </div>
         </nav>
 
+
+<div class="flash-message">
+   @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+            @if(Session::has('alert-' . $msg))
+           
+            <div class="row">
+                  <div class="col s12 ">
+                    <div class="card-panel green accent-1">
+                       <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p>
+                    </div>
+                  </div>
+                </div>
+
+            @endif
+          @endforeach
+
+       
+</div>
         @yield('content')
     </div>
 
@@ -90,7 +108,7 @@
 <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
 
         
    

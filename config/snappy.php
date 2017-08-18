@@ -1,0 +1,24 @@
+<?php
+
+return array(
+
+
+    'pdf' => array(
+        'enabled' => true,
+        //'binary'  => '/usr/local/bin/wkhtmltopdf', //default
+        //'binary' => '"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf"' //windows
+        'binary'  => '/usr/local/bin/wkhtmltopdf-amd64', //vagrant
+        'timeout' => false,
+        'options' => array(),
+        'env'     => array(),
+    ),
+    'image' => array(
+        'enabled' => true,
+        'binary'  => '/usr/local/bin/wkhtmltoimage',
+        'timeout' => false,
+        'options' => array(),
+        'env'     => array(),
+    ),
+
+
+);

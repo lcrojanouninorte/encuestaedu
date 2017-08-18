@@ -28,6 +28,7 @@ Route::get('caracterizacion/{survey}', 'SurveyController@showCaracterizacion');
 Route::get('/cno/{survey}/{cod_area}/{category?}/{level?}', 'CnoController@cno_report');
 Route::get('/profesion/{cod_porfesion}/{level?}', 'CnoController@cno_profesion');
 Route::get('/profesionpdf/{cod_porfesion}/{level?}', 'CnoController@cno_profesionpdf');
+Route::get('/profesionemail/{cod_porfesion}/{level?}', 'CnoController@cno_profesionmail');
 Route::get('/cnopdf/{survey}/{cod_area}/{category?}/{level?}', 'CnoController@cno_reportpdf');
 
 Route::group(['middleware' => 'auth'], function () {
