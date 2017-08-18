@@ -11,6 +11,8 @@ use App\User;
 use Illuminate\Http\Request;
 use DB;
 
+use Mail;
+
 use Session;
 
 use Auth;
@@ -65,9 +67,9 @@ class SurveyController extends Controller
 
             //TODO: validar lado servidor e-mail
             $userData = [
-                    'name' => $data["profile"]["email"],
-                    'email' => $data["profile"]["email"],
-                    'password' =>  bcrypt($data["profile"]["contrasena"]),
+                    'name' => $profile["nombre"],
+                    'email' => $profile["email"],
+                    'password' =>  bcrypt($profile["contrasena"]),
             ];
         }
 
@@ -80,9 +82,23 @@ class SurveyController extends Controller
             $user_id = "";
             if(!isset($profile["user_id"])){
                 $newUser = User::create($userData);
-                 
+                $data = array(
+                        'email' =>  $newUser->email,
+                        'nombre' => $newUser->name,
+                        'password' => $profile["contrasena"],
+                    );
+                if ($newUser) {
+                    //send mail with credential
+                     Mail::send('emails.credenciales', $data, function ($message) use ($data) {
+
+                            $message->from('contacto@orienta-t.co', 'Orienta-t');
+
+                            $message->to( $data["email"])->subject('Resultados Orienta-t'); //Cambiar fecha
+
+                    });
+                }
                 Auth::loginUsingId($newUser->id);
-                 $user_id = $newUser->id;
+                $user_id = $newUser->id;
 
                   //crear el perfil si no existe, o update el existente
                 $newProfile = Profile::firstOrNew(['user_id' => $user_id]); // your data
@@ -128,7 +144,8 @@ class SurveyController extends Controller
            return $newSurvey;
 
         });
-               
+        //enviar correo con usuario y contraseña si todo salio ok
+
         $response["survey"]=$transaction;
         echo json_encode( $response);
     }
@@ -178,7 +195,7 @@ class SurveyController extends Controller
 
         //get survey level
 
-
+        //split area
 
         foreach ($areas as $key => $area) {
             $categoria = DB::table('cnos')
@@ -189,6 +206,10 @@ class SurveyController extends Controller
                 ->distinct()
                 ->get();
             $area->categorias = $categoria;
+            $area_arr =  explode(':', $area->desc_area);
+            $area->title =  $area_arr[0];
+            $area->desc =  $area_arr[1];
+
         }
 
        

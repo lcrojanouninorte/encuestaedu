@@ -5,6 +5,7 @@ angular.module('app.controllers', [])
             surveyCrtl.pagination.numPages = 0;
             surveyCrtl.questions = [];
             surveyCrtl.answers = [];
+            surveyCrtl.splash = true;
             surveyCrtl.sectionsErrors = {
               s1:false,
               s2:false,
@@ -122,5 +123,11 @@ angular.module('app.controllers', [])
                     });
                    
                 };
+
+                //animation
+
+                surveyCrtl.hide_splash = function(){
+                  surveyCrtl.splash = false;
+                }
 
             });

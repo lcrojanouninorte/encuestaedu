@@ -25,6 +25,7 @@ class CreateCnosTable extends Migration
             $table->string('cod_profesion');
             $table->string('prioridad');
             $table->string('cod_area');
+            $table->string('onet');
             $table->timestamps();
 
             $table->foreign('area_id')->references('id')->on('areas');

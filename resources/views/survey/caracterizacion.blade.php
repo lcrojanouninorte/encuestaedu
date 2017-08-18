@@ -9,34 +9,31 @@
   <div class="row">
     <div class="col-md-12">
       <div class="panel panel-default">
-        <div class="panel-heading">Areas</div>
+        
         <div class="panel-body">
 <div class="col-md-12 col-md-offset-0 text-center">
+<h5>Según tus respuestas, hemos detectado que las siguientes áreas son más afines a tu perfil</h5>
 
-<h5>Ahora escoje una categoria que más te llame la atención</h5>
-
- 
-
+<br>
 <div class="row">
 @if(count($results)>=0)
-  @foreach ($results as $result)
-    
-
+  @foreach ($results as $key=>$result)
       <div class="col s12 m6">
         <div class="card" style="min-height: 500px;">
-           <div class="card-image">
-            <img style="opacity: 1;filter: alpha(opacity=20);" src="https://static.vecteezy.com/system/resources/previews/000/103/286/non_2x/free-flat-design-vector-background.jpg">
-           
-            
+           <div id="area-{{$key}}" class=" valign-wrapper" style="min-height: 70px;">
+           <div class="col s12 text-center">
+             <h5>{{ $result->title}}</h5>
+             </div>
           </div>
-          <span class="card-title valign-wrappe" style="color: #000;">{{$result->desc_area}}</span>
+          <br>
+         <p> <span class="valign-wrapper" style="color: #000;">En esta área puedes econtrar profeciones relacionadas con: {{$result->desc}}</span></p> 
             
           <div class="card-content">
           <div ><span>Puntaje:</span>
-          <h2 class="text-center">{{$result->total}}</h2>
+          <h4 class="text-center">{{$result->total}}</h4>
             
           </div>
-          <p>Categorias:</p>
+          <p>Elije una categoria que te llame la atención:</p>
             <div class="collection row">
             @if(!count($result->categorias)>0)
                       <p>No Existen categorias asociadas nivel academico seleccionado, por favor intenta realizar nuevamente el test</p>

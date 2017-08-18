@@ -82,12 +82,11 @@
         </div>
 <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="edad">Edad*</label>
+          <label class="col-md-4 control-label" for="edad">Edad</label>
           <div class="col-md-5">
-            <input id="edad" ng-model="surveyCrtl.profile.edad"  name="edad" type="number" placeholder="" class="form-control input-md" required>
+            <input id="edad" ng-model="surveyCrtl.profile.edad"  name="edad" type="number" placeholder="" class="form-control input-md" >
             <div class="   alert-danger" role="alert">
-              <span class="error" ng-show="charForm.edad.$touched && charForm.edad.$error.required">
-              *Edad es obligatoria!</span>
+               
               <span class="error" ng-show="charForm.edad.$touched && charForm.edad.$error.number">
               *No es una edad valida!</span>
             </div>
@@ -96,12 +95,11 @@
         <!-- Form Name -->
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="Institución">Colegio*</label>
+          <label class="col-md-4 control-label" for="Institución">Colegio</label>
           <div class="col-md-5">
-            <input id="Institución" ng-model="surveyCrtl.profile.institucion"  name="institucion" type="text" placeholder="" class="form-control input-md" required>
+            <input id="Institución" ng-model="surveyCrtl.profile.institucion"  name="institucion" type="text" placeholder="" class="form-control input-md" >
             <div class="   alert-danger" role="alert">
-              <span class="error" ng-show="charForm.institucion.$touched && charForm.institucion.$error.required">
-              *Colegio es obligatorio!</span>
+               
                
             </div>
           </div>
@@ -109,16 +107,15 @@
         
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="curso">Grado*</label>
+          <label class="col-md-4 control-label" for="curso">Grado</label>
           <div class="col-md-5">
             <div class="row" >
               <p class="col s12">
-                <input ng-model="surveyCrtl.profile.curso" name="grado" type="text" id="test1" required/>
+                <input ng-model="surveyCrtl.profile.curso" name="grado" type="text" id="test1" />
                 
               </p>
               <div class="   alert-danger" role="alert">
-                <span class="error" ng-show="charForm.grado.$touched && charForm.grado.$error.required">
-                *Grado es obligatorio!</span>
+                 
                 <span class="error" ng-show="charForm.grado.$touched && charForm.grado.$error.text">
                 *No es una edad valida!</span>
               </div>
@@ -139,7 +136,7 @@
       </div>
       @else
       <div class="col-sm-12   text-left center-align" style="margin-top: 15px;">
-        <a href="#" class="row "> Al hacer click en "Continuar" Acepta la politica de tratamiento de datos</a>
+        <a href="https://drive.google.com/file/d/0B7oqoVmBYZyqeWpIVEV6Y3cybnM/view?usp=sharing" target="_blank" class="row "> Al hacer click en "Continuar" Acepta la politica de tratamiento de datos</a>
         <br>
         <button ng-disabled="!charForm.$valid" type="button" class="waves-effect waves-light btn-large blue darken-1" wz-next="surveyCrtl.canExitChar()" value="Go on">CONTINUAR</button>
       </div>
@@ -279,7 +276,7 @@
       <br>
       <br>
       <div class="row">
-      <%nivelForm.group2.$invalid%>
+      
         <div class="col s6 right-align">
           <a href="/" type="button" class="waves-effect waves-light btn-large blue darken-1" wz-previous>REGRESAR  </a>
         </div>

@@ -8,10 +8,10 @@
         <div class="panel-body">
           <div class="col s12">
             <div class="col s12 center-align">
-              <img class="" src="/logo.png" style="width: 100px;">
-            </div>
            
-
+              <!--<img class="" src="/logo.png" style="width: 100px;">-->
+            </div>
+            
             <div class="col s12 text-center"><h5>CARRERAS QUE COINCIDEN CON TUS INTERESES Y NIVEL DE PREPARACION</h5>
             <p>Haz click en cada ocupación para conocer con más detalle</p>
 </div>
@@ -25,19 +25,17 @@
                   @foreach ($level->cnos as $key=>$cno)
                   
  
-                  <a style="z-index: 100;" href="/profesion/{{$cno->cod_profesion}}/{{$level->id}}" class="collection-item avatar col s12">
+                  <a style="z-index: 100;" href="/profesion/{{$cno->cod_profesion}}/{{$level->id}}" class="collection-item avatar valign-wrapper">
  
                     <i class="circle green">{{ ++$key }}</i>
                     <span class=" title"><p>  {{$cno->ocupacion}}</p></span>
-                    
-                    
                   </a>
                  
                   
                  
                   @endforeach
 
-                  <div class="col s12 center-align"> <a href="/cnopdf/{{$survey}}/{{$cod_area}}/{{$category}}/{{$level->id}}" class="btn btn-primary" target="_blank"> Descargar Pdf</a></div>
+                  <!--<div class="col s12 center-align"> <a href="/cnopdf/{{$survey}}/{{$cod_area}}/{{$category}}/{{$level->id}}" class="btn btn-primary" target="_blank"> Descargar Pdf</a></div>-->
                 @else
                   <p>No hay profesiones para este nivel de preparación</p>
                 @endif
