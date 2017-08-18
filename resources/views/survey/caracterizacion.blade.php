@@ -26,7 +26,7 @@
              </div>
           </div>
           <br>
-         <p> <span class="valign-wrapper" style="color: #000;">En esta área puedes econtrar profeciones relacionadas con: {{$result->desc}}</span></p> 
+         <p> <span class="valign-wrapper" style="color: #000;">En esta área puedes econtrar profesiones relacionadas con: {{$result->desc}}</span></p> 
             
           <div class="card-content">
           <div ><span>Puntaje:</span>
