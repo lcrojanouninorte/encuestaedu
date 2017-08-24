@@ -2,13 +2,18 @@
 @section('content')
  
 
-<div class="row">
+<div class="row" id="profesiones">
 
 	<div class=" container">
 
   
-      <div class="col s12 " style="    padding: 0 .3rem;">
+      <div class="col s12 m6 " style="    padding: 0 .3rem;">
+
         <div class="card-panel center-align">
+        <div class="row shifttitle">
+        	<img class="col" style="height: 45px;" src="https://lh3.googleusercontent.com/aKa1Ya_a43dnUBwEKJh_-Jc6KqmUzNcv0hvvUuRFPyrJ637FcLLxiWTXYkc9OafvQjQ__MtdZS_0BTc=w1920-h918">
+			<h5 class="text-center col">Personalidad</h5>
+        </div>
               <img class="" src="/logo.png" style="width: 100px;">
 			<h4 class="text-center">{{$results->ocupacion}}</h4>
 				<p>{{$results->desc_ocupacion}}</p>
@@ -16,18 +21,33 @@
       </div>
  
 
-       <div class="col s12 " style="    padding: 0 .3rem; page-break-inside: avoid;">
+       <div class="col s12 m6" style="    padding: 0 .3rem; page-break-inside: avoid;">
         <div class="card-panel ">
+        <div class="row shifttitle">
+        		<img class="col" style="height: 45px;" src="https://lh6.googleusercontent.com/xJCnv6YijeL8Sn-7YEy5IQPuVfFRAx5si7Ra_AjGKqdxjcWC1GKqPkYUOJFzCLPQATIIF86f-AVqJ44=w1920-h918">
+			<h5 class="text-center col">Salida Ocupacional</h5>
+        </div>
 			<div class="row">
-        	<img class="col" style="height: 45px;" src="https://www.shareicon.net/download/2016/07/22/800263_start_512x512.png">
-			<h5 class="text-center col">Salida Ocupacional: <span style="font-weight: bolder;" >{{$results->descoutputs[0]->onet}}</span></h5>
+        
+			<h5 class="text-center col"> 
+			@if($results->descoutputs->count()>0)
+			<span style="font-weight: bolder;" >{{$results->descoutputs[0]->onet}}</span>
+			@else
+			N/A
+			@endif
+
+			</h5>
         </div>
 			<ul>
 
 			 
 			<li>
 				<p style="font-weight: bold;">Descripción:</p>
+				@if($results->descoutputs->count()>0)
 				<span class="valign-wrapper"> {{$results->descoutputs[0]->desc}}</span>
+				@else
+				N/A
+				@endif
 
 				</li>
  
@@ -40,8 +60,8 @@
  
       <div class="col s12 m4 " style="    padding: 0 .3rem; page-break-inside: avoid;">
         <div class="card-panel ">
-        <div class="row">
-        	<img class="col" style="height: 45px;" src="http://danieldonahoo.com/wp-content/uploads/2015/11/settings-icon.png">
+        <div class="row shifttitle">
+        	<img class="col" style="height: 45px;" src="https://lh4.googleusercontent.com/aLWx8KEIU1z5TWP3aPTn0CmzXb3chV459kW-6psjb76dUk-d8xda2z8ACB4a9s5T-uZyyK8s9bgD0VI=w1920-h918">
 			<h5 class="text-center col">Habilidades</h5>
         </div>
         	
@@ -57,8 +77,8 @@
   
       <div class="col s12 m4 " style="    padding: 0 .3rem ; page-break-inside: avoid;">
         <div class="card-panel ">
-			<div class="row">
-        	<img class="col" style="height: 45px;" src="http://eversity.uasys.edu/sites/default/files/content/paragraphs/text-graphic/problem_solving.png">
+			<div class="row shifttitle">
+        	<img class="col" style="height: 45px;" src="https://lh4.googleusercontent.com/o88WJU_KraDJgzLpSvMHNJfpqAdQVA0Y6VacneuE2ukrTemuXhKQPX_x_FQcUKnpZh1qx-4J7r-dznE=w1920-h918">
 			<h5 class="text-center col">Conocimientos</h5>
        		 </div>
 			<ul>
@@ -74,8 +94,8 @@
 
       <div class="col s12 m4 " style="    padding: 0 .3rem; page-break-inside: avoid;">
         <div class="card-panel ">
-			<div class="row">
-        	<img class="col" style="height: 45px;" src="http://media.utp.edu.co/ilex/archivos/solicite-su-certificado-de-cursos-de-ingles-ilex/certificate-flat.png">
+			<div class="row shifttitle">
+        	<img class="col" style="height: 30px; font-size: 12px" src="https://lh3.googleusercontent.com/j7EpqvLtbOnxreE_8oATPTvrJ3-kqJpSwP7Dj9KS7WiBTANqPA8VLgo-7iGrk7QMASJ_KP7Y8ccVGsE=w1920-h918">
 			<h5 class="text-center col">Oferta Académica</h5>
         </div>
 			<ul>

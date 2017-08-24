@@ -213,8 +213,7 @@ class SurveyController extends Controller
         }
 
        
-               // return  $areas ;
-
+ 
         return view('survey.caracterizacion')->with([
             'survey'=> $survey,
             'results' =>  $areas,

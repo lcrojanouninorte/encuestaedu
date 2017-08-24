@@ -16,6 +16,7 @@
 
 <br>
 <div class="row">
+ 
 @if(count($results)>=0)
   @foreach ($results as $key=>$result)
       <div class="col s12 m6">

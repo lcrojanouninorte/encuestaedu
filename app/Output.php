@@ -11,7 +11,5 @@ class Output extends Model
         return $this->belongsTo(Cno::class, 'onet', 'onet');
     }
 
-    public function descoutput(){
-        return $this->belongsTo(Descoutput::class, 'onet', 'onet');
-    }
+     
 }
