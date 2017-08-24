@@ -147,9 +147,16 @@ p {
         padding-bottom: 35px;
     margin-bottom: 35px;
  }
+ div#illustracion {
+    position: relative;
+    top: -80px;
+    line-height: 0px;
+    height: 0;
+}
 
     .ilustracion {
     width: 100%;
+    line-height: 0px;
 }
     .logo1  {
         max-width: 80px;
@@ -321,4 +328,30 @@ background-size: cover;
     background-image: url('/btn.png');
     background-position: center;
     background-size: cover;
+}
+
+.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+    margin-right: 0px!important; 
+    margin-left: 0px!important; 
+}
+
+
+.panel {
+    margin-bottom: 22px!important;
+    background-color: #F4F4F4!important;
+    border: 1px solid rgb(0, 0, 0)!important;
+    border-radius: 9px!important;
+    box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.6)!important;
+}
+html {
+    font-family: Century Gothic!important;
+}
+dt, kbd kbd, label {
+    
+}
+
+label {
+    font-size: 1rem!important;
+    color: #7a7272!important;
+    font-weight: 500!important;
 }

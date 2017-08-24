@@ -64,11 +64,11 @@
     <body class="full-height  ">
         <div class="row">
        
-            <div class="col s12 left-align" style="margin: 10px;min-height: 100px">
+            <div class="col s12 left-align" style="margin-top: 10px; height: 20px;">
                 <img id="logo-nav" class="logo-principal logo-nav" src="/logo.png" style="width: 50px">
             </div>
         </div>
-        <div class="valign-wrapper" style="padding: 10px; flex-direction: column;min-height: 420px">
+        <div class="valign-wrapper" style="padding: 1px; flex-direction: column;min-height: 340px">
             <div class="row">
                 <div class="col s12" style="min-height: 100px">
                     <div id="splashscreen" >
@@ -102,7 +102,7 @@
                 </div>
                 
             </div>
-            <div id="illustracion" class="ilustracion-wrapper col s12 center-align" >
+            <div id="illustracion" class="ilustracion-wrapper row center-align" style="margin-bottom: 0px;">
                         <img   class="ilustracion" src="/ilustracion.png">
             </div>
         </div>
@@ -124,7 +124,7 @@
                 <div class="row center-align" >
                     <div class="col s12 m6 offset-m3">
                         <br>
-                        <p class="disclaimer"><b>Disclaimer:</b> Los derechos de Autor del Test Preferencias Profesionales (PPS) les corresponden a Carlos Yuste, David Yuste y Jose Luis Galvez. Hace parte de su propiedad intelectual y se reservan sus derechos de autor. Se ha autorizado el uso del Test para fines educativos e investigativos sin ningún tipo de lucro. </p>
+                        <p class="disclaimer">Los derechos de Autor del Test Preferencias Profesionales (PPS) les corresponden a Carlos Yuste, David Yuste y Jose Luis Galvez. Hace parte de su propiedad intelectual y se reservan sus derechos de autor. Se ha autorizado a la universidad del Norte, la Camará de Comercio de Barranquilla y a Promigas el uso del Test para fines educativos e investigativos sin ningún tipo de lucro. </p>
                     </div>
                     
                 </div>
@@ -145,7 +145,7 @@
 
             $('#logo-nav').hide();
             setTimeout(function(){
-                $('#logo-nav').fadeIn("slow");
+                $('#logo-nav').fadeIn();
             },2900);
 
             $('#illustracion').hide();
@@ -156,7 +156,7 @@
 
             $('#options').hide();
             setTimeout(function(){
-                $('#options').fadeIn("slow");
+                $('#options').fadeIn(3000);
             },2900);
 
         });
