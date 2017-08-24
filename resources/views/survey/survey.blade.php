@@ -6,7 +6,7 @@
       <wizard name="mainw" class="slide-animate" hide-indicators="true" on-finish="finishedWizard()" on-cancel="cancelledWizard()" indicators-position="top">
       <wz-step wz-title="Perfil" >
       <h2 class="center-align">Inicia tu ruta ocupacional</h2>
-      <strong class="text-bold">Este cuestionario trata de clasificar tus preferencias profesionales en 13 grandes áreas de interés. Responde con cuidado y sinceridad, pues te ayudara a conocer mejor tus propios intereses y a compararlos con los de otras personas. Responde guiándote únicamente por el gusto que te suscitan las actividades que se te indiquen.</strong>
+      <strong class="text-bold">Este cuestionario trata de clasificar tus preferencias profesionales en 13 grandes áreas de interés. Responde con cuidado y sinceridad, pues te ayudara a conocer mejor tus propios intereses. Responde guiándote únicamente por el gusto que te suscitan las actividades que se te indiquen.</strong>
       <br>
       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
@@ -300,7 +300,7 @@
       <div class="col s12">
         <br>
         <br>
-        <p>Responde con cuidado y sinceridad, pues te ayudará a conocer mejor tus propios intereses y a compararlos con las otras personas. Responde guiándote únicamente por el gusto que te suscitan las actividades que se te indiquen.</p>
+        <p>Responde con cuidado y sinceridad, pues te ayudará a conocer mejor tus propios intereses. Responde guiándote únicamente por el gusto que te suscitan las actividades que se te indiquen.</p>
         
       </div>
       
