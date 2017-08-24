@@ -291,13 +291,15 @@ background-size: cover;
 
  
 @media only screen and (min-width : 1025px) {
- #profesiones .card-panel {
-
+ 
+  #profesiones .card-panel {
+ 
         min-height: 500px !important;
     }   
 }
-#profesiones .card-panel {
-    transition: box-shadow .25s;
+ 
+ #profesiones .card-panel {
+     transition: box-shadow .25s;
     padding: 24px!important;
     margin: .5rem 0 1rem 0!important;
     border-radius: 2px!important;

@@ -11,7 +11,7 @@
 
         <div class="card-panel center-align">
         <div class="row shifttitle">
-        	<img class="col" style="height: 45px;" src="https://lh3.googleusercontent.com/aKa1Ya_a43dnUBwEKJh_-Jc6KqmUzNcv0hvvUuRFPyrJ637FcLLxiWTXYkc9OafvQjQ__MtdZS_0BTc=w1920-h918">
+        	<img class="col" style="height: 45px;" src="/images/7 icono personalidad.png">
 			<h5 class="text-center col">Personalidad</h5>
         </div>
               <img class="" src="/logo.png" style="width: 100px;">
@@ -24,7 +24,7 @@
        <div class="col s12 m6" style="    padding: 0 .3rem; page-break-inside: avoid;">
         <div class="card-panel ">
         <div class="row shifttitle">
-        		<img class="col" style="height: 45px;" src="https://lh6.googleusercontent.com/xJCnv6YijeL8Sn-7YEy5IQPuVfFRAx5si7Ra_AjGKqdxjcWC1GKqPkYUOJFzCLPQATIIF86f-AVqJ44=w1920-h918">
+        		<img class="col" style="height: 45px;" src="/images/7 icono conocimiento.png">
 			<h5 class="text-center col">Salida Ocupacional</h5>
         </div>
 			<div class="row">
@@ -61,7 +61,11 @@
       <div class="col s12 m4 " style="    padding: 0 .3rem; page-break-inside: avoid;">
         <div class="card-panel ">
         <div class="row shifttitle">
+<<<<<<< HEAD
         	<img class="col" style="height: 45px;" src="https://lh4.googleusercontent.com/aLWx8KEIU1z5TWP3aPTn0CmzXb3chV459kW-6psjb76dUk-d8xda2z8ACB4a9s5T-uZyyK8s9bgD0VI=w1920-h918">
+=======
+        	<img class="col" style="height: 45px;" src="/images/7 icono habilidades.png">
+>>>>>>> 5e56ce35edba0c4a474fdf906e2d959471f2b50f
 			<h5 class="text-center col">Habilidades</h5>
         </div>
         	
@@ -78,7 +82,8 @@
       <div class="col s12 m4 " style="    padding: 0 .3rem ; page-break-inside: avoid;">
         <div class="card-panel ">
 			<div class="row shifttitle">
-        	<img class="col" style="height: 45px;" src="https://lh4.googleusercontent.com/o88WJU_KraDJgzLpSvMHNJfpqAdQVA0Y6VacneuE2ukrTemuXhKQPX_x_FQcUKnpZh1qx-4J7r-dznE=w1920-h918">
+ 
+        	<img class="col" style="height: 45px;" src="/images/7 icono aptitudes.png">
 			<h5 class="text-center col">Conocimientos</h5>
        		 </div>
 			<ul>
@@ -95,7 +100,8 @@
       <div class="col s12 m4 " style="    padding: 0 .3rem; page-break-inside: avoid;">
         <div class="card-panel ">
 			<div class="row shifttitle">
-        	<img class="col" style="height: 30px; font-size: 12px" src="https://lh3.googleusercontent.com/j7EpqvLtbOnxreE_8oATPTvrJ3-kqJpSwP7Dj9KS7WiBTANqPA8VLgo-7iGrk7QMASJ_KP7Y8ccVGsE=w1920-h918">
+ 
+        	<img class="col" style="height: 30px; font-size: 12px" src="/images/7 icono educacion.png">
 			<h5 class="text-center col">Oferta Académica</h5>
         </div>
 			<ul>

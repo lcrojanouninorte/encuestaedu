@@ -18,6 +18,7 @@
            // save: save,
            //stop: stop,
            //start: start
+           //okopo
         };  
         var config = {};
 

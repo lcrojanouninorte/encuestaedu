@@ -130,7 +130,7 @@
       
       @if(Auth::check())
       <div class="col-sm-12   text-left center-align" style="margin-top: 15px;">
-        <a href="#" class="row "> Al hacer click en "Continuar" Acepta la politica de tratamiento de datos</a>
+        <a href="https://drive.google.com/file/d/0B7oqoVmBYZyqeWpIVEV6Y3cybnM/view?usp=sharing" target="_blank" class="row "> Al hacer click en "Continuar" Acepta la politica de tratamiento de datos</a>
         <br>
         <button ng-disabled="!charForm.$valid" type="button" class="waves-effect waves-light btn-large blue darken-1" wz-next value="Go on">CONTINUAR</button>
       </div>
@@ -217,7 +217,7 @@
             <img src="/smile1.png" style="width: 20px">
           </div>
           <div class="col s7 valign-wrapper">
-            <p><b>Me me gusta</b></p>
+            <p><b>No me gusta</b></p>
           </div>
         </div>
       </div>

@@ -169,7 +169,8 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-
+ 
+ 
 
         /*
          * Application Service Providers...
