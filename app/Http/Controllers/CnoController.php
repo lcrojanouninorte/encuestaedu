@@ -139,7 +139,7 @@ public function cno_profesionpdf($cod_profesion, $level=null)
 
 
   // return $results;
- return PDF::loadFile('http://encuestaedu.app/profesion/'.$cod_profesion.'/'.$level)->inline('github.pdf');
+ return PDF::loadFile('http://orienta-t.co/profesion/'.$cod_profesion.'/'.$level)->inline('orienta-t.pdf');
               /*  PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
 $pdf = PDF::loadView('cno.singlepdf', [
              'results' => $results[0],
