@@ -61,12 +61,9 @@
       <div class="col s12 m4 " style="    padding: 0 .3rem; page-break-inside: avoid;">
         <div class="card-panel ">
         <div class="row shifttitle">
-<<<<<<< HEAD
-        	<img class="col" style="height: 45px;" src="https://lh4.googleusercontent.com/aLWx8KEIU1z5TWP3aPTn0CmzXb3chV459kW-6psjb76dUk-d8xda2z8ACB4a9s5T-uZyyK8s9bgD0VI=w1920-h918">
-=======
+ 
         	<img class="col" style="height: 45px;" src="/images/7 icono habilidades.png">
->>>>>>> 5e56ce35edba0c4a474fdf906e2d959471f2b50f
-			<h5 class="text-center col">Habilidades</h5>
+ 			<h5 class="text-center col">Habilidades</h5>
         </div>
         	
 			<ul class="profesion">

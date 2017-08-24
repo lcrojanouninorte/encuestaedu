@@ -316,3 +316,9 @@ background-size: cover;
     top: -35px!important;
     position: relative!important;
 }
+
+.special-btn {
+    background-image: url('/btn.png');
+    background-position: center;
+    background-size: cover;
+}

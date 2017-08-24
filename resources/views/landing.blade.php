@@ -13,7 +13,7 @@
         <!-- Styles -->
         <style>
         html, body {
-        background-color: #fff;
+        
         color: #636b6f;
         font-family: 'Raleway', sans-serif;
         font-weight: 100;
@@ -83,16 +83,17 @@
                     </div>
                     <div class="row" id="options">
                         <div class=" col s12 center-align begin">
-                            <a  href="/questions" class="waves-effect waves-light btn-large blue darken-1">
-                            Empezar<i class="material-icons right">play_arrow</i></a>
+                            <a  href="/questions" class=" waves-effect waves-light ">
+                           <img src="/boton empezar.png" width="200"></a>
                         </div>
+
                         <div class=" col s12 center-align" style="margin-top: 5px;">
                             <p>Ó</p>
                         </div>
                         
-                        <div class=" col s12 center-align" style="margin-top: 5px;text-decoration: underline;color:blue;">
-                            <a  href="/login" class=" btn-link">
-                            Iniciar Sesión</a>
+                        <div class=" col s12 center-align" style="margin-top: 5px;text-decoration: underline;color:blue;"> 
+                             <a  href="/login" class="waves-effect waves-light">
+                             <img src="/boton login.png" width="200"></a>
                         </div>
                         
                         

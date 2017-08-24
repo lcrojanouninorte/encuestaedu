@@ -137,9 +137,14 @@ public function cno_profesionpdf($cod_profesion, $level=null)
                 ->with("skills", "knowledges", "outputs")->get();
  
 
-
+return PDF::loadFile('http://orienta-t.co/profesion/'.$cod_profesion.'/'.$level)->setOption('margin-top',0)
+        ->setOption('margin-bottom',0)
+        ->setOption('margin-left',0)
+        ->setOption('margin-right',0)
+        ->inline('orienta-t.pdf');
   // return $results;
- return PDF::loadFile('http://orienta-t.co/profesion/'.$cod_profesion.'/'.$level)->inline('orienta-t.pdf');
+ 
+
               /*  PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
 $pdf = PDF::loadView('cno.singlepdf', [
              'results' => $results[0],
