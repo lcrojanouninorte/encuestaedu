@@ -124,7 +124,8 @@ class SurveyController extends Controller
 
             //crear una encuesta y obtener su id
             $newSurvey = Survey::firstOrNew(['user_id' => $user_id]); // your data
-            $newSurvey->nivel_preparacion = $profile["opciones"];
+            //$newSurvey->nivel_preparacion = $profile["opciones"];
+            $newSurvey->nivel_preparacion = 0;
             $newSurvey->save();
             
             

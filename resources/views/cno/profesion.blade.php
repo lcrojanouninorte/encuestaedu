@@ -126,7 +126,7 @@
 				@endif
 		    @endforeach
 		    </ul>
-				
+			<p>Para más información sobre oferta académica diríjase a : <a href="http://aprende.colombiaaprende.edu.co/buscandocarrera" target="_blank">Buscando Carrera</a></p>
  
         </div>
       </div>

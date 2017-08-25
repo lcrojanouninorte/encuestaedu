@@ -28,8 +28,8 @@ app.config(config);
   }
 //ok
 var local = {
-  	//"apiHost": "http://encuestaedu.app/api",
-    "apiHost": "http://orienta-t.co/api",
+  	"apiHost": "http://encuestaedu.app/api",
+    //"apiHost": "http://orienta-t.co/api",
     "questionTemplate": "/templates/question.template.html",
  
   };

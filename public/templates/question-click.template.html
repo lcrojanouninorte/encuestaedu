@@ -8,7 +8,8 @@
                 
             </div>
             <div class="col s1 m1">
-                <a class="center-align btn-edit btn-floating btn-xsmall waves-effect waves-light  light-blue darken-1"><i class="material-icons" ng-click="$ctrl.reset($ctrl.question)">delete</i></a>
+                <a class="center-align btn-edit  btn-xsmall waves-effect waves-light  ">
+                <img src="/4 caneca.png" width="12" ng-click="$ctrl.reset($ctrl.question)"></a>
             </div>
 
             
@@ -18,18 +19,19 @@
     <div class="col s12 question">
         <div class="col s12">
             <ul>
-                <li class="question-option" data-ng-repeat="option in $ctrl.question.options" ng-click="$ctrl.setValue($ctrl.question, option, $event)">
-                    <div class="col m12">
+                <li class="question-option row" data-ng-repeat="option in $ctrl.question.options" ng-click="$ctrl.setValue($ctrl.question, option, $event)">
+                    <div class="col s12 m10 offset-m2">
                         <div class="col s2 m1">
                         <img src="smile{{option.value || 0}}.png" style="max-width: 30px;">
                         </div>
-                        <!-- <span class="color-position-<% option.value %> item-check glyphicon glyphicon-minus" ng-show="option.value!=null"  aria-hidden="true"></span>-->
-                        <!--<% option.value  %>-->
                         <div class="col s10 m11">
                           <% option.desc%>  
                         </div>
-                        
+
                     </div>
+                         <!-- <span class="color-position-<% option.value %> item-check glyphicon glyphicon-minus" ng-show="option.value!=null"  aria-hidden="true"></span>-->
+                        <!--<% option.value  %>-->
+                     
                     
                 </li>
             </ul>

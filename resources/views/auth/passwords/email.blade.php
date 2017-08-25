@@ -32,8 +32,8 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="col-md-6 col-md-offset-4 text-center">
+                                <button type="submit" class="btn btn-primary text-center">
                                     Solicitar contraseña
                                 </button>
                             </div>
