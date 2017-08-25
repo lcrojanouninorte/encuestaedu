@@ -115,6 +115,7 @@ public function cno_profesionmail($cod_profesion, $level=null)
             });
            Session::flash('alert-success', 'Mensaje Enviado Correctamente.');
         }else{
+            return redirect()->route('login');
            Session::flash('alert-error', 'Mensaje No Enviado. Intente nuevamente');
         }
 
@@ -138,6 +139,7 @@ public function cno_profesionpdf($cod_profesion, $level=null)
  
 
 return PDF::loadFile('http://orienta-t.co/profesion/'.$cod_profesion.'/'.$level)->setOption('margin-top',0)
+        ->setPaper('a4')
         ->setOption('margin-bottom',0)
         ->setOption('margin-left',0)
         ->setOption('margin-right',0)

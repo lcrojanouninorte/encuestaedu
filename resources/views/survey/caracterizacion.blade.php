@@ -31,7 +31,7 @@
                     <h4 class="text-center">{{$result->total}}</h4>
                     
                   </div>
-                  <p class="animated infinite pulse"><b>Elije una salida ocupacional que te llame la atención:</b></p>
+                  <p class="animated infinite pulse"><b>Elije un área de desempeño que te llame la atención:</b></p>
                   <div class="collection row">
                     @if(!count($result->onet)>0)
                     <p>No Existen salidas ocupacionales asociadas por favor intenta realizar nuevamente el test</p>
@@ -49,15 +49,15 @@
             
             @endforeach
             @else
-            <h6>No hay una ruta ocupacional que corresponda a los criterios que has seleccionado, intenta volver a realizar el test.</h6>
+            <h6>No hay una área de desempeño que corresponda a los criterios que has seleccionado, intenta volver a realizar el test.</h6>
             @endif
           </div>
           <div class="row">
             <div class="col s12 m12">
               <div class="card" style="padding: 15px;">
-                <h5>Este es el puntaje que obtuvistes en todas las áreas</h5>
+                <h5>Este es el puntaje que obtuvistes en todas las demás áreas del conocimiento</h5>
                 <canvas id="base" class="chart-horizontal-bar"
-                chart-data="surveyCrtl.chart_data" chart-labels="surveyCrtl.labels">
+                chart-data="surveyCrtl.chart_data" chart-labels="surveyCrtl.labels" width="100%">
                 </canvas>
               </div>
             </div>

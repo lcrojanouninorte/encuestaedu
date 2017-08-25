@@ -105,7 +105,8 @@ class SurveyController extends Controller
                 $newProfile->edad = $profile["edad"];
                 $newProfile->institucion = $profile["institucion"];
                 $newProfile->curso = $profile["curso"];
-                $newProfile->opciones = $profile["opciones"];
+                //$newProfile->opciones = $profile["opciones"];
+                $newProfile->opciones = 1;
                 //$newProfile->verificacion = $profile["verificacion"];
                 $newProfile->nombre = $profile["nombre"];
                 $newProfile->save();
@@ -125,7 +126,7 @@ class SurveyController extends Controller
             //crear una encuesta y obtener su id
             $newSurvey = Survey::firstOrNew(['user_id' => $user_id]); // your data
             //$newSurvey->nivel_preparacion = $profile["opciones"];
-            $newSurvey->nivel_preparacion = 0;
+            $newSurvey->nivel_preparacion = 1;
             $newSurvey->save();
             
             

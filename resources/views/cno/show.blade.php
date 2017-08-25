@@ -43,14 +43,14 @@
           </div>
 
             
-            <div class="col s12  text-center"><br>
-            <br><h6>OTROS NIVELES QUE TE PUEDEN INTERESAR:</h6></div>
+            <div class="col s12  "><br>
+          <!--  <br><h6>OTROS NIVELES QUE TE PUEDEN INTERESAR:</h6></div>-->
             <div class="col s12">
             @foreach ($results as $nivel)
+              @if(count($nivel->cnos)>0)
             <div class="collection with-header "  >
               <div class="collection-header yellow  lighten-{{$nivel->id}}"><h6 class="text-center bold">{{$nivel->desc}}</h6></div>
-              @if(count($nivel->cnos)>0)
-              @foreach ($nivel->cnos as $key=>$cno)
+                @foreach ($nivel->cnos as $key=>$cno)
               
               <a style="z-index: 100;" href="/profesion/{{$cno->cod_profesion}}/{{$nivel->id}}" class="collection-item avatar ">
                 <i class="circle green">{{ ++$key }}</i>
@@ -58,11 +58,10 @@
                 
                 
               </a>
-              @endforeach
-              @else
-              <p>No hay profesiones para este nivel de preparación</p>
+               @endforeach 
+              </div>              
               @endif
-            </div>
+           
             
             @endforeach
             </div>

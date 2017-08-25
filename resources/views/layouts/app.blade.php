@@ -29,7 +29,7 @@
 </head>
 <body >
     <div id="app">
- <nav class="navbar navbar-default navbar-static-top hide-print">
+ <nav class="navbar navbar-default navbar-static-top hide-print hidden-print">
             <div class="container">
                 <div class="navbar-header">
 
