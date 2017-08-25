@@ -8,7 +8,8 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link href="/css/personal.css" rel="stylesheet">
-        
+               <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         
         <!-- Styles -->
         <style>
@@ -103,7 +104,7 @@
                 
             </div>
             <div id="illustracion" class="ilustracion-wrapper row center-align" style="margin-bottom: 0px;">
-                        <img   class="ilustracion" src="/ilustracion.png">
+                        <img   class="ilustracion animated fadeInUp" src="/ilustracion.png">
             </div>
         </div>
         <div class="container-fluid">
@@ -111,13 +112,13 @@
                 <div class="col s12 logos-wrapper " style="    padding: 0px;">
                     <div class="logos  valign-wrapper">
                         <div class="col s4 center-align">
-                            <img class="logo1" src="/logos/uninorte.jpg" >
+                            <img class="logo1 animated fadeIn" src="/logos/uninorte.jpg" >
                         </div>
                         <div class="col s4 center-align"  >
-                            <img class="logo1" src="/logos/promigas.jpg"  style="width: 135px">
+                            <img class="logo1 animated fadeIn" src="/logos/promigas.jpg"  style="width: 135px">
                         </div>
                         <div class="col s4 center-align">
-                            <img class="logo1" src="/logos/camaracomercio.png"  >
+                            <img class="logo1 animated fadeIn" src="/logos/camaracomercio.png"  >
                         </div>
                     </div>
                 </div>

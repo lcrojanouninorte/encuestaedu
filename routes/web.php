@@ -25,6 +25,8 @@ Route::resource('questions', 'QuestionController');
 	Route::get('validate/{email}', 'SurveyController@validateEmail');
 
 Route::get('caracterizacion/{survey}', 'SurveyController@showCaracterizacion');
+
+
 Route::get('/cno/{survey}/{cod_area}/{category?}/{level?}', 'CnoController@cno_report');
 Route::get('/profesion/{cod_porfesion}/{level?}', 'CnoController@cno_profesion');
 Route::get('/profesionpdf/{cod_porfesion}/{level?}', 'CnoController@cno_profesionpdf');

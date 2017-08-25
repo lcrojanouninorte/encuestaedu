@@ -9,7 +9,7 @@ var app = angular.module('surveyApp',
     'app.controllers',
     'app.directives',
     'app.componets',
-    'hl.sticky','mgo-angular-wizard'
+    'hl.sticky','mgo-angular-wizard','chart.js'
     ]); 
 
 
@@ -20,6 +20,7 @@ app.config(config);
     // Enable log
      $interpolateProvider.startSymbol('<%');
      $interpolateProvider.endSymbol('%>');  
+ 
    
  
  

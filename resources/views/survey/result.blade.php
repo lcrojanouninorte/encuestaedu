@@ -35,7 +35,7 @@
           {{ csrf_field() }}
           <br>
           <div class="col-md-5 col-md-offset-5">
-            <a class="btn btn-primary" href="{{ URL::route('home') }}">Volver</a>
+            <a class="btn btn-primary" href="{{ URL::route('/home') }}">Volver</a>
 
           </div>
         </div>

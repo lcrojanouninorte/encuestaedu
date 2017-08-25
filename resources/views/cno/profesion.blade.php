@@ -6,8 +6,8 @@
 
 	<div class=" container">
 
-  
-      <div class="col s12 m6 " style="    padding: 0 .3rem;">
+  <div class="row">
+      <div class="col s12 m6 animated fadeIn " style="    padding: 0 .3rem;">
 
         <div class="card-panel center-align">
         <div class="row shifttitle">
@@ -21,7 +21,7 @@
       </div>
  
 
-       <div class="col s12 m6" style="    padding: 0 .3rem; page-break-inside: avoid;">
+       <div class="col s12 m6 animated fadeIn " style="    padding: 0 .3rem; ">
         <div class="card-panel ">
         <div class="row shifttitle">
         		<img class="col" style="height: 45px;" src="/images/7 icono conocimiento.png">
@@ -57,8 +57,9 @@
  
         </div>
       </div>
- 
-      <div class="col s12 m4 " style="    padding: 0 .3rem; page-break-inside: avoid;">
+      </div>
+ <div class="row">
+      <div class="col s12 m4 animated fadeIn " style="    padding: 0 .3rem; ">
         <div class="card-panel ">
         <div class="row shifttitle">
  
@@ -76,7 +77,7 @@
         </div>
       </div>
   
-      <div class="col s12 m4 " style="    padding: 0 .3rem ; page-break-inside: avoid;">
+      <div class="col s12 m4 animated fadeIn " style="    padding: 0 .3rem ; ">
         <div class="card-panel ">
 			<div class="row shifttitle">
  
@@ -94,7 +95,7 @@
       </div>
 
 
-      <div class="col s12 m4 " style="    padding: 0 .3rem; page-break-inside: avoid;">
+      <div class="col s12 m4 animated fadeIn " style="    padding: 0 .3rem; ">
         <div class="card-panel ">
 			<div class="row shifttitle">
  
@@ -130,7 +131,7 @@
  
         </div>
       </div>
-
+</div>
     </div>
  <br>
           <div style="margin-top:30px;" class="col s12  text-center hide-print">

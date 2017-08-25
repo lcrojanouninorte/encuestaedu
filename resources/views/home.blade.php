@@ -15,7 +15,7 @@
 
 
 
-    <div class="flash-message">
+    <div class="flash-message animated fadeIn">
    @foreach (['danger', 'warning', 'success', 'info'] as $msg)
             @if(Session::has('alert-' . $msg))
            
@@ -33,13 +33,13 @@
        
 </div>
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default" >
+            <div class="panel panel-default animated fadeInLeft" >
                 <div class="panel-heading">
                     Mis Herramientas 
             
                 </div>
 
-                <div class="panel-body valign-wrapper center-align" style="min-height: 200px;">
+                <div class="panel-body valign-wrapper center-align"  style="min-height: 200px; flex-direction: column;">
                 @if(empty($survey['id']))
                 <div class="col s12">
                     
@@ -49,7 +49,7 @@
                 </div>
                 @else
 
-                <p class="text-center">A continuación puede ver los resultados de la encuesta.</p>
+                <p class="text-center">Da click en el siguiente enlace para ver los resultados de tu encuesta.</p>
              <br> 
                 <div class=" text-center">
                     <div class="row text-center">

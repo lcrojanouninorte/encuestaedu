@@ -234,6 +234,29 @@ class SurveyController extends Controller
         ] );
     }
 
+    public function getResultByAreas(Survey $survey)
+    {
+
+        //Devolver 2 primeras areas + ocupaciones
+
+        //send 
+        $areas = DB::table('answers')
+                ->select('options.area', DB::raw('SUM(answers.value) as total'), 'cod_area', 'areas.desc_area')
+                ->leftJoin('options', 'answers.option_id', '=', 'options.id')
+                ->leftJoin('surveys', 'surveys.id', '=', 'answers.survey_id')
+                ->leftJoin('areas', 'areas.id', '=', 'options.area')
+                ->where('surveys.id', $survey->id)
+                ->where('surveys.nivel_preparacion', $survey->nivel_preparacion)
+                ->orderBy('total', 'desc')
+                ->groupBy('area','cod_area','areas.desc_area' )
+            
+                ->get();
+return $areas;  
+        //get survey level
+
+        
+    }
+
     public function showPDF(Survey $survey)
     {
         //send 

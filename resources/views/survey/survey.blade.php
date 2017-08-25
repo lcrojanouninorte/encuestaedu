@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container"  ng-controller="SurveyController as surveyCrtl">
-  <div class="panel panel-default">
+  <div class="panel panel-default animated fadeInLeft">
     <div class="panel-body" style="    padding-left: 20px;
       padding-right: 20px;">
       <wizard name="mainw" class="slide-animate" hide-indicators="true" on-finish="finishedWizard()" on-cancel="cancelledWizard()" indicators-position="top">

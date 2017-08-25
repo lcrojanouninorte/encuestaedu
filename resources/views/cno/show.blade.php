@@ -3,9 +3,9 @@
 <div class="container"  ng-controller="SurveyController as surveyCrtl">
   <div class="row">
     <div class="col s12">
-      <div class="panel panel-default">
+      <div class="panel panel-default animated fadeInLeft">
         
-        <div class="panel-body">
+        <div class="panel-body ">
           <div class="col s12">
             <div class="col s12 center-align">
            

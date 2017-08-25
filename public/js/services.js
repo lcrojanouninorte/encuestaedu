@@ -13,7 +13,8 @@
             create:create,
             isNewEmail:isNewEmail,
             getQuestions: getQuestions,
-            currentSurvey: getCurrentSurvey 
+            currentSurvey: getCurrentSurvey,
+            getSurveyResults: getSurveyResults 
 
            // save: save,
            //stop: stop,
@@ -88,6 +89,35 @@
             function postAnswersFailed(error) {
                 $log.error('XHR Failed for getAnswers.\n' + angular.toJson(error.data, true));
                 return null;
+            }
+        }
+
+        function getSurveyResults(survey) {
+            var questions = {};
+            $log.info("Obteniendo preguntas");
+            return $http.get(apiHost +"/caracterizacion/"+survey )
+                .then(getAnswersComplete)
+                .catch(getAnswersFailed);
+
+            function getAnswersComplete(response) {
+                $log.info("devolviendo :", response);
+                if (response.status == 200) { //Respuesta ok
+                    if (typeof(response.data) != "undefined" && response.data != null) {//verificar que envio preguntas
+                        currentSurvey = response.data;
+                        return response.data;
+                    } else {
+                        return null //si no se ha realizado el insturmento
+                    }
+                }
+
+                  currentSurvey = response.data;
+                 return response.data;
+
+            }
+
+            function getAnswersFailed(error) {
+                $log.error('XHR Failed for questions.\n' + angular.toJson(error.data, true));
+                return questions;
             }
         }
 

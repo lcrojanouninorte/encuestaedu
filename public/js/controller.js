@@ -1,6 +1,7 @@
 angular.module('app.controllers', [])
-    .controller('SurveyController', function($scope, survey, $log, $window, Pagination,WizardHandler ) {
+    .controller('SurveyController', function($scope, survey, $log, $window, Pagination,WizardHandler) {
             var surveyCrtl = this;
+             
             surveyCrtl.pagination = Pagination.getNew(18);
             surveyCrtl.pagination.numPages = 0;
             surveyCrtl.questions = [];
@@ -26,6 +27,15 @@ angular.module('app.controllers', [])
                 { disabled: true },
             ];
             surveyCrtl.inputType = false;
+
+
+            surveyCrtl.labels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+            surveyCrtl.series = ['Series A', 'Series B'];
+
+            surveyCrtl.chart_data = [
+              [65, 59, 80, 81, 56, 55, 40]
+               
+            ];
 
             surveyCrtl.paginationPerPage = function(){
               //surveyCrtl.pagination.perPage = 10
@@ -130,5 +140,29 @@ angular.module('app.controllers', [])
                 surveyCrtl.hide_splash = function(){
                   surveyCrtl.splash = false;
                 }
+
+                surveyCrtl.getAreasResults = function(survey_id){
+                  //Verificar si el e-mail ya existe
+                  
+                   
+                  return survey.getSurveyResults(survey_id).then(
+                  function(data) {
+                        if (!$.isEmptyObject(data) && data !== null && typeof(data) != "undfined") {
+                          surveyCrtl.chart_data = [];
+                          surveyCrtl.labels = [];
+
+                            angular.forEach(data, function(area, key) {
+                              surveyCrtl.chart_data.push(area.total);
+                              var desc_area = area.desc_area.split(":")
+                              desc_area = desc_area[0];
+                              surveyCrtl.labels.push(desc_area);
+                            });
+                        } else {
+                           alert("error preuebe su conexion");
+                        }
+                       // $log.debug("recibido en questions controller: ", surveyCrtl.questions);
+                    });
+                   
+                };
 
             });

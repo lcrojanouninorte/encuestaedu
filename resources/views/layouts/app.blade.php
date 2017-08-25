@@ -22,6 +22,8 @@
         
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+        <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
 
 </head>
@@ -127,6 +129,10 @@
     <script src="{{ URL::asset('js/directive.js') }}"></script>
     <script src="{{ URL::asset('js/componets.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
+
+
 
 
 </body>
