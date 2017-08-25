@@ -48,13 +48,13 @@ class CnoController extends Controller
             $results = Preparationlevel::with(array('cnos' => function($query) use ($category, $cod_area)
             {
                  $query->where('prioridad', $cod_area)
-                        ->where('categoria', $category);
+                        ->where('onet', $category);
             }))->get();
               $level = $results[$level-1];
               unset( $results[$level->id-1]);
         }else{
             if($category){
-                $results = DB::table('cnos')->select('nivel')->distinct()
+                $results = DB::table('cnos')->select('onet')->distinct()
                 ->where('prioridad', $cod_area)
                 ->where('categoria', $category)
                 ->get();

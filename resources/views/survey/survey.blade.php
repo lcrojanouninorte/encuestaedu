@@ -349,7 +349,7 @@ pregunta haz click en este ícono</b></p>
       </p>
       <div class="row">
         <div class="col s12">
-          <div class="panel-body">
+          <div id="sticky-container" class="panel-body ">
             <div class="progress-lcr valign-wrapper" hl-sticky="" offsetTop="10" class="simple" >
               <div class="col s3 m1" style="font-size: 11px;">
                 <p> Progreso:</p>

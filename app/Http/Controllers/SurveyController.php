@@ -179,7 +179,7 @@ class SurveyController extends Controller
     public function showCaracterizacion(Survey $survey)
     {
 
-        //Devolver 2 primeras categoria + ocupaciones
+        //Devolver 2 primeras areas + ocupaciones
 
         //send 
         $areas = DB::table('answers')
@@ -197,8 +197,9 @@ class SurveyController extends Controller
         //get survey level
 
         //split area
-
+//obtener los onet de cada area
         foreach ($areas as $key => $area) {
+            /*
             $categoria = DB::table('cnos')
                 ->select('categoria', 'categoria_desc', 'nivel')
                 ->where('nivel', $survey->nivel_preparacion)
@@ -207,6 +208,17 @@ class SurveyController extends Controller
                 ->distinct()
                 ->get();
             $area->categorias = $categoria;
+            $area_arr =  explode(':', $area->desc_area);
+            $area->title =  $area_arr[0];
+            $area->desc =  $area_arr[1];
+            */
+            $onet = DB::table('cnos')
+                ->select('onet')
+                ->where('area_id', $area->area)
+                ->orderBy( 'onet', 'asc')
+                ->distinct()
+                ->get();
+            $area->onet = $onet;//TODO cambiar por onet
             $area_arr =  explode(':', $area->desc_area);
             $area->title =  $area_arr[0];
             $area->desc =  $area_arr[1];

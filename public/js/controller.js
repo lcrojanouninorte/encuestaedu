@@ -49,6 +49,7 @@ angular.module('app.controllers', [])
                   
                   break;
                 }
+                $window.scrollTo(0, 0);
               }
               if(is_ok){
                 WizardHandler.wizard('mainw').next();

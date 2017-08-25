@@ -34,14 +34,14 @@
           <h4 class="text-center">{{$result->total}}</h4>
             
           </div>
-          <p>Elije una categoria que te llame la atención:</p>
+          <p>Elije una salida ocupacional que te llame la atención:</p>
             <div class="collection row">
-            @if(!count($result->categorias)>0)
-                      <p>No Existen categorias asociadas nivel academico seleccionado, por favor intenta realizar nuevamente el test</p>
+            @if(!count($result->onet)>0)
+                      <p>No Existen salidas ocupacionales asociadas por favor intenta realizar nuevamente el test</p>
             @else
-                       @foreach ( $result->categorias as $categoria)
-                       <a class="collection-item" href="/cno/{{$survey->id}}/{{$result->cod_area}}/{{$categoria->categoria}}/{{$nivel}}">
-                          {{$categoria->categoria_desc}}
+                       @foreach ( $result->onet as $onet)
+                       <a class="collection-item" href="/cno/{{$survey->id}}/{{$result->cod_area}}/{{$onet->onet}}/{{$nivel}}">
+                          {{$onet->onet}}
 
                        </a>
                        @endforeach

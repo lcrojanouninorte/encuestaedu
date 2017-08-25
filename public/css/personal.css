@@ -366,3 +366,7 @@ img.team {
     border-radius: 5px;
     margin-top: 2px!important; 
 }
+
+.capitalized:first-letter {
+    text-transform: uppercase;
+}
