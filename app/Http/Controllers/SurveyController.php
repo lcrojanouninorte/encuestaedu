@@ -65,7 +65,7 @@ class SurveyController extends Controller
         $profile = $data["profile"];
         $survey = $data["survey"];
         $userData =[];
-        if(!isset($data["profile"]["user_id"])){
+       /* if(!isset($data["profile"]["user_id"])){
 
             //TODO: validar lado servidor e-mail
             $userData = [
@@ -73,7 +73,7 @@ class SurveyController extends Controller
                     'email' => $profile["email"],
                     'password' =>  bcrypt($profile["contrasena"]),
             ];
-        }
+        }*/
 
         //TODO: validar cada campo
 
@@ -82,7 +82,7 @@ class SurveyController extends Controller
             //crear usuario
             // create user
             $user_id = "";
-            if(!isset($profile["user_id"])){
+           /* if(!isset($profile["user_id"])){
                 $newUser = User::create($userData);
                 $data = array(
                         'email' =>  $newUser->email,
@@ -119,8 +119,9 @@ class SurveyController extends Controller
                 }
             }else{
                  $user_id = $profile["user_id"];
-            }
+            }*/
             
+            $user_id = $profile["user_id"];
 
 
            
