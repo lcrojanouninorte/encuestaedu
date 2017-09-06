@@ -1,15 +1,44 @@
 
 strong {
-    font-weight: 600!important;
+    font-weight: bolder!important;
 }
-body {
-    font-family: Century Gothic!important;
+html, body {
+    font-family: Open Sans!important;
+    background-color: white!important;
+  
+}
+h1,h2,h3,h4,h5,h6 {
+    color: #7391C8!important;
 }
 
+.logo-principal {
+        width: 300px;
+        margin-top: 140px;
+    
+    }
+.boxed-help {
+    height: 320px;
+    width: 520px;
+    background-color: #5076BA;
+    border-radius: 5px;
+    color: white;
+}
+.boxed-help p {
+    font-size: 18px;
+}
+.boxed-help strong p {
+    font-size: 32px;
+}
+.ngdialog.ngdialog-theme-default.custom-width-800 .ngdialog-content {
+    width: 800px;
+}
+.ngdialog.ngdialog-theme-default.custom-width-900 .ngdialog-content {
+    width: 900px;
+}
 .disclaimer{
-    color: #948989!important; /*Color of Disclaimer Text*/
+   /* color: #948989!important; Color of Disclaimer Text*/
     font-size:12px!important; /*Font Size of Disclaimer Text*/
-    font-family:  Arial, Helvetica, sans-serif!important; /*Web Safe Font Family of Disclaimer Text*/
+    text-align : justify;
 }
 .color-position-3{
 background-color: green;
@@ -141,7 +170,37 @@ p {
 .begin{
     margin-top: 30px;
 }
+ 
+@media only screen and (min-width : 1025px) {
+ 
+  #profesiones .card-panel {
+ 
+        min-height: 500px !important;
+    }   
+}
+@media only screen and (max-width : 1025px) {
+ 
+  .iniciar-btn{
+    margin-top: 30px;
+    text-align: center!important;
+  } 
+  .reg-btn{
+ 
+    text-align: center!important;
+  } 
+  
+}
 @media (max-width: 600px) {
+    .logo-principal {
+        width: 135px;
+         margin-top: 24px;
+    
+    }
+    .slogan{
+        font-size: 1.5rem;
+    }
+
+     
      .question-option{
     display:    block!important;
         padding-bottom: 10px;
@@ -173,8 +232,8 @@ p {
             }
       .container{
         width: 100%!important;
-        padding-left: 2px;
-        padding-right: 2px;
+        padding-left: 28px;
+        padding-right: 28px;
       }
       .panel-body {
     padding: 5px;
@@ -183,14 +242,7 @@ p {
 }
  
 
-.logo-principal{
-    width: 100px;
-}
-
-body{
-    background-image: url('/fondo.png');
-        background-size: contain;
-}
+ 
 
 .profesion li {
     display: block;
@@ -296,14 +348,7 @@ background-size: cover;
 }
 }
 
- 
-@media only screen and (min-width : 1025px) {
- 
-  #profesiones .card-panel {
- 
-        min-height: 500px !important;
-    }   
-}
+
  
  #profesiones .card-panel {
      transition: box-shadow .25s;
@@ -311,12 +356,12 @@ background-size: cover;
     margin: .5rem 0 1rem 0!important;
     border-radius: 2px!important;
     border: 1px solid;
-    background-color: #f4f4f4!important;
+    /*background-color: #f4f4f4!important;*/
 }
 .row.shifttitle {
     position: relative!important;
     top: -44px!important;
-    background-color: #f4f4f4!important;
+    /*background-color: #f4f4f4!important;*/
 }
 
 .row.shiftdata {
@@ -334,7 +379,13 @@ background-size: cover;
     margin-right: 0px!important; 
     margin-left: 0px!important; 
 }
-
+.navbar-default {
+    background-color:#5076BA!important;
+    border-color: transparent!important;
+}
+nav {
+    box-shadow: 0 0px0px 0 rgba(0,0,0,0), 0 1px 5px 0 rgba(0,0,0,0), 0 3px 1px -2px rgba(0,0,0,0)!important;
+}
 
 .panel {
     margin-bottom: 22px!important;
@@ -343,9 +394,7 @@ background-size: cover;
     border-radius: 9px!important;
     box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.6)!important;
 }
-html {
-    font-family: Century Gothic!important;
-}
+ 
 dt, kbd kbd, label {
     
 }

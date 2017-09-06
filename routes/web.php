@@ -26,6 +26,8 @@ Route::resource('questions', 'QuestionController');
 
 Route::get('caracterizacion/{survey}', 'SurveyController@showCaracterizacion');
 
+Route::post('/register_orientate', 'SurveyController@register_orientate')->name('register_orientate');;
+
 
 Route::get('/cno/{survey}/{cod_area}/{category?}/{level?}', 'CnoController@cno_report');
 Route::get('/profesion/{cod_porfesion}/{level?}', 'CnoController@cno_profesion');

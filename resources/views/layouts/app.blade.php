@@ -17,6 +17,8 @@
     <link href="{{ asset('css/ng-sortable.style.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/personal.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/angular-wizard.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="/css/ng-dialog/css/ngDialog.min.css">
+    <link rel="stylesheet" href="/css/ng-dialog/css/ngDialog-theme-default.min.css">
 <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         
@@ -25,13 +27,13 @@
         <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
-
+ 
 </head>
 <body >
     <div id="app">
- <nav class="navbar navbar-default navbar-static-top hide-print hidden-print">
+ <nav class="navbar navbar-default navbar-static-top hide-print hidden-print z-depth-0">
             <div class="container">
-                <div class="navbar-header">
+                <div class="navbar-header ">
 
                     <!-- Collapsed Hamburger-->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
@@ -43,7 +45,7 @@
  
                     <!-- Branding Image-->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                         <img id="logo-nav" class="logo-principal logo-nav" src="/logo.png" style="width: 30px">
+                         <img id="logo-nav" class=" logo-nav" src="/logo.png" style="width: 90px">
                     </a> 
                 </div>
 
@@ -131,6 +133,8 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
     <script src="http://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
+
+    <script src="/js/ng-dialog/ngDialog.min.js"></script>
 
 
 

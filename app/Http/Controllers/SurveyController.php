@@ -11,6 +11,8 @@ use App\User;
 use Illuminate\Http\Request;
 use DB;
 
+use Validator;
+
 use Mail;
 
 use Session;
@@ -150,6 +152,111 @@ class SurveyController extends Controller
 
         $response["survey"]=$transaction;
         echo json_encode( $response);
+    }
+
+    public function register_orientate(Request $request)
+    {
+        //
+
+        $validator = Validator::make($request->all(), [
+            //'nombre' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            //'contrasena' => 'required|string|min:6|confirmed',
+        ]);
+
+         if ($validator->fails()) {
+            Session::flash('alert-success', 'Este e-mail ya ha sido tomado, intente recuperar su contraseña');
+            return redirect('/password/reset')->with('message', '')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+
+
+        $response["success"] = true;
+
+        $data = $request->json()->all();
+ 
+        $userData =[];
+        //TODO: validar lado servidor e-mail
+        $userData = [
+                    'name' => $request->input("nombre"),
+                    'email' => $request->input("email"),
+                    'password' =>  bcrypt($request->input("contrasena")),
+        ];
+
+        $userProfile =[];
+        //TODO: validar lado servidor e-mail
+        $userProfile = [
+                    'edad' => $request->input("edad"),
+                    'institucion' => $request->input("institucion"),
+                    'grado' => $request->input("grado"),
+                    'apellido' => $request->input("apellido"),
+                    'nombre' => $request->input("nombre"),
+                    'contrasena' =>  $request->input("contrasena"),
+                    
+        ];
+         
+
+        $transaction = DB::transaction(function () use ($userProfile, $userData, $response) {
+            //crear usuario
+            // create user
+            $user_id = "";
+            //check if user existe:
+ 
+
+            $newUser = User::create($userData);
+
+            //send mail with credential
+            $data = array(
+                        'email' =>  $newUser->email,
+                        'nombre' => $newUser->name,
+                        'password' => $userProfile["contrasena"],
+            );
+            if ($newUser) {
+                Mail::send('emails.credenciales', $data, function ($message) use ($data) {
+
+                            $message->from('contacto@orienta-t.co', 'Orienta-t');
+
+                            $message->to( $data["email"])->subject('Resultados Orienta-t'); //Cambiar fecha
+
+                    });
+                }
+
+                Auth::loginUsingId($newUser->id);
+                $user_id = $newUser->id;
+                $userData["id"]= $newUser->id;
+
+
+                //crear el perfil si no existe, o update el existente
+                $newProfile = Profile::firstOrNew(['user_id' => $user_id]); // your data
+                $newProfile->edad = $userProfile["edad"];
+                $newProfile->institucion = $userProfile["institucion"];
+                $newProfile->curso = $userProfile["grado"];
+                $newProfile->apellido = $userProfile["apellido"];
+                $newProfile->opciones = 1;
+                $newProfile->nombre = $userProfile["nombre"];
+                $newProfile->save();
+                if( !$newProfile )
+                {
+                    $response["success"] = false;
+                    throw new \Exception('No se creo el perfil');
+                }
+
+        });
+        //enviar correo con usuario y contraseña si todo salio ok
+
+        $response["survey"]=$transaction;
+        if($response["success"]){
+            return redirect('questions')->with([
+            'user'=> $userData
+        ] );;
+        }else{
+            Session::flash('alert-success', 'Por favor Revise los datos ingresados');
+            return back()->with('message', 'success| Borrado correctamente.');
+        }
+        echo json_encode( $response);
+
     }
 
     /**

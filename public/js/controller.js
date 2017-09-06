@@ -1,7 +1,7 @@
 angular.module('app.controllers', [])
-    .controller('SurveyController', function($scope, survey, $log, $window, Pagination,WizardHandler) {
+    .controller('SurveyController', function($scope, survey, $log, $window, Pagination,WizardHandler,ngDialog) {
             var surveyCrtl = this;
-             
+        
             surveyCrtl.pagination = Pagination.getNew(18);
             surveyCrtl.pagination.numPages = 0;
             surveyCrtl.questions = [];
@@ -164,5 +164,14 @@ angular.module('app.controllers', [])
                     });
                    
                 };
+
+
+                //Dialog
+                 surveyCrtl.clickToOpen = function () {
+                      ngDialog.open({ template: 'loginForm', className: 'ngdialog-theme-default' });
+                  };
+                 surveyCrtl.clickToOpen2 = function () {
+                      ngDialog.open({ template: 'registerForm',  className: 'ngdialog-theme-default custom-width-800', });
+                  };
 
             });

@@ -1,166 +1,253 @@
-<!doctype html>
-<html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-        <title>Orienta-T</title>
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <link href="/css/personal.css" rel="stylesheet">
-               <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-        
-        <!-- Styles -->
-        <style>
-        html, body {
-        
-        color: #636b6f;
-        font-family: 'Raleway', sans-serif;
-        font-weight: 100;
-        height: 100vh;
-        margin: 0;
-        }
-        .full-height {
-        height: 100vh;
-        }
-        .flex-center {
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        }
-        .position-ref {
-        position: relative;
-        }
-        .top-right {
-        position: absolute;
-        right: 10px;
-        top: 18px;
-        }
-        .content {
-        text-align: center;
-        }
-        .title {
-        font-size: 84px;
-        }
-        .links > a {
-        color: #636b6f;
-        padding: 0 25px;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: .1rem;
-        text-decoration: none;
-        text-transform: uppercase;
-        }
-        .m-b-md {
-        margin-bottom: 30px;
-        }
-        </style>
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
-    </head>
-    <body class="full-height  ">
-        <div class="row">
-       
-            <div class="col s12 left-align" style="margin-top: 10px; height: 20px;">
-                <img id="logo-nav" class="logo-principal logo-nav" src="/logo.png" style="width: 50px">
-            </div>
-        </div>
-        <div class="valign-wrapper" style="padding: 1px; flex-direction: column;min-height: 340px">
-            <div class="row">
-                <div class="col s12" style="min-height: 100px">
-                    <div id="splashscreen" >
-                     <div class="col s12 center-align">
-                        <h2>Bienvenido a </h2>
-                     </div>
-                        <div class="row">
-                            <div class="col s12 center-align">
-                                <img class="logo-principal logo-main" src="/logo.png" style="width: 170px">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row" id="options">
-                        <div class=" col s12 center-align begin">
-                            <a  href="/questions" class=" waves-effect waves-light ">
-                           <img src="/boton empezar.png" width="200"></a>
-                        </div>
+@extends('layouts.app')
+@section('content')
 
-                        <div class=" col s12 center-align" style="margin-top: 5px;">
-                            <p>Ó</p>
-                        </div>
-                        
-                        <div class=" col s12 center-align" style="margin-top: 5px;text-decoration: underline;color:blue;"> 
-                             <a  href="/login" class="waves-effect waves-light">
-                             <img src="/boton login.png" width="200"></a>
-                        </div>
-                        
-                        
-                    
+<div class="row"  ng-controller="SurveyController as surveyCrtl">
+    
+
+<div class="container container-custom">
+    <div class="row" >
+        <div class="col s12  left-align"  >
+            <img class="logo-principal"  src="/LOGO GRANDE-16.png" >
+        </div>
+        <div class="col s12 left-align">
+            <h4 class="slogan"><strong>Inicia tu ruta ocupacional.</strong></h4>
+        </div>
+    </div>
+     
+    <div class="row center-align" >
+                <div class=" col s12 m3 left-align reg-btn" ng-click="surveyCrtl.clickToOpen2()">
+                    <!--<a  href="/questions" class=" waves-effect waves-light ">-->
+                    <img src="/btn/REGISTRATE-16.png" width="200"></a>
+                </div>
+                
+                
+                <div class=" col s12 m3  left-align iniciar-btn" ng-click="surveyCrtl.clickToOpen()" >
+               
+                    <!--<a  href="/login" class="waves-effect waves-light">-->
+                    <img src="/btn/INICIAR SESION-16.png" width="200"></a>
+                </div>
+        
+    </div>
+    
+ 
+        <div class="row" style="margin-top: 8%;">
+            <div class="col s12 m8 offset-m2 logos-wrapper " style="    padding: 0px;">
+                <div class="logos  valign-wrapper">
+                    <div class="col s12 m4 center-align">
+                        <img class="logo1 animated fadeIn" src="/logos/uninorte.png" >
                     </div>
+                    <div class="col s12 m4 center-align"  >
+                        <img class="logo1 animated fadeIn" src="/logos/promigas.jpg"  style="width: 135px">
+                    </div>
+                    <div class="col s12 m4 center-align">
+                        <img class="logo1 animated fadeIn" src="/logos/camaracomercio.png"  >
+                    </div>
+                </div>
+            </div>
+            <div class="row left-align" >
+                <div class="col s12 m8 offset-m2">
+                    <br>
+                    <p class="disclaimer">Los derechos de Autor del Test Preferencias Profesionales (PPS) les corresponden a Carlos Yuste, David Yuste y Jose Luis Galvez. Hace parte de su propiedad intelectual y se reservan sus derechos de autor. Se ha autorizado a la universidad del Norte, la Camará de Comercio de Barranquilla y a Promigas el uso del Test para fines educativos e investigativos sin ningún tipo de lucro. </p>
                 </div>
                 
             </div>
-            <div id="illustracion" class="ilustracion-wrapper row center-align" style="margin-bottom: 0px;">
-                        <img   class="ilustracion animated fadeInUp" src="/ilustracion.png">
-            </div>
         </div>
-        <div class="container-fluid">
+ 
+</div>
+ @if ($errors->has('email') ||  $errors->has('password'))
+   <div ng-init="surveyCrtl.clickToOpen();"></div> 
+@endif
+<script type="text/ng-template" id="loginForm">
+   
+     
+        <div class="row">
+             
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
+                        {{ csrf_field() }}
+
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" class="col m4 control-label">E-Mail </label>
+
+                            <div class="col m6">
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="password" class="col s4 control-label">Contraseña</label>
+
+                            <div class="col m6">
+                                <input id="password" type="password" class="form-control" name="password" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+ 
+
+                        <div class="form-group">
+                            <div class="col s12 text-center">
+                                <button type="submit" class="btn btn-primary">
+                                    Login
+                                </button>
+
+                                <a class=" col s12" href="{{ route('password.request') }}">
+                                    Olvidaste Tu Contraseña?
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+          
+     
+ 
+</script>
+
+
+<script type="text/ng-template"   id="registerForm">
+<div class="row">
+    <div class="container">
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+        </form>
+        <form  name="registerForm" role="form" method="POST" action="{{ route('register_orientate') }}" style="margin-top: 10px;">
+         {{ csrf_field() }}
             <div class="row">
-                <div class="col s12 logos-wrapper " style="    padding: 0px;">
-                    <div class="logos  valign-wrapper">
-                        <div class="col s4 center-align">
-                            <img class="logo1 animated fadeIn" src="/logos/uninorte.jpg" >
-                        </div>
-                        <div class="col s4 center-align"  >
-                            <img class="logo1 animated fadeIn" src="/logos/promigas.jpg"  style="width: 135px">
-                        </div>
-                        <div class="col s4 center-align">
-                            <img class="logo1 animated fadeIn" src="/logos/camaracomercio.png"  >
-                        </div>
+                <div class="input-field col s6 ">
+                    <input id="Nombre" ng-model="surveyCrtl.profile.nombre"  name="nombre" type="text" placeholder="" class="validate form-control input-md" required autofocus>
+                    <div class="   alert-danger" role="alert">
+                        <span class="error" ng-show="charForm.nombre.$touched && charForm.nombre.$error.required">
+                        *El nombre es obligatorio!</span>
+                        <span class="error" ng-show="charForm.nombre.$touched && charForm.nombre.$error.text">
+                        *Este no es un nombre valido!</span>
+                    </div>
+                    <label for="Nombre">Nombre*</label>
+                </div>
+                <!-- Text input-->
+                <div class="input-field col s6 ">
+                    <input id="edad" ng-model="surveyCrtl.profile.edad"  name="edad" type="number" placeholder="" class="form-control input-md" >
+                    <label for="v">Edad*</label>
+                    <div class="alert-danger" role="alert">
+                        <span class="error" ng-show="charForm.edad.$touched && charForm.edad.$error.number">
+                        *No es una edad valida!</span>
                     </div>
                 </div>
-                <div class="row center-align" >
-                    <div class="col s12 m6 offset-m3">
-                        <br>
-                        <p class="disclaimer">Los derechos de Autor del Test Preferencias Profesionales (PPS) les corresponden a Carlos Yuste, David Yuste y Jose Luis Galvez. Hace parte de su propiedad intelectual y se reservan sus derechos de autor. Se ha autorizado a la universidad del Norte, la Camará de Comercio de Barranquilla y a Promigas el uso del Test para fines educativos e investigativos sin ningún tipo de lucro. </p>
+            </div>
+            <!---->
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="Apellido" ng-model="surveyCrtl.profile.apellido"  name="apellido" type="text" placeholder="" class="validate" required>
+                    <div class="   alert-danger" role="alert">
+                        <span class="error" ng-show="charForm.apellido.$touched && charForm.apellido.$error.required">
+                        *El apellido es obligatorio!</span>
+                        <span class="error" ng-show="charForm.apellido.$touched && charForm.apellido.$error.text">
+                        *Este no es un apellido valido!</span>
                     </div>
+                    <label for="Apellido">Apellido*</label>
+                </div>
+                <!-- Text input-->
+                <div class="input-field col s6">
+                    <label class="control-label" for="institucion">colegio</label>
+                    <input id="institucion" ng-model="surveyCrtl.profile.institucion"  name="institucion" type="text" placeholder="" class="form-control input-md" >
+                    <div class="   alert-danger" role="alert">
+                        </div>
                     
                 </div>
             </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <label class="control-label" for="email">E-Mail*</label>
+                     
+                        <input id="email" ng-model="surveyCrtl.profile.email"  name="email" type="email" placeholder="" class="form-control input-md"  required>
+                        <div class="   alert-danger" role="alert">
+                            <span class="error" ng-show="charForm.email.$touched && charForm.email.$error.required">
+                            *E-mail es obligatorio!</span>
+                            <span class="error" ng-show="charForm.email.$touched && charForm.email.$error.email">
+                            *Este no es un E-mail Valido!</span>
+                        </div>
+                    
+                </div>
+                <!-- Text input-->
+                <div class="input-field col s6">
+                    <label class="  control-label" for="grado">Grado</label>
+                            <input ng-model="surveyCrtl.profile.curso" name="grado" type="text" id="test1" />
+                            <div class="   alert-danger" role="alert">
+                                
+                                <span class="error" ng-show="charForm.grado.$touched && charForm.grado.$error.text">
+                                *No es una edad valida!</span>
+                            </div>
+
+                </div>
+                
+            </div>
+            
+            <div class="row center-align">
+                
+                
+                <!-- Text input-->
+                <div class="input-field col s12">
+                    <label class="control-label" for="contrasena">Contraseña*</label>
+                     
+                        <input id="contrasena" ng-model="surveyCrtl.profile.contrasena"  name="contrasena" type="password" placeholder="" class="form-control input-md" required>
+                        <div class="   alert-danger" role="alert">
+                            <span class="error" ng-show="charForm.contrasena.$touched && charForm.contrasena.$error.required">
+                            *Este campo es obligatorio!</span>
+                            
+                        </div>
+                     
+                </div>
+                <div class="input-field col s12">
+                    <label class=" control-label" for="contrasena2">Verificar Contraseña*</label>
+                     
+                        <input id="Institución" ng-model="surveyCrtl.profile.contrasena2"  name="contrasena2" type="password" placeholder="" class="form-control input-md" required>
+                        <div class="   alert-danger" role="alert">
+                            <span class="error" ng-show="charForm.contrasena2.$touched && charForm.contrasena2.$error.required">
+                            *Este campo es obligatorio!</span>
+                            <span class="error" ng-show="charForm.contrasena2.$touched && (surveyCrtl.profile.contrasena != surveyCrtl.profile.contrasena2)">
+                            *No Coinciden!</span>
+                            
+                        </div>
+                     
+                </div>
+            </div>
+            
+            <!-- Form Name -->
+            <div class="col s12   text-left center-align" style="margin-top: 15px;">
+                <a href="https://drive.google.com/file/d/0B7oqoVmBYZyqeWpIVEV6Y3cybnM/view?usp=sharing" target="_blank" class="row "> Al hacer click en "Continuar" Acepta la politica de tratamiento de datos</a>
+                <br>
+                
+            </div>
+            <div class=" col s12 m12 center-align   waves-effect waves-light " ng-disabled="!charForm.$valid" type="button" >
+                <!--<a  href="/questions" class=" waves-effect waves-light ">-->
+            <img src="/btn/REGISTRATE-16.png" width="200"></a>
         </div>
-        
-        <!--Import jQuery before materialize.js-->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
-        <script type="text/javascript">
-        $(function(){
-
-            $('#splashscreen').show();
-            setTimeout(function(){
-                $('#splashscreen').fadeOut("slow");
-            },2000);
-
-            $('#logo-nav').hide();
-            setTimeout(function(){
-                $('#logo-nav').fadeIn();
-            },2900);
-
-            $('#illustracion').hide();
-            setTimeout(function(){
-                $('#illustracion').fadeIn("slow");
-            },2900);
+        <button type="submit" class="btn btn-primary">
+                                    submit
+                                </button>
+    </form>
+    
+    
+</div>
+</div>
+</script>
 
 
-            $('#options').hide();
-            setTimeout(function(){
-                $('#options').fadeIn(3000);
-            },2900);
+</div>
 
-        });
-        </script>
-    </body>
-</html>
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+
+
+ 
+@endsection

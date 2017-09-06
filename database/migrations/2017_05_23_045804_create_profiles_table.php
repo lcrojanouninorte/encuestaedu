@@ -22,6 +22,7 @@ class CreateProfilesTable extends Migration
             $table->string('opciones');
             $table->string('verificacion')->nullable();
             $table->string('nombre');
+            $table->string('apellido');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

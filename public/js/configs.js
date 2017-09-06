@@ -9,7 +9,7 @@ var app = angular.module('surveyApp',
     'app.controllers',
     'app.directives',
     'app.componets',
-    'hl.sticky','mgo-angular-wizard','chart.js'
+    'hl.sticky','mgo-angular-wizard','chart.js',"ngDialog"
     ]); 
 
 
