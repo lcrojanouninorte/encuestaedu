@@ -5,7 +5,49 @@ strong {
 html, body {
     font-family: Open Sans!important;
     background-color: white!important;
+
   
+}
+
+.btn-pink {
+    background-color: #D86C8C!important;
+    line-height: 0!important;
+    padding: 27px!important;
+    box-shadow: 0!important;
+    /* text-decoration-style: dashed; */
+    text-transform: none!important;
+    letter-spacing: 0!important;
+    font-size: 14px!important;
+    border-radius: 6px!important;
+}
+.btn-pink:hover{
+    background-color: #e9698f!important;
+    color: white;
+    text-decoration: none!important;
+}
+
+.btn-blue {
+    background-color: #7391C8!important;
+    line-height: 0!important;
+    padding: 27px!important;
+    box-shadow: 0!important;
+    /* text-decoration-style: dashed; */
+    text-transform: none!important;
+    letter-spacing: 0!important;
+    font-size: 14px!important;
+    border-radius: 6px!important;
+}
+.btn-blue:hover{
+    background-color: #7391C5!important;
+    color: white!important;
+    text-decoration: none!important;
+}
+
+
+ 
+
+.blue-s {
+     color: #7391C8!important;
 }
 h1,h2,h3,h4,h5,h6 {
     color: #7391C8!important;
@@ -351,11 +393,11 @@ background-size: cover;
 
  
  #profesiones .card-panel {
-     transition: box-shadow .25s;
+     
     padding: 24px!important;
     margin: .5rem 0 1rem 0!important;
-    border-radius: 2px!important;
-    border: 1px solid;
+    border-radius: 5px!important;
+  
     /*background-color: #f4f4f4!important;*/
 }
 .row.shifttitle {
@@ -389,10 +431,10 @@ nav {
 
 .panel {
     margin-bottom: 22px!important;
-    background-color: #F4F4F4!important;
-    border: 1px solid rgb(0, 0, 0)!important;
-    border-radius: 9px!important;
-    box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.6)!important;
+    background-color: white!important;
+    border: 0px solid rgb(0, 0, 0)!important;
+    border-radius: 5px!important;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1)!important;
 }
  
 dt, kbd kbd, label {
@@ -418,4 +460,30 @@ img.team {
 
 .capitalized:first-letter {
     text-transform: uppercase;
+}
+
+.panel-default>.panel-heading {
+    color: #fff;
+    background-color: #5076BA;
+    border-color: #d3e0e9;
+    border-radius: 6px 6px 0px 0px;
+    min-height: 45px;
+    text-align: center;
+    font-size: 18px;
+}
+
+
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+    
+ 
+    background: rgba(240, 240, 240, 0.0)!important;
+ 
+    color: inherit!important;
+    font-family: inherit!important;
+    font-size: inherit!important;
+ 
+    margin: 0 auto!important;
+    max-width: 100%!important;
+    padding: 0px!important;
+ 
 }

@@ -59,7 +59,12 @@
 @endif
 <script type="text/ng-template" id="loginForm">
    
-     
+      <div class="panel panel-default animated fadeInLeft" >
+                <div class="panel-heading">
+                    Iniciar Sesión 
+                </div>
+
+                <div class="panel-body  center-align valign-wrapper"  style="min-height: 220px;">
         <div class="row">
              
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
@@ -96,7 +101,7 @@
 
                         <div class="form-group">
                             <div class="col s12 text-center">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-blue">
                                     Login
                                 </button>
 
@@ -106,6 +111,9 @@
                             </div>
                         </div>
                     </form>
+                    </div>
+                    </div>
+                    </div>
           
      
  
@@ -113,6 +121,13 @@
 
 
 <script type="text/ng-template"   id="registerForm">
+
+<div class="panel panel-default animated fadeInLeft" >
+                <div class="panel-heading">
+                    Iniciar Sesión 
+                </div>
+
+                <div class="panel-body  center-align valign-wrapper"  style="min-height: 220px;">
 <div class="row">
     <div class="container">
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -124,19 +139,19 @@
                 <div class="input-field col s6 ">
                     <input id="Nombre" ng-model="surveyCrtl.profile.nombre"  name="nombre" type="text" placeholder="" class="validate form-control input-md" required autofocus>
                     <div class="   alert-danger" role="alert">
-                        <span class="error" ng-show="charForm.nombre.$touched && charForm.nombre.$error.required">
+                        <span class="error" ng-show="registerForm.nombre.$touched && registerForm.nombre.$error.required">
                         *El nombre es obligatorio!</span>
-                        <span class="error" ng-show="charForm.nombre.$touched && charForm.nombre.$error.text">
+                        <span class="error" ng-show="registerForm.nombre.$touched && registerForm.nombre.$error.text">
                         *Este no es un nombre valido!</span>
                     </div>
-                    <label for="Nombre">Nombre*</label>
+                    <label class="control-label" for="Nombre">Nombre*</label>
                 </div>
                 <!-- Text input-->
                 <div class="input-field col s6 ">
                     <input id="edad" ng-model="surveyCrtl.profile.edad"  name="edad" type="number" placeholder="" class="form-control input-md" >
-                    <label for="v">Edad*</label>
+                    <label class="control-label" for="edad">Edad</label>
                     <div class="alert-danger" role="alert">
-                        <span class="error" ng-show="charForm.edad.$touched && charForm.edad.$error.number">
+                        <span class="error" ng-show="registerForm.edad.$touched && registerForm.edad.$error.number">
                         *No es una edad valida!</span>
                     </div>
                 </div>
@@ -146,9 +161,9 @@
                 <div class="input-field col s6">
                     <input id="Apellido" ng-model="surveyCrtl.profile.apellido"  name="apellido" type="text" placeholder="" class="validate" required>
                     <div class="   alert-danger" role="alert">
-                        <span class="error" ng-show="charForm.apellido.$touched && charForm.apellido.$error.required">
+                        <span class="error" ng-show="registerForm.apellido.$touched && registerForm.apellido.$error.required">
                         *El apellido es obligatorio!</span>
-                        <span class="error" ng-show="charForm.apellido.$touched && charForm.apellido.$error.text">
+                        <span class="error" ng-show="registerForm.apellido.$touched && registerForm.apellido.$error.text">
                         *Este no es un apellido valido!</span>
                     </div>
                     <label for="Apellido">Apellido*</label>
@@ -168,9 +183,9 @@
                      
                         <input id="email" ng-model="surveyCrtl.profile.email"  name="email" type="email" placeholder="" class="form-control input-md"  required>
                         <div class="   alert-danger" role="alert">
-                            <span class="error" ng-show="charForm.email.$touched && charForm.email.$error.required">
+                            <span class="error" ng-show="registerForm.email.$touched && registerForm.email.$error.required">
                             *E-mail es obligatorio!</span>
-                            <span class="error" ng-show="charForm.email.$touched && charForm.email.$error.email">
+                            <span class="error" ng-show="registerForm.email.$touched && registerForm.email.$error.email">
                             *Este no es un E-mail Valido!</span>
                         </div>
                     
@@ -181,7 +196,7 @@
                             <input ng-model="surveyCrtl.profile.curso" name="grado" type="text" id="test1" />
                             <div class="   alert-danger" role="alert">
                                 
-                                <span class="error" ng-show="charForm.grado.$touched && charForm.grado.$error.text">
+                                <span class="error" ng-show="registerForm.grado.$touched && registerForm.grado.$error.text">
                                 *No es una edad valida!</span>
                             </div>
 
@@ -193,25 +208,25 @@
                 
                 
                 <!-- Text input-->
-                <div class="input-field col s12">
+                <div class="input-field col s12 m8 offset-m2">
                     <label class="control-label" for="contrasena">Contraseña*</label>
                      
                         <input id="contrasena" ng-model="surveyCrtl.profile.contrasena"  name="contrasena" type="password" placeholder="" class="form-control input-md" required>
                         <div class="   alert-danger" role="alert">
-                            <span class="error" ng-show="charForm.contrasena.$touched && charForm.contrasena.$error.required">
+                            <span class="error" ng-show="registerForm.contrasena.$touched && registerForm.contrasena.$error.required">
                             *Este campo es obligatorio!</span>
                             
                         </div>
                      
                 </div>
-                <div class="input-field col s12">
+                <div class="input-field col s12 m8 offset-m2">
                     <label class=" control-label" for="contrasena2">Verificar Contraseña*</label>
                      
                         <input id="Institución" ng-model="surveyCrtl.profile.contrasena2"  name="contrasena2" type="password" placeholder="" class="form-control input-md" required>
                         <div class="   alert-danger" role="alert">
-                            <span class="error" ng-show="charForm.contrasena2.$touched && charForm.contrasena2.$error.required">
+                            <span class="error" ng-show="registerForm.contrasena2.$touched && registerForm.contrasena2.$error.required">
                             *Este campo es obligatorio!</span>
-                            <span class="error" ng-show="charForm.contrasena2.$touched && (surveyCrtl.profile.contrasena != surveyCrtl.profile.contrasena2)">
+                            <span class="error" ng-show="registerForm.contrasena2.$touched && (surveyCrtl.profile.contrasena != surveyCrtl.profile.contrasena2)">
                             *No Coinciden!</span>
                             
                         </div>
@@ -225,16 +240,17 @@
                 <br>
                 
             </div>
-            <div class=" col s12 m12 center-align   waves-effect waves-light " ng-disabled="!charForm.$valid" type="button" >
-                <!--<a  href="/questions" class=" waves-effect waves-light ">-->
-            <img src="/btn/REGISTRATE-16.png" width="200"></a>
-        </div>
-        <button type="submit" class="btn btn-primary">
-                                    submit
+            <!--<div class=" col s12 m12 center-align   waves-effect waves-light " ng-disabled="!registerForm.$valid" type="button">
+                    <img src="/btn/REGISTRATE-16.png" width="200">
+                    </div>-->
+        <button type="submit" class="btn btn-pink col s12 m12 center-align   waves-effect waves-light" ng-disabled="!registerForm.$valid">
+                                    Regístrarse
                                 </button>
     </form>
     
     
+</div>
+</div>
 </div>
 </div>
 </script>

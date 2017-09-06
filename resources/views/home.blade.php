@@ -32,34 +32,43 @@
 
        
 </div>
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col m8 offset-m2">
             <div class="panel panel-default animated fadeInLeft" >
                 <div class="panel-heading">
                     Mis Herramientas 
-            
                 </div>
 
-                <div class="panel-body valign-wrapper center-align"  style="min-height: 200px; flex-direction: column;">
+                <div class="panel-body  center-align valign-wrapper"  style="min-height: 220px;">
+                <div class="container " > 
+                 
                 @if(empty($survey['id']))
-                <div class="col s12">
-                    
-                    <a href="{{url('questions')}}"><button type="button" class="btn btn-primary">Crear encuesta</button></a>
+
+                    <div class="col s10 offset-s1" >
+                    <p class="blue-s" style="font-size: 14px;">Haz click en el siguiente enlaces para realizar el test.</p>
+                    <br> 
+                        
+                        <a href="{{url('questions')}}">
+                        <img src="/btn/iniciar.png" width="200">
+                        </a>
 
 
-                </div>
+                    </div>
                 @else
 
-                <p class="text-center">Da click en el siguiente enlace para ver los resultados de tu encuesta.</p>
+                <p class="blue-s" style="font-size: 14px;">Haz click en los siguientes enlaces para ver los resultados
+de tu test o para borrarlos y realizarlo de nuevo.</p>
              <br> 
                 <div class=" text-center">
                     <div class="row text-center">
-                    <a class="btn btn-danger" href="caracterizacion/{{$survey->id}}">RESULTADOS</a>
-                    <p>ó</p>
+                    <a  href="caracterizacion/{{$survey->id}}"><img src="/btn/MIS RESULTADOS.png" width="200"></a>
+                    <br> 
+                    <br> 
+                    <br> 
                     {{ Form::open(['method' => 'DELETE', 'route' => ['surveys.destroy', $survey->id]]) }}
-                {{ Form::token()}}
-                {{ Form::hidden('id', $survey->id) }}
-                {{ Form::submit('Borrar encuesta realizada ', ['class' => 'btn btn-danger']) }}
-            {{ Form::close() }}
+                        {{ Form::token()}}
+                        {{ Form::hidden('id', $survey->id) }}
+                        {{ Form::submit('Borrar encuesta realizada ', ['class' => 'btn btn-pink']) }}
+                    {{ Form::close() }}
              
                     </div>
                     <br> 
@@ -69,7 +78,7 @@
 
 
                 @endif
-
+                </div>
                 </div>
             </div>
         </div>
