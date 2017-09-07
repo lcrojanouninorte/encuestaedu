@@ -35,9 +35,9 @@
 					<ul>
 						
 						<li>
-							<p style="font-weight: bold;">Descripción:</p>
+							 
 							@if($results->descoutputs->count()>0)
-							<span class="valign-wrapper"> {{$results->descoutputs[0]->desc}}</span>
+							<p class="valign-wrapper"> {{$results->descoutputs[0]->desc}}</p>
 							@else
 							N/A
 							@endif
@@ -123,8 +123,9 @@
 		</div>
 	</div>
 	<br>
+
 	<div style="margin-top:30px;" class="row center-align hide-print">
-		<div class="col s12">
+		<div class="col s12  center-align">
 			<div class="col s12 m6 left-align">
 				<div class="col s12   center-align">
 					<a  class="  col s12" href="{{ url()->previous() }}">

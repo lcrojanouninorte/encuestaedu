@@ -68,7 +68,10 @@
         </div>
         <br>
         <div style="margin-top:30px;" class="col-md-5 col-md-offset-5">
-          <a class="btn btn-success" href="/home">Volver</a>
+          <a class="" href="/home">
+            <img src="/btn/BOTON REDODNO ROJO BACK-16.png" width="50">
+            <p class="pink-s">Regresar</p>
+          </a>
         </div>
       </div>
     </div>
