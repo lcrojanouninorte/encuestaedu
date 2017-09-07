@@ -89,8 +89,33 @@ html, body {
     text-decoration: none!important;
 }
 
+.heading-s{
+    color: white;
+    background-color: #7391C8!important;
+    min-height: 70px!important;
+    border-radius: 5px 5px 0 0;
+  
 
+}
+.heading-level-s{
+    background-color: #F7D06F!important;
+    color: white!important;
+    font-size: 1.5em!important;
+}
+.heading-s-title {
+        margin: 12px 0px 12px 0;
+}
+.collection {
+    border: 0px solid #e0e0e0!important;
+    border-radius: 0px!important;
+}
+.collection .collection-item {
  
+    border-bottom: 0px solid #e0e0e0!important;
+    color: #7391C8!important;
+    font-size: 1.3em;
+
+}
 
 .blue-s {
      color: #7391C8!important;
@@ -266,7 +291,7 @@ p {
  
   #profesiones .card-panel {
  
-        min-height: 500px !important;
+        min-height: 400px !important;
     }   
 }
 @media only screen and (max-width : 1025px) {
@@ -361,7 +386,43 @@ left: -100%;
 transition: all 1s ease-in-out;
 }
 
+.box-s {
+    color: white;
+    font-size: 1.2em;
+      text-align: justify;
+    text-justify: inter-word;
+}
+.box-s h5{
+    color: white!important;
+    font-size: 1.7em;
+    font-weight: 700;
+}
+.box-s h6{
+    color: white!important;
+    font-size: 1.3em;
+    font-weight: 400;
+}
 
+.box-s p{
+    color: white!important;
+    font-size: 1em;
+    font-weight: 300;
+}
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-text {
+    color: #fff!important;
+}
+ul.nav.navbar-nav {
+    background-color: rgba(80, 118, 186, 0.96)!important;
+}
+@media (max-width: 767px){
+ 
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+        color: #fffdfd!important;
+    }
+}
+.ngdialog-overlay {
+    background: rgba(143, 167, 211, 0.4)!important;
+}
 
 input.ng-invalid {
     background-color: pink;
@@ -372,19 +433,20 @@ input.ng-valid {
 
 
 .collection .collection-item.avatar {
-    min-height: 30px!important;
+    min-height: 55px!important;
    
 }
 .collection .collection-item.avatar .circle {
     position: absolute;
-    width: 30px!important;
-    height: 30px!important;
+    width: 40px!important;
+    height: 40px!important;
  
 }
 
 .collection .collection-item.avatar i.circle {
-    font-size: 13px!important;
-    line-height: 30px!important;
+    font-size: 14px!important;
+    line-height: 40px!important;
+    color: #7391C8!important;;
  
 }
 
@@ -444,7 +506,7 @@ background-size: cover;
  #profesiones .card-panel {
      
     padding: 24px!important;
-    margin: .5rem 0 1rem 0!important;
+  
     border-radius: 5px!important;
   
     /*background-color: #f4f4f4!important;*/

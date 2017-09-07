@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="/css/ng-dialog/css/ngDialog.min.css">
     <link rel="stylesheet" href="/css/ng-dialog/css/ngDialog-theme-default.min.css">
   
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         
@@ -41,15 +41,12 @@
 
                     <!-- Collapsed Hamburger-->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+ 
                     </button>
  
                     <!-- Branding Image-->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                         <img id="logo-nav" class=" logo-nav" src="/logo.png" style="width: 90px">
+                         <img id="logo-nav" class=" logo-nav" src="/logo.png" style="width: 100px">
                     </a> 
                 </div>
 
@@ -63,7 +60,7 @@
                     <ul id="login-nav" class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Iniciar Sesión <i class="material-icons right">exit_to_app</i></a> </li>
+                            <!--  <li><a href="{{ route('login') }}">Iniciar Sesión <i class="material-icons right">exit_to_app</i></a> </li>-->
                            <!-- <li><a href="{{ route('register') }}">Register</a></li>-->
                         @else
                             <li class="dropdown">

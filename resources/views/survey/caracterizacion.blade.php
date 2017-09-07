@@ -6,11 +6,11 @@
   
   <div class="row" ng-init="surveyCrtl.getAreasResults({{$survey->id}})">
     <div class="col-md-12">
-      <div class="panel panel-default animated fadeInLeft">
+      <div class="   animated fadeInLeft">
         
         <div class="panel-body">
           <div class="col-md-12 col-md-offset-0 text-center">
-            <h5>Según tus respuestas, hemos detectado que las siguientes áreas son más afines a tu perfil</h5>
+            <h5><strong>Según tus respuestas, hemos detectado que las siguientes áreas son más afines a tu perfil</strong></h5>
             <br>
             <div class="row">
               
