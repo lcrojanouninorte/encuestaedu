@@ -50,6 +50,18 @@ class SurveyController extends Controller
         echo $request;
     }
 
+     /**
+     * instrucciones.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function instrucciones(Request $request)
+    {
+        return view('survey.instructions');
+    }
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -249,7 +261,7 @@ class SurveyController extends Controller
 
         $response["survey"]=$transaction;
         if($response["success"]){
-            return redirect('questions')->with([
+            return redirect('instructciones')->with([
             'user'=> $userData
         ] );;
         }else{

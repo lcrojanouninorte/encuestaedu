@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('surveys', 'SurveyController');
 Route::resource('questions', 'QuestionController');
+Route::get('instrucciones', 'SurveyController@instrucciones');
 	Route::resource('cnos', 'CnoController');
 	Route::get('validate/{email}', 'SurveyController@validateEmail');
 

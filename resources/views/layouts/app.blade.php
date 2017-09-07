@@ -15,10 +15,14 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/ng-sortable.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/ng-sortable.style.min.css') }}" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.10/sweetalert2.min.css">
+
     <link href="{{ asset('/css/personal.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/angular-wizard.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="/css/ng-dialog/css/ngDialog.min.css">
     <link rel="stylesheet" href="/css/ng-dialog/css/ngDialog-theme-default.min.css">
+  
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
 <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         
@@ -135,6 +139,9 @@
     <script src="http://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
 
     <script src="/js/ng-dialog/ngDialog.min.js"></script>
+     <script src="/js/SweetAlert.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.10/sweetalert2.min.js"></script>
+
 
 
 

@@ -49,25 +49,26 @@ angular.module('app.controllers', [])
               surveyCrtl.tabs[tab_index].disabled = false;
 
             }
-            surveyCrtl.validate = function(from, many, section){
+            surveyCrtl.validate = function(question_index){
               var is_ok = true;
-              for (var i = from; i <= many+from-1; i++) {
-                if(!surveyCrtl.questions[i].done){
-                  surveyCrtl.sectionsErrors[section] = true;
-                  $window.scrollTo(0, 0);
+               
+                if(!surveyCrtl.questions[question_index].done){
+                   
+                  $window.scrollTo(0, 0); 
                   is_ok = false;
                   
-                  break;
+                 
                 }
                 $window.scrollTo(0, 0);
-              }
+               
+
               if(is_ok){
                 WizardHandler.wizard('mainw').next();
-                if(section=="s3"){
+                if(question_index==51){
                   surveyCrtl.save();
                 }
               }else{
-                alert("Hay una pregunta sin completar, por favor revisar")
+                swal("!Esta pregunta esta sin contestar!",  "¡Recuerda elegir todas las opciones en orden de preferencia!");
               }
 
               return is_ok;

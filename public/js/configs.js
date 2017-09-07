@@ -9,7 +9,7 @@ var app = angular.module('surveyApp',
     'app.controllers',
     'app.directives',
     'app.componets',
-    'hl.sticky','mgo-angular-wizard','chart.js',"ngDialog"
+    'hl.sticky','mgo-angular-wizard','chart.js',"ngDialog", "19degrees.ngSweetAlert2"
     ]); 
 
 

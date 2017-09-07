@@ -22,7 +22,7 @@ class QuestionController extends Controller
         if ($request->route()->getPrefix() == 'api') {
             return $questions;
         } else {
-            return view('survey.survey')->with([
+            return view('survey.test')->with([
             'questions'=> $questions 
             ] );
         

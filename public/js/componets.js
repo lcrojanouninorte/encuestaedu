@@ -48,15 +48,22 @@ componets.component('questionClick', {
                     question.options[i].value = 0;
                 }
                 this.answers = [];
+                if(this.question.done){
+                  this.donecount--;  
+                }
                  this.question.done  = false;
-                 this.donecount--;
+                 
             }
             //fin version 1
 
             //clases de ayuda general
             this.setQuestionDone = function(){
+                if(!this.question.done){
+                  this.donecount++;  
+                }
                 this.question.done = true;
-                this.donecount++;
+
+                
             }
 
             //clases de ayuda visual css
