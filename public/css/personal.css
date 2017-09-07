@@ -8,6 +8,16 @@ html, body {
 
   
 }
+.question-title {
+    background-color: #7391C8;
+    min-height: 60px!important;
+    color: white;
+    font-size: 1.5em;
+    border-radius: 5px 5px 0px 0px;
+}
+.option-text{
+    font-size: 1.5em;
+}
 
 .btn-pink {
     background-color: #D86C8C!important;

@@ -6,9 +6,8 @@
 <div class="container"  ng-controller="SurveyController as surveyCrtl" >
 @endif
 
-<% "user:" + surveyCrtl.profile.user_id %>
   <div class="row animated fadeInLeft">
-    <div class="col s12" style="padding-top: 7%;">
+    <div class="col s12" style="padding-top: 2%;">
       <wizard name="mainw" class="slide-animate" hide-indicators="true" on-finish="finishedWizard()" on-cancel="cancelledWizard()" indicators-position="top">
       
       <wz-step wz-title="Instrucciones" class="center-align">
@@ -174,24 +173,27 @@ cómo se relacionan con ocupaciones en el mundo del trabajo. </p>
     
       
       <wz-step wz-title="Test">
-      <p>
-      </p>
+ 
       <div class="row">
+         
         <div class="col s12">
-          <div id="sticky-container" class="panel-body ">
-            <div class="progress-lcr valign-wrapper" hl-sticky="" offsetTop="10" class="simple" >
-              <div class="col s3 m1" style="font-size: 11px;">
-                <p> Progreso:</p>
-              </div>
-              <div  class="col s4 m8" >
+            <div class="row center-align" style="margin-bottom: 0;">
+             <p class="blue-s"> <strong>Progreso:</strong></p>
+            </div>
+            <div class="row progress-lcr valign-wrapper" hl-sticky="" offsetTop="10" class="simple" >
+              <div  class="col s12 center-align" >
                 <uib-progressbar  class="progress-striped active" max="52" value="surveyCrtl.answers_done" type="success">
-                
                 </uib-progressbar>
               </div>
-              <div  class="col s5 m4 " style="font-size: 11px;" >
-                <p>Pregunta <%surveyCrtl.answers_done + 1%> de 52</p>
+              <div  class="col blue-s" style="font-size: 11px;" >
+                <p><%surveyCrtl.answers_done + 1%> de 52</p>
               </div>
+              
             </div>
+          </div>
+       
+          <div id="sticky-container" class="panel-body col s10 offset-s1">
+           
             <!--encuesta-->
             
             <div ng-repeat="question in surveyCrtl.questions | limitTo:25:0">
@@ -215,7 +217,7 @@ cómo se relacionan con ocupaciones en el mundo del trabajo. </p>
             </div>
             
           </div>
-        </div>
+         
       </div>
       </wz-step>
       <wz-step wz-title="Test2">

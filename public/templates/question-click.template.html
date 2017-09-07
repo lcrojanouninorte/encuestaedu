@@ -1,43 +1,37 @@
 <div id="question" class="row question-item">
-    <div class="question-title col s12  m11 offset-m1">
-            <div class="col s1 m1"  >
-                <div class="center-align" ng-class="$ctrl.isQuestionDone()"></div> 
-            </div>
-            <div class="col s9 m10"> 
+    <div class="question-title col s12   m8 offset-m2 valign-wrapper">
+            
+            <div class="col s12 "> 
                 <p class="center-align bold"><b><strong>{{$ctrl.question.id}}. {{$ctrl.question.desc}}</strong></b></p>
-                
             </div>
-            <div class="col s1 m1">
-                <a class="center-align btn-edit  btn-xsmall waves-effect waves-light  " ng-click="$ctrl.reset($ctrl.question)">
-                <img src="/4 caneca.png" width="12" ">
-                </a>
-            </div>
-
-            
-            
     </div>
 
-    <div class="col s12 question">
-        <div class="col s12">
+    <div class="col s10 offset-s1  m6 offset-m3 question">
+         
             <ul>
                 <li class="question-option row" data-ng-repeat="option in $ctrl.question.options" ng-click="$ctrl.setValue($ctrl.question, option, $event)">
-                    <div class="col s12 m11 offset-m1">
-                        <div class="col s2 m1 animated fadeIn ">
-                        <img src="smile{{option.value || 0}}.png" style="max-width: 30px;">
+
+                    <div class="row valign-wrapper" style="margin-bottom: 2px;">
+                        <div class="col animated fadeIn ">
+                            <img src="smile{{option.value || 0}}.png" style="max-width: 40px;">
                         </div>
-                        <div class="col s10 m11 capitalized">
+
+                        <div class="col capitalized option-text blue-s">
                           <% option.desc%>  
                         </div>
 
                     </div>
-                         <!-- <span class="color-position-<% option.value %> item-check glyphicon glyphicon-minus" ng-show="option.value!=null"  aria-hidden="true"></span>-->
-                        <!--<% option.value  %>-->
-                     
-                    
+                </li>
+                <li class="question-option row">
+                    <div class="row valign-wrapper">
+                        <a class="col animated fadeIn  waves-effect waves-light  " ng-click="$ctrl.reset($ctrl.question)">
+                            <img src="/images/ICONOS PEQ-21.png" width="40" ">
+                        </a>
+                        <div class="col capitalized option-text blue-s">Cambiar opciones</div>
+                    </div>
                 </li>
             </ul>
-            
-        </div>
+        
         
 
          
