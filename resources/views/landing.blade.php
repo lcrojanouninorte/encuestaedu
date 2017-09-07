@@ -85,7 +85,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col s4 control-label">Contraseña</label>
+                            <label for="password" class="col m4 control-label">Contraseña</label>
 
                             <div class="col m8">
                                 <input id="password" type="password" class="form-control" name="password" required>
@@ -136,7 +136,7 @@
         <form  name="registerForm" role="form" method="POST" action="{{ route('register_orientate') }}" style="margin-top: 10px;">
          {{ csrf_field() }}
             <div class="row">
-                <div class="input-field col s6 ">
+                <div class="input-field col s12 m6">
                     <input id="Nombre" ng-model="surveyCrtl.profile.nombre"  name="nombre" type="text" placeholder="" class="validate form-control input-md" required autofocus>
                     <div class="   alert-danger" role="alert">
                         <span class="error" ng-show="registerForm.nombre.$touched && registerForm.nombre.$error.required">
@@ -147,7 +147,7 @@
                     <label class="control-label" for="Nombre">Nombre*</label>
                 </div>
                 <!-- Text input-->
-                <div class="input-field col s6 ">
+                <div class="input-field col s12 m6 ">
                     <input id="edad" ng-model="surveyCrtl.profile.edad"  name="edad" type="number" placeholder="" class="form-control input-md" >
                     <label class="control-label" for="edad">Edad</label>
                     <div class="alert-danger" role="alert">
@@ -158,7 +158,7 @@
             </div>
             <!---->
             <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s12 m6">
                     <input id="Apellido" ng-model="surveyCrtl.profile.apellido"  name="apellido" type="text" placeholder="" class="validate" required>
                     <div class="   alert-danger" role="alert">
                         <span class="error" ng-show="registerForm.apellido.$touched && registerForm.apellido.$error.required">
@@ -169,7 +169,7 @@
                     <label for="Apellido">Apellido*</label>
                 </div>
                 <!-- Text input-->
-                <div class="input-field col s6">
+                <div class="input-field col s12 m6">
                     <label class="control-label" for="institucion">colegio</label>
                     <input id="institucion" ng-model="surveyCrtl.profile.institucion"  name="institucion" type="text" placeholder="" class="form-control input-md" >
                     <div class="   alert-danger" role="alert">
@@ -178,7 +178,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s12 m6">
                     <label class="control-label" for="email">E-Mail*</label>
                      
                         <input id="email" ng-model="surveyCrtl.profile.email"  name="email" type="email" placeholder="" class="form-control input-md"  required>
@@ -191,7 +191,7 @@
                     
                 </div>
                 <!-- Text input-->
-                <div class="input-field col s6">
+                <div class="input-field col s12 m6">
                     <label class="  control-label" for="grado">Grado</label>
                             <input ng-model="surveyCrtl.profile.curso" name="grado" type="text" id="test1" />
                             <div class="   alert-danger" role="alert">
@@ -236,7 +236,7 @@
             
             <!-- Form Name -->
             <div class="col s12   text-left center-align" style="margin-top: 15px;">
-                <a href="https://drive.google.com/file/d/0B7oqoVmBYZyqeWpIVEV6Y3cybnM/view?usp=sharing" target="_blank" class="row "> Al hacer click en "Continuar" Acepta la politica de tratamiento de datos</a>
+                <a href="https://drive.google.com/file/d/0B7oqoVmBYZyqZnhKX0ZtQ3lyb0E/view?usp=sharing" target="_blank" class="row "> Al hacer click en "Continuar" Acepta la politica de tratamiento de datos</a>
                 <br>
                 
             </div>

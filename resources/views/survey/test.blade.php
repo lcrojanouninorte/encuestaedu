@@ -32,7 +32,7 @@
           
           
           <div class="panel-body col s10 offset-s1">
-            <%$index%>
+            
             <!--encuesta-->
             
             <div>

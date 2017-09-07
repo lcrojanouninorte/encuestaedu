@@ -307,6 +307,12 @@ p {
   
 }
 @media (max-width: 600px) {
+
+    .ngdialog.ngdialog-theme-default {
+     
+    padding-top: 10px!important;
+}
+
     .logo-principal {
         width: 135px;
          margin-top: 24px;
