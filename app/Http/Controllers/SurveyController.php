@@ -261,7 +261,7 @@ class SurveyController extends Controller
 
         $response["survey"]=$transaction;
         if($response["success"]){
-            return redirect('instructciones')->with([
+            return redirect('instrucciones')->with([
             'user'=> $userData
         ] );;
         }else{
@@ -339,6 +339,7 @@ class SurveyController extends Controller
                 ->orderBy( 'onet', 'asc')
                 ->distinct()
                 ->get();
+                
             $area->onet = $onet;//TODO cambiar por onet
             $area_arr =  explode(':', $area->desc_area);
             $area->title =  $area_arr[0];
