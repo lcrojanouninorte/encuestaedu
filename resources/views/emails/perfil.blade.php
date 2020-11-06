@@ -36,9 +36,9 @@
  
 	</div>
 	<div class="col m12 center-align">
-			<a href="http://www.uninorte.edu.co/" target="_blank"><img alt="Uninorte" src="http://encuestaedu.app/logos/uninorte.jpg" width=32 height=32  /></a>
-			<a href="http://www.promigas.com" target="_blank"><img src="http://encuestaedu.app/logos/promigas.jpg" width=32 height=32 alt="promigas" /></a>
-			<a href="http://www.camarabaq.org.co/" target="_blank"><img alt="camarabaq" src="http://encuestaedu.app/logos/camaracomercio.png" width=32 height=32  /></a>
-		</div>
+		<a href="http://www.uninorte.edu.co/" target="_blank"><img alt="Uninorte" src="http://orienta-t.lcrojano/logos/uninorte.jpg" width=32 height=32  /></a>
+		<a href="http://www.promigas.com" target="_blank"><img src="http://orienta-t.lcrojano/logos/promigas.jpg" width=32 height=32 alt="promigas" /></a>
+		<a href="http://www.camarabaq.org.co/" target="_blank"><img alt="camarabaq" src="http://orienta-t.lcrojano/logos/camaracomercio.png" width=32 height=32  /></a>
+	</div>
 
 </div>
