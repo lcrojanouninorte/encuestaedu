@@ -24,3 +24,5 @@ Route::get('/questions', "QuestionController@index");
 Route::get('/caracterizacion/{survey}', 'SurveyController@getResultByAreas');
 
 Route::get('validate/{email}', 'SurveyController@validateEmail');
+Route::post('/emails/register', "EmailsController@register");
+Route::post('/emails/reset', "EmailsController@reset");
