@@ -340,14 +340,9 @@ class SurveyController extends Controller
                 ->orderBy( 'onet', 'asc')
                 ->distinct()
                 ->get();
-<<<<<<< HEAD
-                $area->onet = $onet;//TODO cambiar por onet
-                $area_arr =  explode(':', $area->desc_area);
-=======
                 
             $area->onet = $onet;//TODO cambiar por onet
             $area_arr =  explode(':', $area->desc_area);
->>>>>>> 6b2127b78a923900df8f41e05b44f551419711d1
             $area->title =  $area_arr[0];
             $area->desc =  $area_arr[1];
 
