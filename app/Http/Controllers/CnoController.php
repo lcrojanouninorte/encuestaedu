@@ -171,7 +171,7 @@ return $pdf->stream();*/
 
             });
            //  Session::flash('alert-success', 'Mensaje Enviado Correctamente, Pronto será revisado.')
-         return PDF::loadFile('orienta-t.lcrojano.com')->inline('github.pdf');
+         return PDF::loadFile('http://orienta-t.lcrojano.com/profesion/4153/1')->inline('github.pdf');
 
         /*if($cod_area){
             $results = DB::table('cnos')->select('categoria')->distinct()->where('prioridad', $cod_area)->get();;

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Mail;
 
 use Illuminate\Http\Request;
+use Response;
 
 class EmailsController extends Controller
 {
@@ -11,21 +12,19 @@ class EmailsController extends Controller
     public function register(Request $request){
 
 
-        
-        $data = array(
-            'verificationCode'=>$request->email_verification_code,
+         $data =array(
+            'verificationCode'=>$request->verificationCode,
             'password'=> $request->password,
             'email'=>$request->email
         );
         $user = $request->user;
+       
 
-
-         Mail::send('emails.userverification', $data, function ($m) use ($user) {
+      $send =   Mail::send('emails.userverification', $data, function ($m) use ($user) {
             $m->from('obsriomagdalena@uninorte.edu.co', 'Observatorio del Río Magdalena ');
-            $m->to($user->email)->subject('Confirmación de Registro en Plataforma OBS');
+            $m->to($user["email"])->subject('Confirmación de Registro en Plataforma OBS');
         });
-        return $request;
-
+        return response()->json($send, 200);
       
     }
 
@@ -36,7 +35,7 @@ class EmailsController extends Controller
 
            Mail::send('emails.reset_link', compact('email', 'token'), function ($mail) use ($email) {
             $mail->to($email)
-            ->from('noreply@example.com')
+            ->from('obsriomagdalena@uninorte.edu.co')
             ->subject('Password reset link');
         });
 

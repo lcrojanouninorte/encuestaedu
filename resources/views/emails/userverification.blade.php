@@ -230,13 +230,13 @@
                 <table cellpadding="0" cellspacing="0" width="600" class="w320">
                   <tr>
                     <td class="pull-left mobile-header-padding-left" style="vertical-align: middle;">
-                      <a href=""><img width="137" height="47" src="{{url('/img/LogoOBS.jpg')}}" alt="logo"></a>
+                      <a href=""><img width="40"   src="{{url('/img/LogoOBS.jpg')}}" alt="logo"></a>
                     </td>
                     <td class="pull-right mobile-header-padding-right" style="color: #4d4d4d;">
-                      <a href="https://twitter.com/obsriomagdalena"><img width="44" height="47" src="{{url('/img/twitter.png')}}" alt="twitter" /></a>
-                      <a href="https://www.instagram.com/obsriomagdalena/"><img width="38" height="47" src="{{url('/img/instagram.png')}}" alt="instagram" /></a>
-                      <a href="https://www.youtube.com/channel/UCYIPAkNxbPptJPtAmG_WO7Q?view_as=subscriber"><img width="40" height="47" src="{{url('/img/youtube.png')}}" alt="youtube" /></a>
-                      <a href="https://www.uninorte.edu.co/obsriomagdalena"><img width="40" height="47" src="{{url('/img/web.png')}}" alt="web" /></a>
+                      <a href="https://twitter.com/obsriomagdalena"><img width="40" height="40" src="{{url('/img/twitter.png')}}" alt="twitter" /></a>
+                      <a href="https://www.instagram.com/obsriomagdalena/"><img width="40" height="40" src="{{url('/img/instagram.png')}}" alt="instagram" /></a>
+                      <a href="https://www.youtube.com/channel/UCYIPAkNxbPptJPtAmG_WO7Q?view_as=subscriber"><img width="40" height="40" src="{{url('/img/youtube.png')}}" alt="youtube" /></a>
+                      <a href="https://www.uninorte.edu.co/obsriomagdalena"><img width="40" height="40" src="{{url('/img/web.png')}}" alt="web" /></a>
 
                     </td>
                   </tr>
@@ -263,22 +263,23 @@
           </tr>
           <tr>
             <td class="free-text">
-              Gracias Por Registrarte, se te ha asignado una cuenta con la cual podrá revisar distintas capas.
+              Gracias por registrarse, se le ha asignado una cuenta con la cual podrá acceder al visor del Observatorio del Río Magdalena.
               <br>
               <br>
              <b> Usuario: {{ $email }}</b>
               <br>
              <b> Contraseña: {{ $password }}</b>
+             <b>test:  {{$verificationCode}}</b>
             </td>
           </tr>
           <tr>
             <td class="button">
               <div><!--[if mso]>
-                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://obsriomagdalena.uninorte.edu.co/plataforma/api/user/verify/$verificationCode" style="height:45px;v-text-anchor:middle;width:155px;" arcsize="15%" strokecolor="#ffffff" fillcolor="#ff6f6f">
+                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://obsriomagdalena.uninorte.edu.co/plataforma/api/user/verify/{{$verificationCode}}" style="height:45px;v-text-anchor:middle;width:155px;" arcsize="15%" strokecolor="#ffffff" fillcolor="#ff6f6f">
                   <w:anchorlock/>
                   <center style="color:#ffffff;font-family:Helvetica, Arial, sans-serif;font-size:14px;font-weight:regular;">Verificar Email</center>
                 </v:roundrect>
-              <![endif]--><a class="button-mobile" href="https://obsriomagdalena.uninorte.edu.co/plataforma/api/user/verify/$verificationCode"
+              <![endif]--><a class="button-mobile" href="https://obsriomagdalena.uninorte.edu.co/plataforma/api/user/verify/{{$verificationCode}}"
               style="background-color:#ff6f6f;border-radius:5px;color:#ffffff;display:inline-block;font-family:'Cabin', Helvetica, Arial, sans-serif;font-size:14px;font-weight:regular;line-height:45px;text-align:center;text-decoration:none;width:155px;-webkit-text-size-adjust:none;mso-hide:all;">Verificar Email</a></div>
             </td>
           </tr>

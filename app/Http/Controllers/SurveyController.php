@@ -315,6 +315,7 @@ class SurveyController extends Controller
                 ->limit(2)  
                 ->get();
 
+             
         //get survey level
 
         //split area

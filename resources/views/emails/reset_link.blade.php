@@ -231,12 +231,14 @@
                 <table cellpadding="0" cellspacing="0" width="600" class="w320">
                   <tr>
                     <td class="pull-left mobile-header-padding-left" style="vertical-align: middle;">
-                      <a href=""><img width="137" height="47" src="http://s3.amazonaws.com/swu-filepicker/0zxBZVuORSxdc9ZCqotL_logo_03.gif" alt="logo"></a>
+                      <a href=""><img width="40"   src="{{url('/img/LogoOBS.jpg')}}" alt="logo"></a>
                     </td>
                     <td class="pull-right mobile-header-padding-right" style="color: #4d4d4d;">
-                      <a href=""><img width="44" height="47" src="http://s3.amazonaws.com/swu-filepicker/k8D8A7SLRuetZspHxsJk_social_08.gif" alt="twitter" /></a>
-                      <a href=""><img width="38" height="47" src="http://s3.amazonaws.com/swu-filepicker/LMPMj7JSRoCWypAvzaN3_social_09.gif" alt="facebook" /></a>
-                      <a href=""><img width="40" height="47" src="http://s3.amazonaws.com/swu-filepicker/hR33ye5FQXuDDarXCGIW_social_10.gif" alt="rss" /></a>
+                      <a href="https://twitter.com/obsriomagdalena"><img width="40" height="40" src="{{url('/img/twitter.png')}}" alt="twitter" /></a>
+                      <a href="https://www.instagram.com/obsriomagdalena/"><img width="40" height="40" src="{{url('/img/instagram.png')}}" alt="instagram" /></a>
+                      <a href="https://www.youtube.com/channel/UCYIPAkNxbPptJPtAmG_WO7Q?view_as=subscriber"><img width="40" height="40" src="{{url('/img/youtube.png')}}" alt="youtube" /></a>
+                      <a href="https://www.uninorte.edu.co/obsriomagdalena"><img width="40" height="40" src="{{url('/img/web.png')}}" alt="web" /></a>
+
                     </td>
                   </tr>
                 </table>
@@ -257,12 +259,12 @@
         <table cellspacing="0" cellpadding="0" width="600" class="w320">
           <tr>
             <td class="header-lg">
-              Reset Password
+             Recuperar Contraseña
             </td>
           </tr>
           <tr>
             <td class="free-text">
-              Click en este link para recuperar su contraseña.
+            Por favor dar  Click en este link para recuperar su contraseña.
             </td>
           </tr>
           <tr>
