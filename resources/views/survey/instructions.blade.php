@@ -35,7 +35,7 @@ cómo se relacionan con ocupaciones en el mundo del trabajo. </p>
       <br>
       <br><br>
         <div class="col s12   center-align">
-          <a  href="/" type="button" class="waves-effect waves-light" wz-previous><img width="50" src="/btn/BOTON REDODNO ROJO BACK-16.png" width="200">  </a>
+          <!--<a  href="/" type="button" class="waves-effect waves-light" wz-previous><img width="50" src="/btn/BOTON REDODNO ROJO BACK-16.png" width="200">  </a>-->
         
           <a style="margin-left: 40px;" type="button" class="waves-effect waves-light" wz-next value="Continue"><img width="50" src="/btn/BOTON REDONDO AZUL NEXT-16.png" width="200"> </a>
         </div>
@@ -66,7 +66,7 @@ cómo se relacionan con ocupaciones en el mundo del trabajo. </p>
                 <img src="/images/ICONOS PEQ-17.png" style="width: 50px">
               </div>
               <div class=" ">
-                <h6>Me gusta</h6>
+                <h6>Me encanta</h6>
               </div>
             </div>
 
@@ -75,7 +75,7 @@ cómo se relacionan con ocupaciones en el mundo del trabajo. </p>
                 <img src="/images/ICONOS PEQ-18.png" style="width: 50px">
               </div>
               <div class=" ">
-                <h6>Me encanta</h6>
+                <h6>Me gusta</h6>
               </div>
             </div>
 

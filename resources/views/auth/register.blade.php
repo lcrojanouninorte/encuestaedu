@@ -9,6 +9,31 @@
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
+                        <div class="form-group{{ $errors->has('stratum') ? ' has-error' : '' }}">
+
+                            <div class="col-md-6 input-field">
+                                <input   name="stratum" value="{{ old('stratum') }}" required autofocus>
+                                
+                                    <select id="stratum" class="form-control">
+                                      <option value="" disabled selected>Seleccione su estrato</option>
+                                      <option value="1">Estrato 1</option>
+                                      <option value="2">Estrato 2</option>
+                                      <option value="3">Estrato 3</option>
+                                      <option value="4">Estrato 4</option>
+                                      <option value="5">Estrato 5</option>
+                                      <option value="6">Estrato 6</option>
+
+                                      
+                                    </select>
+                                    <label for="stratum" class="col-md-4 control-label">Estrato</label>
+                                  
+                                @if ($errors->has('stratum'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('stratum') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Nombre</label>
