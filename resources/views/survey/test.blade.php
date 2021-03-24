@@ -3,9 +3,9 @@
     @else
     <div class="container" ng-controller="SurveyController as surveyCrtl">
         @endif
-        <div class="row animated fadeInLeft" style="padding-top: 2%;">
+        <div class="row animated fadeInLeft " style="padding-top: 2%;">
             <div class="row">
-                <div class="container-fluid">
+                <div class="container-fluid  center-align ">
                     <div class="row center-align" style="margin-bottom: 0;">
                         <h6 class="blue-s">Progreso</h6>
                     </div>
@@ -29,54 +29,56 @@
             <wizard name="mainw" class="slide-animate" hide-indicators="true" on-finish="finishedWizard()" on-cancel="cancelledWizard()" indicators-position="top">
                 <wz-step wz-title="Test">
                     <div class="row">
+                        <div class="col s2">
 
-                        <div class="panel-body col s12">
+                        </div>
+                        <div class="panel-body col s10">
 
-                            <div class="col s8 valign-wrapper">
+                            <div class="col s8 valign-wrapper   ">
 
                             </div>
-                            <div class="col s4">
+                            <div class="col s4 ">
 
                                 <div class="col s3 center-align">
                                     <div class="row">
-                                        <img src="/images/ICONOS PEQ-17.png" style="width: 24px;
-                                opacity: 0.5;
-                                filter: alpha(opacity=50);">
+                                        <img src="/images/ICONOS PEQ-17.png" style="width: 35px;
+                                opacity: 1;
+                                filter: alpha(opacity=1);">
                                     </div>
                                     <div class="">
-                                        <h6> Me encanta</h6>
+                                        <h6 style="font-size: 12px;"> Me encanta</h6>
                                     </div>
                                 </div>
 
                                 <div class="col s3 center-align">
                                     <div class="row">
-                                        <img src="/images/ICONOS PEQ-18.png" style="width: 24px;
-                                opacity: 0.5;
+                                        <img src="/images/ICONOS PEQ-18.png" style="width: 35px;
+                                opacity: 1;
                                 filter: alpha(opacity=50);">
                                     </div>
                                     <div class="">
-                                        <h6>Me gusta</h6>
+                                        <h6 style="font-size: 12px;">Me gusta</h6>
                                     </div>
                                 </div>
 
                                 <div class="col s3 center-align">
                                     <div class="row">
-                                        <img src="/images/ICONOS PEQ-19.png" style="width: 24px;
-                                opacity: 0.5;
-                                filter: alpha(opacity=50);">
+                                        <img src="/images/ICONOS PEQ-19.png" style="width: 35px;
+                                opacity: 1;
+                                filter: alpha(opacity=1);">
                                     </div>
                                     <div class="">
-                                        <h6>No estoy seguro</h6>
+                                        <h6 style="font-size: 12px;">No estoy seguro</h6>
                                     </div>
                                 </div>
                                 <div class="col s3 center-align">
                                     <div class="row">
-                                        <img src="/images/ICONOS PEQ-20.png" style="width: 24px;
-                                    opacity: 0.5;
-                                    filter: alpha(opacity=50);">
+                                        <img src="/images/ICONOS PEQ-20.png" style="width: 35px;
+                                    opacity: 1;
+                                    filter: alpha(opacity=1);">
                                     </div>
                                     <div class="">
-                                        <h6>No me gusta</h6>
+                                        <h6 style="font-size: 12px;">No me gusta</h6>
                                     </div>
                                 </div>
 
@@ -86,7 +88,7 @@
                         </div>
 
                     </div>
-                    <div class="row" ng-repeat="question in surveyCrtl.questions | limitTo:surveyCrtl.pagination.perPage/3:(surveyCrtl.pagination.perPage/3)*surveyCrtl.pagination.page">
+                    <div style="margin: 5px;" class="row" ng-repeat="question in surveyCrtl.questions | limitTo:surveyCrtl.pagination.perPage/3:(surveyCrtl.pagination.perPage/3)*surveyCrtl.pagination.page">
 
                         <div class="panel-body col s12  ">
 
@@ -109,7 +111,9 @@
 
 
                         </div>
+                        <div class="row border-top">
 
+                        </div>
                     </div>
 
                     <div class="col s4">
@@ -120,7 +124,7 @@
 
                             </div>
 
-                            <div href="#" class="waves-effect waves-light" ng-click="surveyCrtl.validate($index)" value="Continue">
+                            <div href="#" class="waves-effect waves-light" ng-click="surveyCrtl.validate(surveyCrtl.pagination.page)" value="Continue">
                                 <img width="50" src="/btn/BOTON REDONDO AZUL NEXT-16.png" width="200">
                                 <p class="blue-s">Continuar</p>
                             </div>

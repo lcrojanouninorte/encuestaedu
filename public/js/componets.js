@@ -21,21 +21,33 @@ componets.component('questionClick', {
             option.opacity3 = 0.5;
             option.opacity4 = 0.5;
             option[opt] = 1;
+            if (opt == "opacity1") {
+                option.value = 1;
+            }
+            if (opt == "opacity2") {
+                option.value = 2;
+            }
+            if (opt == "opacity3") {
+                option.value = 3;
+            }
+            if (opt == "opacity4") {
+                option.value = 4;
+            }
 
             this.clicked = option;
             if (this.answers.length < 4) {
                 if (this.answers.indexOf(option) === -1) {
                     this.answers.push(option);
-                    option.value = Math.abs(this.answers.length - 5);
+                    //option.value = Math.abs(this.answers.length - 5);
                     //$(event.target).find(".item-check").addClass('color-position-'+option.value);
                 } else {
                     var index = this.answers.indexOf(option);
                     if (index > -1) {
                         this.answers.splice(index, 1);
                         // $(event.target).find(".item-check").removeClass('color-position-'+option.value);
-                        option.value = 0;
+                        // option.value = 0;
                         angular.forEach(this.answers, function(option, key) {
-                            option.value = Math.abs(key - 4);
+                            // option.value = Math.abs(key - 4);
                         });
                     }
                 }
@@ -62,7 +74,7 @@ componets.component('questionClick', {
                 }
                 this.answers = [];
                 if (this.question.done) {
-                    this.donecount--;
+                    //  this.donecount--;
                 }
                 this.question.done = false;
 

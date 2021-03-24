@@ -61,6 +61,8 @@ angular.module('app.controllers', [])
                 surveyCrtl.pagination.page = surveyCrtl.pagination.page + 1;
 
             }
+
+
             if (!surveyCrtl.questions[question_index].done) {
 
                 $window.scrollTo(0, 0);
@@ -70,14 +72,16 @@ angular.module('app.controllers', [])
             }
             $window.scrollTo(0, 0);
 
-
             if (is_ok) {
                 WizardHandler.wizard('mainw').next();
-                if (question_index == 51) {
+                if (surveyCrtl.pagination.page > surveyCrtl.pagination.numPages) {
                     surveyCrtl.save();
                 }
+                if (question_index == 51) {
+                    // surveyCrtl.save();
+                }
             } else {
-                swal("!Esta pregunta esta sin contestar!", "¡Recuerda elegir todas las opciones en orden de preferencia!");
+                // swal("!Esta pregunta esta sin contestar!", "¡Recuerda elegir todas las opciones en orden de preferencia!");
             }
 
             return is_ok;

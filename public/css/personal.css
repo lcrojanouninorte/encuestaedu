@@ -230,6 +230,10 @@ p {
     margin: 0px!important;
 }
 
+.option-face {
+    width: 35px;
+}
+
 .question-item {
     z-index: 100;
 }
@@ -246,6 +250,10 @@ p {
 .question {
     padding: 3px!important;
     /*   border: 1px solid rgba(128, 128, 128, 0.15);*/
+}
+
+div#question {
+    border-bottom: 2px dashed #d363673b;
 }
 
 #question {
@@ -337,6 +345,9 @@ ul.steps-indicator.steps-3 {
 }
 
 @media (max-width: 600px) {
+    .option-face {
+        width: 25px;
+    }
     .ngdialog.ngdialog-theme-default {
         padding-top: 10px!important;
     }
