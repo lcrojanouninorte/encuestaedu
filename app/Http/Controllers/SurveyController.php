@@ -344,7 +344,7 @@ class SurveyController extends Controller
             $area->onet = $onet;//TODO cambiar por onet
             $area_arr =  explode(':', $area->desc_area);
             $area->title =  $area_arr[0];
-            $area->desc =  $area_arr[1];
+            $area->desc =  isset($area_arr[1])?$area_arr[1]:"PENDIENTE";
 
         }
 

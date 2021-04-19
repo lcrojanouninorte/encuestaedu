@@ -57,19 +57,19 @@ angular.module('app.controllers', [])
         }
         surveyCrtl.validate = function(question_index) {
             var is_ok = true;
-            if (surveyCrtl.pagination.page < surveyCrtl.pagination.numPages) {
+            if (surveyCrtl.pagination.page <= surveyCrtl.pagination.numPages) {
                 surveyCrtl.pagination.page = surveyCrtl.pagination.page + 1;
 
             }
 
 
-            if (!surveyCrtl.questions[question_index].done) {
+            /*if (!surveyCrtl.questions[question_index].done) {
 
                 $window.scrollTo(0, 0);
                 is_ok = false;
 
 
-            }
+            }*/
             $window.scrollTo(0, 0);
 
             if (is_ok) {
@@ -77,9 +77,9 @@ angular.module('app.controllers', [])
                 if (surveyCrtl.pagination.page > surveyCrtl.pagination.numPages) {
                     surveyCrtl.save();
                 }
-                if (question_index == 51) {
-                    // surveyCrtl.save();
-                }
+                /* if (question_index == 52) {
+                     surveyCrtl.save();
+                 }*/
             } else {
                 // swal("!Esta pregunta esta sin contestar!", "¡Recuerda elegir todas las opciones en orden de preferencia!");
             }

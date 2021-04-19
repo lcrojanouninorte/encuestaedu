@@ -36,26 +36,29 @@ class CnoController extends Controller
         //buscar las nivel,  categorias y profesiones del area seleccionada
         
 
-
-        if($level>=0){
+      
+        if($level >= 0){
+          
             /* $results = DB::table('cnos')->select('ocupacion', 'desc_ocupacion', 'cod_profesion', 'preparationlevels.desc')->distinct()
              ->leftJoin('preparationlevels', 'cnos.nivel', '=', 'preparationlevels.id')
             ->where('prioridad', $cod_area)
             ->where('categoria', $category)
             //->where('nivel', $level)
             ->get();*/
-
+         
             $results = Preparationlevel::with(array('cnos' => function($query) use ($category, $cod_area)
             {
-                 $query->where('prioridad', $cod_area)
+                 $query->where('prioridad', $cod_area) // ->where('code_area', $cod_area)
                         ->where('onet', $category);
             }))->get();
+           // return  $results;
               $level = $results[$level-1];
               unset( $results[$level->id-1]);
         }else{
+             
             if($category){
                 $results = DB::table('cnos')->select('onet')->distinct()
-                ->where('prioridad', $cod_area)
+                ->where('prioridad', $cod_area) //  ->where('prioridad', $cod_area)
                 ->where('categoria', $category)
                 ->get();
             }else{
@@ -65,7 +68,7 @@ class CnoController extends Controller
             }
         }
         
-      // return $results;
+      
 
 
        //$results->where('prioridad', $cod_area)->get();

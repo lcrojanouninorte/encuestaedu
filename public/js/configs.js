@@ -22,7 +22,7 @@ function config($interpolateProvider) {
 }
 //ok
 var local = {
-    "apiHost": "http://orienta-t.lcrojano.com/api",
+    "apiHost": "http://localhost:8000/api",
     //"apiHost": "http://orienta-t.co/api",
     "questionTemplate": "/templates/question.template.html",
 
