@@ -170,7 +170,7 @@ class SurveyController extends Controller
     public function register_orientate(Request $request)
     {
         //
-
+      
         $validator = Validator::make($request->all(), [
             //'nombre' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
@@ -185,11 +185,11 @@ class SurveyController extends Controller
         }
 
 
-
         $response["success"] = true;
 
         $data = $request->json()->all();
- 
+        
+
         $userData =[];
         //TODO: validar lado servidor e-mail
         $userData = [
@@ -197,20 +197,20 @@ class SurveyController extends Controller
                     'email' => $request->input("email"),
                     'password' =>  bcrypt($request->input("contrasena")),
         ];
-
+       
         $userProfile =[];
         //TODO: validar lado servidor e-mail
         $userProfile = [
                     'edad' => $request->input("edad"),
-                    'institucion' => $request->input("institucion"),
+                    'institucion' => $request->input("institucion")[0],
                     'grado' => $request->input("grado"),
                     'apellido' => $request->input("apellido"),
                     'nombre' => $request->input("nombre"),
                     'contrasena' =>  $request->input("contrasena"),
                     
         ];
-         
-
+    
+       
         $transaction = DB::transaction(function () use ($userProfile, $userData, $response) {
             //crear usuario
             // create user
@@ -219,7 +219,7 @@ class SurveyController extends Controller
  
 
             $newUser = User::create($userData);
-
+         
             //send mail with credential
             $data = array(
                         'email' =>  $newUser->email,

@@ -17,7 +17,10 @@ angular.module('app.controllers', [])
             nombre: "",
             edad: "",
             curso: "",
-            institucion: ""
+            institucion: "",
+            dpto: "",
+            mun: "",
+            col: "",
         }
         surveyCrtl.active = 0;
         surveyCrtl.answers_done = 0;
@@ -36,6 +39,8 @@ angular.module('app.controllers', [])
             [65, 59, 80, 81, 56, 55, 40]
 
         ];
+
+
 
         surveyCrtl.paginationPerPage = function() {
             //surveyCrtl.pagination.perPage = 10
@@ -172,7 +177,7 @@ angular.module('app.controllers', [])
                             surveyCrtl.labels.push(desc_area);
                         });
                     } else {
-                        alert("error preuebe su conexion");
+                        //alert("error pruebe su conexion");
                     }
                     // $log.debug("recibido en questions controller: ", surveyCrtl.questions);
                 });
@@ -185,7 +190,33 @@ angular.module('app.controllers', [])
             ngDialog.open({ template: 'loginForm', className: 'ngdialog-theme-default' });
         };
         surveyCrtl.clickToOpen2 = function() {
-            ngDialog.open({ template: 'registerForm', className: 'ngdialog-theme-default custom-width-800', });
+            ngDialog.open({
+                template: 'registerForm',
+                data: {
+                    location: surveyCrtl.location
+                },
+                className: 'ngdialog-theme-default custom-width-800',
+            }, );
         };
+
+
+        //Ubicación y col
+        surveyCrtl.location = {};
+        surveyCrtl.location.selected_dpto = "";
+        surveyCrtl.location.selected_mun = "";
+        surveyCrtl.location.dptos = survey.getDptos();
+
+        surveyCrtl.location.GetSelectedDpto = function(dpto) {
+            surveyCrtl.location.selected_dpto = survey.getMuns(dpto.cod);
+        }
+        surveyCrtl.location.GetSelectedMun = function(mun) {
+            surveyCrtl.location.selected_mun = survey.getCols(mun.cod);
+            return surveyCrtl.location.selected_mun;
+        }
+        surveyCrtl.location.complete = function() {
+            $('input.autocomplete').autocomplete({
+                data: surveyCrtl.location.selected_mun,
+            });
+        }
 
     });

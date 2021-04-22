@@ -18,7 +18,7 @@
 						 
 						<br>
 						 
-						<h2><a style="font-weight: bold;" class="waves-effect waves-light btn" href="http://orienta-t.co/profesionpdf/4152/1">Ocupación</a></h2>
+						<h2><a style="font-weight: bold;" class="waves-effect waves-light btn" href="http://orienta-t.lcrojano.com/profesionpdf/4152/1">Ocupación</a></h2>
 
 						 
 
@@ -36,16 +36,9 @@
  
 	</div>
 	<div class="col m12 center-align">
-<<<<<<< HEAD
-		<a href="http://www.uninorte.edu.co/" target="_blank"><img alt="Uninorte" src="http://orienta-t.lcrojano/logos/uninorte.jpg" width=32 height=32  /></a>
-		<a href="http://www.promigas.com" target="_blank"><img src="http://orienta-t.lcrojano/logos/promigas.jpg" width=32 height=32 alt="promigas" /></a>
-		<a href="http://www.camarabaq.org.co/" target="_blank"><img alt="camarabaq" src="http://orienta-t.lcrojano/logos/camaracomercio.png" width=32 height=32  /></a>
+		<a href="http://www.uninorte.edu.co/" target="_blank"><img alt="Uninorte" src="http://orienta-t.lcrojano.com/logos/uninorte.png" width=32 height=32  /></a>
+		<a href="http://www.promigas.com" target="_blank"><img src="http://orienta-t.lcrojano.com/logos/promigas.jpg" width=32 height=32 alt="promigas" /></a>
+		<a href="http://www.camarabaq.org.co/" target="_blank"><img alt="camarabaq" src="http://orienta-t.lcrojano.com/logos/camaracomercio.png" width=32 height=32  /></a>
 	</div>
-=======
-			<a href="http://www.uninorte.edu.co/" target="_blank"><img alt="Uninorte" src="http://orienta-t.lcrojano/logos/uninorte.jpg" width=32 height=32  /></a>
-			<a href="http://www.promigas.com" target="_blank"><img src="http://orienta-t.lcrojano/logos/promigas.jpg" width=32 height=32 alt="promigas" /></a>
-			<a href="http://www.camarabaq.org.co/" target="_blank"><img alt="camarabaq" src="http://orienta-t.lcrojano/logos/camaracomercio.png" width=32 height=32  /></a>
-		</div>
->>>>>>> 6b2127b78a923900df8f41e05b44f551419711d1
 
 </div>

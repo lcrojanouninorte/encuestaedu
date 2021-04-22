@@ -8,7 +8,8 @@ var app = angular.module('surveyApp', [
     'app.controllers',
     'app.directives',
     'app.componets',
-    'hl.sticky', 'mgo-angular-wizard', 'chart.js', "ngDialog", "19degrees.ngSweetAlert2"
+    'hl.sticky', 'mgo-angular-wizard', 'chart.js', "ngDialog", "19degrees.ngSweetAlert2",
+    'material.autocomplete'
 ]);
 
 app.config(config);

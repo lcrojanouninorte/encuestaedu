@@ -1,0 +1,91 @@
+/* line 1, ../scss/list.scss */
+.acDirectiveAutocomplete {
+  position: relative;
+}
+/* line 3, ../scss/list.scss */
+.acDirectiveAutocomplete .row {
+  margin-bottom: 1px;
+}
+/* line 7, ../scss/list.scss */
+.acDirectiveAutocomplete .progress {
+  margin: 0;
+  height: 2px;
+  position: absolute;
+}
+/* line 12, ../scss/list.scss */
+.acDirectiveAutocomplete #acForm {
+  padding: 0;
+  position: relative;
+}
+/* line 16, ../scss/list.scss */
+.acDirectiveAutocomplete #acForm .text-input-wrapper input {
+  padding: 0 0;
+  margin: 0 0;
+  font: inherit;
+}
+/* line 21, ../scss/list.scss */
+.acDirectiveAutocomplete #acForm .clearBtn {
+  cursor: pointer;
+  color: #888;
+  font-size: 23px;
+  position: absolute;
+  top: 4px;
+  right: 0px;
+}
+/* line 29, ../scss/list.scss */
+.acDirectiveAutocomplete #acForm .clearBtn:hover {
+  color: #000;
+}
+/* line 33, ../scss/list.scss */
+.acDirectiveAutocomplete #acForm .ac-input {
+  margin-bottom: 0px !important;
+}
+/* line 35, ../scss/list.scss */
+.acDirectiveAutocomplete #acForm .ac-input:focus, .acDirectiveAutocomplete #acForm .ac-input.valid {
+  border-bottom: 1px solid #666;
+  box-shadow: none;
+}
+/* line 38, ../scss/list.scss */
+.acDirectiveAutocomplete #acForm .ac-input:focus + label, .acDirectiveAutocomplete #acForm .ac-input.valid + label {
+  color: #666;
+}
+/* line 44, ../scss/list.scss */
+.acDirectiveAutocomplete #acForm label {
+  left: 0;
+}
+/* line 47, ../scss/list.scss */
+.acDirectiveAutocomplete #acForm .errorMsg {
+  position: absolute;
+}
+/* line 52, ../scss/list.scss */
+.acDirectiveAutocomplete #acDropdown {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+/* line 56, ../scss/list.scss */
+.acDirectiveAutocomplete #acDropdown .dropdown-ul {
+  max-height: 200px;
+  overflow-y: auto;
+  margin: 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+/* line 61, ../scss/list.scss */
+.acDirectiveAutocomplete #acDropdown .dropdown-ul .dropdown-li {
+  display: block;
+  border: none;
+}
+/* line 64, ../scss/list.scss */
+.acDirectiveAutocomplete #acDropdown .dropdown-ul .dropdown-li:hover {
+  background-color: #eeeeee;
+}
+/* line 67, ../scss/list.scss */
+.acDirectiveAutocomplete #acDropdown .dropdown-ul .dropdown-li.selected {
+  background-color: #eeeeee;
+}
+/* line 70, ../scss/list.scss */
+.acDirectiveAutocomplete #acDropdown .dropdown-ul .dropdown-li .displayColor {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+}

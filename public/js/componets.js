@@ -52,7 +52,7 @@ componets.component('questionClick', {
                     }
                 }
             }
-            if (this.answers.length == 4) {
+            if (this.answers.length >= 4) {
                 this.setQuestionDone();
             }
 

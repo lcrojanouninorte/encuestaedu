@@ -16,6 +16,7 @@
     <link href="{{ asset('css/ng-sortable.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/ng-sortable.style.min.css') }}" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.10/sweetalert2.min.css">
+      <link  href="{{ asset('js/autocomplete/autocomplete.min.css') }}" rel="stylesheet">
 
     <link href="{{ asset('/css/personal.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/angular-wizard.min.css') }}" rel="stylesheet">
@@ -138,7 +139,8 @@
     <script src="/js/ng-dialog/ngDialog.min.js"></script>
      <script src="/js/SweetAlert.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.10/sweetalert2.min.js"></script>
-
+     <script  src="{{ URL::asset('js/autocomplete/autocomplete.min.js') }}"></script>
+     
  
 
 

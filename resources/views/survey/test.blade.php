@@ -88,7 +88,7 @@
                         </div>
 
                     </div>
-                    <%answers_done%>
+                 
                     <div style="margin: 5px;" class="row" ng-repeat="question in surveyCrtl.questions | limitTo:surveyCrtl.pagination.perPage/3:(surveyCrtl.pagination.perPage/3)*surveyCrtl.pagination.page">
 
                         <div class="panel-body col s12  ">

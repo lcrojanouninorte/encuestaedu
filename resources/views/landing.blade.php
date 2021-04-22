@@ -158,14 +158,14 @@
                                 <div class="input-field col s12  form-group">
                                     <p>Estrato</p>
                                     <select id="stratum" ng-model="surveyCrtl.profile.stratum" name="stratum" class="validate form-control input-md" required>
-                        <option value="" disabled selected>Estrato</option>
-                        <option value="1">Estrato 1</option>
-                        <option value="2">Estrato 2</option>
-                        <option value="3">Estrato 3</option>
-                        <option value="4">Estrato 4</option>
-                        <option value="5">Estrato 5</option>
-                        <option value="6">Estrato 6</option>
-                </select>
+                                        <option value="" disabled selected>Estrato</option>
+                                        <option value="1">Estrato 1</option>
+                                        <option value="2">Estrato 2</option>
+                                        <option value="3">Estrato 3</option>
+                                        <option value="4">Estrato 4</option>
+                                        <option value="5">Estrato 5</option>
+                                        <option value="6">Estrato 6</option>
+                                </select>
 
 
                                     <div class="alert-danger" role="alert">
@@ -182,13 +182,72 @@
 
 
 
+
+
+
+                            <div class="row">
+                                <div class="  col s12   form-group">
+                                    <p>Departamento</p>
+                                  
+                                     
+                                <select required class="validate form-control input-md"  id="dpto" 
+                                ng-model="surveyCrtl.profile.dpto" 
+                                name="dpto" ng-options="dpto as dpto.dpto for dpto in  ngDialogData.location.dptos  track by dpto.cod" 
+                                ng-change="ngDialogData.location.GetSelectedDpto(surveyCrtl.profile.dpto)">
+                                    <option value=''>Seleccionar</option>
+                                  </select>
+
+ 
+                                            <div class="alert-danger" role="alert">
+                                                <span class="error" ng-show="registerForm.dpto.$touched && registerForm.dpto.$error.required">
+                                *El Departamento es obligatorio!</span>
+                                                <span class="error" ng-show="registerForm.dpto.$touched && registerForm.dpto.$error.text">
+                                *Este no es un Departamento valido!</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="  col s12   form-group">
+                                            <p>Municipio </p>
+                                        
+                                            <select 
+                                            ng-disabled="!surveyCrtl.profile.dpto" 
+                                            id="muni" 
+                                            ng-model="surveyCrtl.profile.mun" 
+                                            ng-options="mun as mun.mun for mun in  ngDialogData.location.selected_dpto  track by mun.cod" 
+                                            ng-change="ngDialogData.location.GetSelectedMun(surveyCrtl.profile.mun)"
+                                            name="muni" class="validate form-control input-md" required>
+                                            <option value=''>Seleccionar</option>
+                                        </select>
+
+                                                <div class="alert-danger" role="alert">
+                                                    <span class="error" ng-show="registerForm.muni.$touched && registerForm.muni.$error.required">
+                                    *El Municipio es obligatorio!</span>
+                                                    <span class="error" ng-show="registerForm.muni.$touched && registerForm.muni.$error.text">
+                                    *Este no es un Municipio valido!</span>
+                                                </div>
+
+                                            </div>
+                            </div>
+                            <!---->
+
+                            
                             <div class="row">
                                 <!-- Text input-->
                                 <div class="input-field col s12 ">
-                                    <label class="control-label" for="institucion">Colegio ó Universidad</label>
-                                    <input id="institucion" ng-model="surveyCrtl.profile.institucion" name="institucion" type="text" placeholder="" class="form-control input-md">
-                                    <div class="   alert-danger" role="alert">
-                                    </div>
+                                    <p class="control-label" for="institucion">Colegio ó Universidad</p>
+                  
+
+                                    <select 
+                                    ng-disabled="!surveyCrtl.profile.mun" 
+                                    id="institucion" 
+                                    ng-model="surveyCrtl.profile.institucion" 
+                                    ng-options="col as col.Nombre for col in  ngDialogData.location.selected_mun" 
+                                   
+                                    name="institucion" class="validate form-control input-md" required>
+                                    <option value=''>Seleccionar</option>
+                                </select>
 
                                 </div>
 
@@ -196,58 +255,22 @@
                                     <p>Sector:</p>
                                     <p class="col sm-6">
                                         <label>
-                    <input  ng-model="surveyCrtl.profile.inst_type" name="group1" type="radio" checked />
-                    <span>Público</span>
-                </label>
-                                    </p>
-                                    <p class="col sm-6 ">
-                                        <label ng-model="surveyCrtl.profile.inst_type">
-                    <input name="group1" type="radio" />
-                    <span>Privado</span>
-                </label>
-                                    </p>
+                                    <input  ng-model="surveyCrtl.profile.inst_type" name="group1" type="radio" checked />
+                                    <span>Público</span>
+                                </label>
+                                                    </p>
+                                                    <p class="col sm-6 ">
+                                                        <label ng-model="surveyCrtl.profile.inst_type">
+                                    <input name="group1" type="radio" />
+                                    <span>Privado</span>
+                                </label>
+                                                    </p>
                                 </div>
 
 
                             </div>
                             <!---->
 
-
-
-                            <div class="row">
-                                <div class="  col s12   form-group">
-                                    <p>Departamento</p>
-                                    <select id="dpto" ng-model="surveyCrtl.profile.dpto" name="dpto" class="validate form-control input-md" required>
-                            <option value="" disabled selected>Departamento</option>
-                        </select>
-
-
-                                    <div class="alert-danger" role="alert">
-                                        <span class="error" ng-show="registerForm.dpto.$touched && registerForm.dpto.$error.required">
-                        *El Departamento es obligatorio!</span>
-                                        <span class="error" ng-show="registerForm.dpto.$touched && registerForm.dpto.$error.text">
-                        *Este no es un Departamento valido!</span>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="  col s12   form-group">
-                                    <p>Municipio </p>
-                                    <select id="muni" ng-model="surveyCrtl.profile.muni" name="muni" class="validate form-control input-md" required>
-                            <option value="" disabled selected>Municipio</option>
-                    </select>
-
-                                    <div class="alert-danger" role="alert">
-                                        <span class="error" ng-show="registerForm.muni.$touched && registerForm.muni.$error.required">
-                        *El Municipio es obligatorio!</span>
-                                        <span class="error" ng-show="registerForm.muni.$touched && registerForm.muni.$error.text">
-                        *Este no es un Municipio valido!</span>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!---->
                             <div class="row">
                                 <div class="input-field col s12  ">
                                     <input id="phone" ng-model="surveyCrtl.profile.phone" name="phone" type="number" placeholder="" class="form-control input-md">
@@ -353,7 +376,6 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
-
 
 
 @endsection

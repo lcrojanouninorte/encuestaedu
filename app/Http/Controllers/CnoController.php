@@ -141,7 +141,7 @@ public function cno_profesionpdf($cod_profesion, $level=null)
                 ->with("skills", "knowledges", "outputs")->get();
  
 
-return PDF::loadFile('http://orienta-t.co/profesion/'.$cod_profesion.'/'.$level)->setOption('margin-top',0)
+return PDF::loadFile('http://orienta-t.lcrojano.com/profesion/'.$cod_profesion.'/'.$level)->setOption('margin-top',0)
         ->setPaper('a4')
         ->setOption('margin-bottom',0)
         ->setOption('margin-left',0)
